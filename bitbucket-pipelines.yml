@@ -1,0 +1,35 @@
+image: node:10.15.3
+pipelines:
+  branches:
+    "{master,staging}":
+      - step:
+          name: Do nothing
+          script:
+            - echo "Waiting For Human Manuel!"
+      - step:
+          name: Build
+          caches:
+            - node
+          script:
+            - unset CI
+            - npm install
+            - npm run build
+          artifacts:
+            - build/**
+      - step:
+          name: Deploy in Production
+          deployment: Production
+          script:
+            - pipe: atlassian/ssh-run:0.2.4
+              variables:
+                SSH_USER: "ubuntu"
+                SERVER: $AWS_SERVER
+                COMMAND: "rm -rf /var/www/build/*"
+                DEBUG: "false"
+            - pipe: atlassian/scp-deploy:0.3.3
+              variables:
+                USER: "ubuntu"
+                SERVER: $AWS_SERVER
+                REMOTE_PATH: "/var/www/build"
+                LOCAL_PATH: "build/*"
+                DEBUG: "false"
