@@ -62,7 +62,7 @@ body{
 
 	font-family: var(--baseHeading);
 	font-weight: 300;
-	font-size: 52px;
+	font-size: 40px;
 	line-height: 1.25;
 	margin-bottom: 0px;
 }
@@ -518,7 +518,7 @@ body{
 	font-weight: 500;
 }
 .the_benefits .para_texts{
-	max-width: 660px;
+	max-width: 900px;
 	margin: 0px auto;
 	text-align: center;
 }
@@ -646,7 +646,6 @@ body{
 	font-weight: 400;
 	font-size: 16px;
 	margin-bottom: 0px;
-	max-width: 180px;
 	line-height: 1.6;
 	margin: 0px auto;
 }
@@ -698,7 +697,6 @@ body{
 }
 .set_account .texts{
 	padding: 0px 25px;
-	padding-left: 100px;
 	margin-top: 130px;
 }
 .set_account .texts h6{

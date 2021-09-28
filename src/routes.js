@@ -11,6 +11,9 @@ import LandingPage from "./containers/landing/landing";
 import CinersPage from "./containers/landing/ciners";
 import HomePage from "./containers/home";
 
+// JWPlayer pages
+import UploadPage from "./containers/jwplayer/upload";
+
 // Import authentication related pages
 import Register from "./containers/auth/register";
 import Login from "./containers/auth/login";
@@ -57,7 +60,8 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/ciners" component={CinersPage} />
-          <Route exact path="/homepage" component={HomePage} />
+          <Route exact path="/home" component={RequireAuth(HomePage)} />
+          <Route exact path="/jwp-upload" component={RequireAuth(UploadPage)} />
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />

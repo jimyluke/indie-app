@@ -49,7 +49,7 @@ class HeaderTemplate extends Component {
               <Nav className="mr-auto" navbar>
                 {authenticated && (
                   <NavItem>
-                    <Link className="nav-link" to="/homepage">
+                    <Link className="nav-link" to="/home">
                       Home
                     </Link>
                   </NavItem>

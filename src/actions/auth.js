@@ -30,7 +30,7 @@ export function loginUser({ email, password }) {
         dispatch({ type: AUTH_USER });
         dispatch({ type: FETCH_USER, payload: user });
         setMessageUserId({ userId: user._id })(dispatch);
-        history.push("/homepage");
+        history.push("/home");
       }
     } catch (err) {
       createNotification("Login Failed", errorMessage(err));

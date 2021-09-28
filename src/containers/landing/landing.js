@@ -9,13 +9,13 @@ class HomePage extends Component {
             <div className="container-fluid">
               <div className="logo_login">
                 <div className="logo">
-                  <a href="index.html">
+                  <Link to="/">
                     <img
                       src={require("../../assets/images/INDIElogo.png")}
                       className="img-fluid"
                       alt=""
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="login grid_item">
                   <Link to="/login">LOG IN</Link>
@@ -24,8 +24,7 @@ class HomePage extends Component {
 
               <div className="contents">
                 <h2>
-                  THE NEXT GENERATION <span className="break"></span> OF
-                  ENTERTAINMENT
+                  A STAGE FOR <span className="break"></span> UNHEARD STORIES
                 </h2>
                 <h4>
                   Feel the power of <span className="color">cinematic</span>{" "}
@@ -71,9 +70,10 @@ class HomePage extends Component {
                 </div>
                 <div className="para_texts">
                   <p>
-                    INDIE Sparxs is an experiential and interactive
-                    multi-platform streaming app and distribution channel
-                    dedicated to independently produced film and TV.
+                    INDIE Sparxs is a social promotions platform for indie
+                    movies. We leverage a sophisticated discovery engine to
+                    connect our indie creatives with their audience and
+                    potential distribution partners.
                   </p>
                 </div>
                 <div className="watch_now">
@@ -103,15 +103,15 @@ class HomePage extends Component {
               <div className="inner_contents">
                 <div className="heading_gradient">
                   <h2>
-                    Let’s be real, we are all <span className="break"></span>{" "}
-                    <span className="bold_texts">emotional creatures</span>.
+                    We are pioneering next <span className="break"></span>
+                    gen indie entertainment <span className="break"></span>
+                    <span className="bold_texts">
+                      while democratizing the<span className="break"></span>
+                    </span>
+                    <span className="bold_texts">
+                      indie distribution process
+                    </span>
                   </h2>
-                </div>
-                <div className="texts">
-                  <p>
-                    So, it only makes sense that the films and series
-                    recommended to us satisfy our emotional needs.
-                  </p>
                 </div>
 
                 <div className="texts_boxes">
@@ -146,12 +146,13 @@ class HomePage extends Component {
                 <div className="para_texts">
                   <p>
                     <span className="bold_texts">
-                      Through a series of personality and in-the-moment quiz
-                      questions,
+                      We are the stage that connects filmmakers with
+                      distributors
                     </span>{" "}
-                    you can narrow down the perfect home cinematic experience
-                    fit for the occasion! Plus, create your own personalized
-                    library of films based on your mood and interests!
+                    and we create a space for your stories to be heard without
+                    the noise. As studios and OTT platforms begin closing their
+                    systems to outside talent, new opportunities are a scarcity
+                    to new independents. We are here for you!
                   </p>
                 </div>
               </div>
@@ -198,12 +199,15 @@ class HomePage extends Component {
                   </div>
                   <div className="para_texts">
                     <p>
-                      Finding an audience for your indie project should be easy.
-                      After all, you’ve already depleted your blood, sweat, and
-                      tears (and maybe even sold your soul) in an effort to
-                      bring your vision to life. Simply upload your creation,
-                      meet approval guidelines, and start earning based on
-                      views.
+                      We all know the math, audience equals revenue, but in
+                      order to entice your audience, you need a platform that is
+                      designed for your film. INDIE Sparxs was made by indie
+                      creatives FOR indie creatives.
+                    </p>
+                    <br />
+                    <p>
+                      Join a platform that showcases your work in the best light
+                      and start earning based on views, followers and shares
                     </p>
                   </div>
                   <div className="clickable_link">
@@ -229,11 +233,14 @@ class HomePage extends Component {
               </div>
               <div className="para_texts">
                 <p>
-                  As a <span className="color">Creator</span>, you can opt to
-                  host monetized premiere parties, connect with fans through
-                  live streams in the Filmmakers’ Lounge, and meet other
-                  like-minded filmmakers. Did we mention you get to keep 80% of
-                  all your earnings?
+                  As a <span className="color">Creator</span>, numbers are
+                  needed to fundraise for your next project. Downloadable and
+                  transparent analytics from your films’ performance on INDIE is
+                  easily accessible for fundraising purposes or to show off that
+                  you actually can make something people want to watch. These
+                  analytics are available for our distribution partners to see
+                  what is trending on INDIE. You don't have to sacrifice your
+                  IP, you retain your rights.
                 </p>
               </div>
 
@@ -322,7 +329,10 @@ class HomePage extends Component {
                 </div>
                 <div className="texts">
                   <h5>CHOOSE AN EXPERIENCE</h5>
-                  <p>Mi male suada phe tra sed dolor.</p>
+                  <p>
+                    Choose between live Virtual Cinema, curated Streaming
+                    Library, or Film Festival events
+                  </p>
                 </div>
               </div>
               <div className="single_step">
@@ -358,15 +368,14 @@ class HomePage extends Component {
             <div className="sign_up_wrap">
               <div className="set_account">
                 <div className="texts grid_item">
-                  <h6>Ready to join the fun?</h6>
+                  <h6>Streaming is old news</h6>
                   <div className="heading">
-                    <h2>Let’s set up your account!</h2>
+                    <h2>Let’s talk about the experience!</h2>
                   </div>
                   <div className="para_texts">
                     <p>
-                      If you want to join us and start submitting your work,
-                      just fill this little form and look out for an email from
-                      us!
+                      Join us to submit your films, enjoy indie stories, and get
+                      started in a new world of social streaming.
                     </p>
                   </div>
                 </div>
@@ -527,7 +536,7 @@ class HomePage extends Component {
                       className="collapsed"
                       data-toggle="collapse"
                     >
-                      Can I upload my film or short?
+                      How long will it take for my film to be approved?
                     </Link>
                   </div>
                   <div
@@ -551,7 +560,7 @@ class HomePage extends Component {
                       className="collapsed"
                       data-toggle="collapse"
                     >
-                      I hate ads. Do I have to watch any?
+                      What if my film hasn’t been at a festival?
                     </Link>
                   </div>
                   <div
@@ -560,12 +569,12 @@ class HomePage extends Component {
                     data-parent="#theFaq"
                   >
                     <p>
-                      No ads in the paid version! And even as a free user, you
-                      will only be subject to viewing ads at the beginning of a
-                      showing, just like watching previews in a traditional
-                      theater. In the beta testing stage, you may see ads to
-                      make sure that the ad-supported tier of our platform is
-                      working properly.
+                      You can still submit! Please be sure you do not want to
+                      put your film in the festival circuit. Some film festivals
+                      will disqualify your film if it has been streamed before
+                      you have submitted it. If you are certain, Please upload
+                      your film but it will take between 1-4 weeks of processing
+                      time to make sure it meets our community guidelines.
                     </p>
                   </div>
                 </div>
@@ -602,7 +611,7 @@ class HomePage extends Component {
                       className="collapsed"
                       data-toggle="collapse"
                     >
-                      Is this platform specific to one genre?
+                      Is INDIE Sparxs specific to one genre?
                     </Link>
                   </div>
                   <div
@@ -651,7 +660,8 @@ class HomePage extends Component {
             <div className="interested_in">
               <div className="heading grid_item">
                 <h3>
-                  Interested in <span className="break"></span> INDIE SPARXS?
+                  Interested in{" "}
+                  <span className="bold_texts">INDIE SPARXS?</span>
                 </h3>
               </div>
               <div className="clickable_link">
@@ -726,6 +736,11 @@ class HomePage extends Component {
                       <li>
                         <Link to="#">
                           <i className="fab fa-linkedin"></i>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/jwp-upload">
+                          <i className="fas fa-upload"></i>
                         </Link>
                       </li>
                     </ul>
