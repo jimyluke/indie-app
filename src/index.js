@@ -14,10 +14,10 @@ import * as serviceWorker from "./serviceWorker";
 import { AUTH_USER } from "./actions/types";
 import history from "./history";
 // import stylesheets
-import "./styles/index.scss";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "suneditor/dist/css/suneditor.min.css";
+import "./styles/index.scss";
 import { configureSocket } from "./utils/socket";
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
