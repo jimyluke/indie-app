@@ -7,9 +7,10 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
+  Row,
+  Col
 } from "reactstrap";
-import { Avatar, Badge } from "antd";
-import sampleUrl from "../../assets/images/user-avatar.png";
+import { Avatar } from "antd";
 import { BellOutlined, SearchOutlined } from "@ant-design/icons";
 import sampleAvatar from "../../assets/images/user-avatar.png";
 
@@ -30,18 +31,95 @@ class HomepageHeader extends Component {
 
     return (
       <div className="homepage-header">
-        <Navbar className="homepage-header__navbar" expand="md" dark>
-          <Link className="homepage-header__navbar-brand" to="/">
-            <img
-              src={require("../../assets/images/INDIElogo.png")}
-              height="35"
-              alt="logo"
-              className="mt-2"
-            />
-          </Link>
-          <NavbarToggler onClick={this.toggle} />
+        <Navbar expand="md" dark>
+          <Row className="w-100 m-0">
+            <Col xs={3} md={0}>
+              <NavbarToggler onClick={this.toggle} />
+              <Link className="brand d-none d-md-block d-lg-block d-xl-block text-left" to="/">
+                <img
+                  src={require("../../assets/images/INDIElogo.png")}
+                  height="35"
+                  alt="logo"
+                  className="mt-2"
+                />
+              </Link>
+            </Col>
+            <Col className="align-items-center justify-content-center d-none d-md-flex d-lg-flex d-xl-flex">
+              <Collapse isOpen={isOpen} navbar>
+                <Nav className="d-flex justify-content-center w-100" navbar>
+                  <NavItem>
+                    <Link
+                      className="nav-link d-block text-uppercase mx-3 text-white font-weight-bold"
+                      to="/home"
+                    >
+                      menu one
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link
+                      className="nav-link d-block text-uppercase mx-3 text-white font-weight-bold"
+                      to="/home"
+                    >
+                      menu two
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link
+                      className="nav-link d-block text-uppercase mx-3 text-white font-weight-bold"
+                      to="/home"
+                    >
+                      discord
+                    </Link>
+                  </NavItem>
+                </Nav>
+              </Collapse>
+            </Col>
+            <Col className="d-flex align-items-center justify-content-center d-md-none">
+              <Link className="brand" to="/">
+                <img
+                  src={require("../../assets/images/INDIElogo.png")}
+                  height="35"
+                  alt="logo"
+                  className="mt-2"
+                />
+              </Link>
+            </Col>
+            <Col xs={3}>
+              <div className="icons text-right">
+                <Link className="nav-link" to="#">
+                  <div
+                    className="mr-2"
+                    style={{
+                      fontSize: 21,
+                      color: "white",
+                    }}
+                  >
+                    <SearchOutlined />
+                  </div>
+                </Link>
+                <Link className="nav-link" to="#">
+                  <div
+                    className="mr-2"
+                    style={{
+                      fontSize: 21,
+                      color: "white",
+                    }}
+                  >
+                    {/*<Badge count={2}>*/}
+                      <BellOutlined />
+                    {/*</Badge>*/}
+                  </div>
+                </Link>
+                <Link className="nav-link" to="#">
+                  <Avatar
+                    src={sampleAvatar}
+                  />
+                </Link>
+              </div>
+            </Col>
+          </Row>
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="d-flex justify-content-center w-100" navbar>
+            <Nav className="d-flex justify-content-center w-100 d-md-none d-lg-none d-xl-none" navbar>
               <NavItem>
                 <Link
                   className="nav-link d-block text-uppercase mx-3 text-white font-weight-bold"
@@ -68,37 +146,6 @@ class HomepageHeader extends Component {
               </NavItem>
             </Nav>
           </Collapse>
-          <div className="homepage-header__navbar-icons">
-            <Link className="nav-link" to="#">
-              <div
-                className="mr-2"
-                style={{
-                  fontSize: 21,
-                  color: "white",
-                }}
-              >
-                <Badge count={2}>
-                  <BellOutlined />
-                </Badge>
-              </div>
-            </Link>
-            <Link className="nav-link" to="#">
-              <div
-                className="mr-2"
-                style={{
-                  fontSize: 21,
-                  color: "white",
-                }}
-              >
-                <SearchOutlined />
-              </div>
-            </Link>
-            <Link className="nav-link" to="#">
-              <Avatar
-                src={sampleAvatar}
-              />
-            </Link>
-          </div>
         </Navbar>
       </div>
     )
