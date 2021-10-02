@@ -1,6 +1,6 @@
 // Google Fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,400italic");
-
+@import "./variables.scss";
 // colors
 .covid-primary {
   background-color: #4472c4;
@@ -490,19 +490,28 @@ a.card-link {
 }
 /* ===== Font Size End ===== */
 
+/* ===== Border Start ===== */
+.border-base {
+  border: 2px solid;
+  //border-image-source: linear-gradient(236.79deg, #FFE37E 6.4%, #F2A072 86.61%);
+  border-radius: $border-radius-base !important;
+  border-color: $orange-primary;
+  border-image-slice: 1;
+  -webkit-border-radius: 5px;
+}
+/* ===== Border radius End ===== */
+
 /* ===== CSS For "The Swiper" Starts Here ===== */
 .swiper-container {
-  min-height: 200px;
-
   .swiper-pagination {
     text-align: right;
     padding-right: 5%;
+    bottom: 16%;
 
     &-bullet {
       --swiper-theme-color: white;
       border-radius: 0;
       padding: 0 25px;
-      bottom: 16%;
       height: 4px;
     }
   }

@@ -1,101 +1,254 @@
 @import './variables.scss';
 @import './base.scss';
 
-.homepage-header {
-  background-color: black;
+.homepage {
+  background: #1b1e21;
 
-  .navbar {
-    padding: 1rem 3rem;
-    padding-top: 2.5rem;
+  &-header {
+    background-color: black;
 
-    @media (max-width: 767.98px) {
-      padding: 1rem 0.5rem;
+    .navbar {
+      padding: 1rem 3rem;
+      padding-top: 2.5rem;
+
+      @media (max-width: 767.98px) {
+        padding: 1rem 0.5rem;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .nav-link {
+          letter-spacing: 1.1px;
+
+          @media (max-width: 767.98px) {
+            padding: .1rem;
+          }
+        }
+      }
+
+      .ant-avatar {
+        border: 1px solid;
+        border-color: $orange-100;
+        box-shadow: 0px 0px 10px $orange-100;
+      }
     }
 
-    .icons {
-      display: flex;
-      align-items: center;
-      height: 100%;
 
-      .nav-link {
-        letter-spacing: 1.1px;
+  //  //@media (max-width: 575.98px) {}
+  //  //@media (min-width: 576px) and (max-width: 767.98px) {}
+  //  @media (max-width: 767.98px) {
+  //
+  //  }
+  //  //@media (min-width: 768px) and (max-width: 991.98px) {
+  //  //
+  //  //}
+  //  //@media (min-width: 992px) and (max-width: 1199.98px) {}
+  //  //@media (min-width: 1200px) {}
+  }
 
-        @media (max-width: 767.98px) {
-          padding: .1rem;
+  &-hero {
+    .ant-btn-primary {
+      background: $orange-primary;
+      border-color: $orange-primary;
+
+      &.ant-btn-background-ghost {
+        color: white;
+      }
+    }
+
+    .hero-slide {
+      &__image {
+        img {
+          width: 100%;
+          height: 600px;
+          object-fit: cover;
+        }
+      }
+
+      &__content {
+        position: absolute;
+        bottom: 20%;
+        left: 7%;
+        color: white;
+
+        .subtitle {
+          font-size: 19px;
+          line-height: 30px;
+        }
+
+        .title {
+          font-size: 52px;
+          line-height: 44px ;
+          color: white;
+        }
+
+        .links {
+          display: flex;
+          align-items: center;
+
+          a {
+            // Using global text-gradient mixin
+            @include text-gradient(linear-gradient(95.35deg, #FFC450 -38.07%, #FF7E3E 157.57%));
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 600;
+          }
+        }
+
+        .description {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 21px;
+          width: 418px;
+        }
+
+        &-action {
+          text-transform: uppercase;
+
+          button {
+            width: 130px;
+            height: 46px;
+          }
         }
       }
     }
 
-    .ant-avatar {
-      border: 1px solid;
-      border-color: $orange-100;
-      box-shadow: 0px 0px 10px $orange-100;
-    }
-  }
-
-
-//  //@media (max-width: 575.98px) {}
-//  //@media (min-width: 576px) and (max-width: 767.98px) {}
-//  @media (max-width: 767.98px) {
-//
-//  }
-//  //@media (min-width: 768px) and (max-width: 991.98px) {
-//  //
-//  //}
-//  //@media (min-width: 992px) and (max-width: 1199.98px) {}
-//  //@media (min-width: 1200px) {}
-}
-
-.homepage-hero {
-  .hero-slide {
-    &__image {
-      img {
-        width: 100%;
-        height: 600px;
-        object-fit: cover;
-      }
-    }
-
-    &__content {
-      position: absolute;
-      bottom: 20%;
-      left: 7%;
+    .film-genres {
+      display: flex;
+      justify-content: space-between;
       color: white;
 
-      .subtitle {
-        font-size: 19px;
-        line-height: 30px;
+      .swiper-wrapper {
+        padding-left: 7%;
       }
 
-      .title {
-        font-size: 52px;
-        line-height: 44px ;
-        color: white;
-      }
-
-      .links {
+      &__item {
         display: flex;
         align-items: center;
 
-        a {
-          // Using global text-gradient mixin
-          @include text-gradient(linear-gradient(95.35deg, #FFC450 -38.07%, #FF7E3E 157.57%));
-          font-size: 16px;
-          line-height: 21px;
+        span {
           font-weight: 600;
+          font-size: 24px;
+          line-height: 44px;
+          letter-spacing: 0.18px;
         }
-      }
 
-      .description {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 21px;
-        width: 418px;
-      }
-
-      &-action {
-        text-transform: uppercase;
+        img {
+          width: 125px;
+          height: 40px;
+        }
       }
     }
   }
+
+  &-slider-wrapper {
+    &__header {
+      padding: 0 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0.18px;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+      }
+
+      a {
+        font-weight: 600;
+        font-size: 19px;
+        color: $orange-200;
+
+        &:hover {
+          color: $orange-100;
+        }
+      }
+
+      .slider-navigation {
+        span {
+          color: white;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .slider {
+      padding-left: 7%;
+
+      .swiper-slide {
+        img {
+          width: 100%;
+          border-radius: $border-radius-base;
+        }
+
+        .slide-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: white;
+          padding: 4% 6%;
+
+          &__content {
+            .title {
+              font-weight: 600;
+              font-size: 20px;
+              line-height: 20px;
+              letter-spacing: 0.18px;
+            }
+            .description {
+              font-size: 14px;
+              line-height: 14px;
+              letter-spacing: 0.18px;
+            }
+          }
+
+          svg {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      &.default {
+        padding-left: 0;
+
+        .swiper-slide {
+          padding: 0 7%;
+        }
+      }
+    }
+  }
+
+  &-quote {
+    display: flex;
+    justify-content: center;
+
+    &__wrapper {
+      width: 100%;
+      height: 100%;
+      background: url("../assets/images/homepage/gradient-bg.svg") no-repeat center center;
+      background-size: 100% 100%;
+      -webkit-background-size: 100% 100%;
+      -moz-background-size: 100% 100%;
+      -o-background-size: 100% 100%;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.18px;
+      color: white;
+      margin: 20px 7%;
+      text-align: center;
+    }
+  }
 }
+
