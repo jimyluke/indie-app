@@ -72,7 +72,7 @@ const Footer = () => {
   return (
     <Container className="homepage-footer mt-5" fluid>
       <div className="d-md-none">
-        <Row className="text-white">
+        <Row className="text-white pt-3">
           <img
             src={require("../../assets/images/INDIElogo.png")}
             height="35"
@@ -83,8 +83,8 @@ const Footer = () => {
         <Row className="text-white mt-3">
           {
             footerItems.slice(0, 2).map((item, index) => (
-              <Col className="p-0">
-                <CollapseWrapper {...item} key={index} />
+              <Col className="p-0" key={index}>
+                <CollapseWrapper {...item} />
               </Col>
             ))
           }
@@ -92,8 +92,8 @@ const Footer = () => {
         <Row className="text-white mt-3">
           {
             footerItems.slice(2, 4).map((item, index) => (
-              <Col className="p-0">
-                <CollapseWrapper {...item} key={index} />
+              <Col className="p-0" key={index}>
+                <CollapseWrapper {...item} />
               </Col>
             ))
           }
@@ -149,8 +149,8 @@ const Footer = () => {
             </div>
           </Col>
           {
-            footerItems.map(({ title, items }, index) => (
-              <Col className="links" key={index}>
+            footerItems.map(({ title, items }, itemIndex) => (
+              <Col className="links" key={itemIndex}>
                 <div className="links-title mb-3">{ title }</div>
                 {
                   items.map(({ label }, index) => (

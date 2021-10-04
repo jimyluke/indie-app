@@ -43,9 +43,9 @@ class HomePage extends Component {
         <SliderWrapper title="Action" videos={actionFilms} />
         <SliderWrapper title="Mystery" videos={mysteryFilms} />
         <div className="homepage-quote">
-          <div className="homepage-quote__wrapper py-5">
+          <div className="homepage-quote__wrapper">
             <div>When people ask me if I went to film school I tell them, 'no, I went to films.'</div>
-            <div className="mt-4">- Tarantino</div>
+            <div className="author">- Tarantino</div>
           </div>
         </div>
         <Footer />

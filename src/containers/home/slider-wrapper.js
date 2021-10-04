@@ -43,7 +43,7 @@ const SliderWrapper = ({ title, videos, defaultSlide }) => {
     <div className='homepage-slider-wrapper'>
       <div className='homepage-slider-wrapper__header my-4'>
         <div className="d-flex align-items-center">
-          <span className="title mr-5">{ title }</span>
+          <span className="title">{ title }</span>
           <Link className="text-uppercase nav-link" to="/">view more</Link>
         </div>
         <div className="slider-navigation">
@@ -53,7 +53,7 @@ const SliderWrapper = ({ title, videos, defaultSlide }) => {
       </div>
       <Swiper
         className={sliderClass}
-        slidesPerView={slidesCountPerView / 2}
+        slidesPerView={defaultSlide ? slidesCountPerView : slidesCountPerView / 2}
         spaceBetween={50}
         breakpoints={
           {

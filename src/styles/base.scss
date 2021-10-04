@@ -503,6 +503,8 @@ a.card-link {
 
 /* ===== CSS For "The Swiper" Starts Here ===== */
 .swiper-container {
+  width: 100% !important;
+
   .swiper-pagination {
     text-align: right;
     padding-right: 5%;

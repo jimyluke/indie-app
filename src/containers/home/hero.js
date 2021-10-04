@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css';
 import SwiperCore, { Pagination } from "swiper";
+import { Row, Col } from "reactstrap"
 import image1 from "../../assets/images/homepage-hero/1.jpg";
 import image2 from "../../assets/images/homepage-hero/2.jpg";
 import image3 from "../../assets/images/homepage-hero/3.jpg";
@@ -25,9 +26,9 @@ const sliders = [
 ]
 const genres = [
   { label: "morror", icon: horrorIcon },
-  { label: "sci-fi", icon: sciFiIcon },
-  { label: "mystery", icon: mysteryIcon },
-  { label: "action", icon: mysteryIcon },
+  { label: "sci-fi", icon: horrorIcon },
+  { label: "mystery", icon: horrorIcon },
+  { label: "action", icon: horrorIcon },
 ]
 
 const Slider = ({ title, imageUrl='1' }) => {
@@ -58,10 +59,14 @@ const Slider = ({ title, imageUrl='1' }) => {
 
 const Genre = ({ label, icon }) => {
   return (
-    <div className="film-genres__item border-base">
-      <span className="mx-4 my-4">{ label }</span>
-      <img src={icon} alt="genre icon" />
-    </div>
+    <Row className="film-genres__item border-base m-0">
+      <Col xs={6} lg={7} className="p-0">
+        <span className="m-1 text-left">{ label }</span>
+      </Col>
+      <Col xs={6} lg={5} className="p-0">
+        <img src={icon} alt="genre icon" />
+      </Col>
+    </Row>
   )
 }
 
@@ -72,10 +77,17 @@ const HompageHero = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
         resistanceRatio={0}
+        breakpoints={
+          {
+            768: {
+              pagination:{ clickable: true }
+            }
+          }
+        }
       >
         {
           sliders.map(({ title, image }, index ) => (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <Slider title={ `${title}_${index + 1}` } imageUrl={image} />
             </SwiperSlide>
           ))
@@ -95,8 +107,8 @@ const HompageHero = () => {
         }
       >
         {
-          genres.map(genre => (
-            <SwiperSlide>
+          genres.map((genre, index) => (
+            <SwiperSlide key={index}>
               <Genre {...genre} />
             </SwiperSlide>
           ))
