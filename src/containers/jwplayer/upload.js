@@ -1,14 +1,29 @@
-import React, { Component } from "react";
-import { Button, Form, Input, Upload } from "antd";
+import React, { Component, useState } from "react";
+import { Button, Form, Input, Upload, Radio, Select } from "antd";
 import { Col, Row } from "reactstrap";
 import { connect } from "react-redux";
 import { Header, Footer } from "../../components/template";
 import { UploadOutlined } from "@ant-design/icons";
-import { uploadVideo } from "../../actions/jwplayer";
+import { uploadVideo, uploadVideoFromURL } from "../../actions/jwplayer";
+import history from "../../history";
+import { categories } from "../../constants/jwplayer";
 
-const UploadForm = ({ props, onSubmit, uploading }) => {
+const UploadForm = ({ props, onSubmit, uploading, onSubmitURL }) => {
+  const [formtype, setFormType] = useState("file");
+
   const onFinish = (values) => {
-    onSubmit(values);
+    if (formtype === "file") onSubmit(values);
+    if (formtype === "url") onSubmitURL(values);
+    return;
+  };
+
+  const onChangeFormType = (e) => {
+    setFormType(e.target.value);
+  };
+
+  const getDisable = () => {
+    if (formtype === "file" && props.fileList.length === 0) return true;
+    return false;
   };
 
   return (
@@ -16,17 +31,41 @@ const UploadForm = ({ props, onSubmit, uploading }) => {
       <div className="account-form-box">
         <Row className="mt-4">
           <Col md={6} sm={12}>
-            <Upload {...props}>
-              <Button
-                icon={<UploadOutlined />}
-                disabled={props.fileList.length > 0}
-              >
-                Select Video File
-              </Button>
-            </Upload>
+            <Radio.Group onChange={onChangeFormType} value={formtype}>
+              <Radio value={"file"}>File Upload</Radio>
+              <Radio value={"url"}>Fetch Video URL</Radio>
+            </Radio.Group>
+          </Col>
+          <Col md={6} sm={12}>
+            {formtype === "file" && (
+              <Upload {...props}>
+                <Button
+                  icon={<UploadOutlined />}
+                  disabled={props.fileList.length > 0}
+                >
+                  Select Video File
+                </Button>
+              </Upload>
+            )}
+            {formtype !== "file" && (
+              <React.Fragment>
+                <span className="form-label">Video URL*</span>
+                <Form.Item
+                  name="video_url"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input the video url!",
+                    },
+                  ]}
+                >
+                  <Input size="large" />
+                </Form.Item>
+              </React.Fragment>
+            )}
           </Col>
         </Row>
-        <Row className="mt-5">
+        <Row className="mt-4">
           <Col md={6} sm={12}>
             <span className="form-label">Title*</span>
             <Form.Item
@@ -56,13 +95,19 @@ const UploadForm = ({ props, onSubmit, uploading }) => {
           <Col md={6} sm={12}>
             <span className="form-label">Permalink</span>
             <Form.Item name="permalink">
-              <Input size="large" />
+              <Input size="large" placeholder="https://" />
             </Form.Item>
           </Col>
           <Col md={6} sm={12}>
             <span className="form-label">Category</span>
             <Form.Item name="category">
-              <Input size="large" />
+              <Select size="large">
+                {categories.map((item) => (
+                  <Select.Option key={item} value={item}>
+                    {item}
+                  </Select.Option>
+                ))}
+              </Select>
             </Form.Item>
           </Col>
         </Row>
@@ -71,10 +116,9 @@ const UploadForm = ({ props, onSubmit, uploading }) => {
       <Button
         type="primary"
         htmlType="submit"
-        disabled={props.fileList.length === 0}
+        disabled={getDisable()}
         loading={uploading}
         className="black-btn mt-4"
-        style={{ float: "right" }}
       >
         {uploading ? "Uploading" : "Start Upload"}
       </Button>
@@ -90,12 +134,18 @@ class UploadPage extends Component {
 
   handleUpload = async (data) => {
     const { fileList } = this.state;
-    this.setState({
-      uploading: true,
-    });
-
+    this.setState({ uploading: true });
     await this.props.uploadVideo(fileList, data);
     this.setState({ fileList: [], uploading: false });
+    history.push("/jwp-player");
+  };
+
+  handleURLUpload = async (data) => {
+    console.log("data", data);
+    this.setState({ uploading: true });
+    await this.props.uploadVideoFromURL(data);
+    this.setState({ uploading: false });
+    history.push("/jwp-player");
   };
 
   render = () => {
@@ -127,6 +177,7 @@ class UploadPage extends Component {
         <div className="container content">
           <UploadForm
             onSubmit={this.handleUpload}
+            onSubmitURL={this.handleURLUpload}
             props={props}
             uploading={uploading}
           />
@@ -144,4 +195,6 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { uploadVideo })(UploadPage);
+export default connect(mapStateToProps, { uploadVideo, uploadVideoFromURL })(
+  UploadPage
+);

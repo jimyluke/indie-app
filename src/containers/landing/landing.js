@@ -743,6 +743,11 @@ class HomePage extends Component {
                           <i className="fas fa-upload"></i>
                         </Link>
                       </li>
+                      <li>
+                        <Link to="/jwp-player">
+                          <i className="fas fa-camera"></i>
+                        </Link>
+                      </li>
                     </ul>
                   </div>
 

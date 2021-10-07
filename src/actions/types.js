@@ -56,3 +56,5 @@ export const FETCH_FAQ_LIST = "fetch_faq_list",
   CREATE_FAQ = "create_faq",
   DELETE_FAQ = "delete_faq",
   UPDATE_FAQ = "update_faq";
+
+export const FETCH_VIDEOS = "fetch_videos";

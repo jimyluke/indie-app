@@ -9,9 +9,11 @@
 @import './admin.scss';
 @import './notification.scss';
 @import './component.scss';
+@import './jwplayer.scss';
 @import url('../assets/style.css');
 @import url('../assets/responsive.css');
 @import url('./homepage.scss');
+@import '~swiper/swiper-bundle.min.css';
 
 body {
   margin: 0;

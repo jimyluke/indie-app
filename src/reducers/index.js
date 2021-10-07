@@ -6,6 +6,7 @@ import messageReducer from "./message";
 import notificationReducer from "./notification";
 import adminReducer from "./admin";
 import faqReducer from "./faq";
+import jsplayerReducer from "./jwplayer"
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   notification: notificationReducer,
   admin: adminReducer,
   faq: faqReducer,
+  jwplayer: jsplayerReducer
 });
 
 export default rootReducer;

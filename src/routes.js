@@ -13,6 +13,7 @@ import HomePage from "./containers/home";
 
 // JWPlayer pages
 import UploadPage from "./containers/jwplayer/upload";
+import VideoPlayer from "./containers/jwplayer/player";
 
 // Import authentication related pages
 import Register from "./containers/auth/register";
@@ -62,6 +63,7 @@ class Routes extends React.Component {
           <Route exact path="/ciners" component={CinersPage} />
           <Route exact path="/home" component={RequireAuth(HomePage)} />
           <Route exact path="/jwp-upload" component={RequireAuth(UploadPage)} />
+          <Route exact path="/jwp-player" component={RequireAuth(VideoPlayer)} />
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />

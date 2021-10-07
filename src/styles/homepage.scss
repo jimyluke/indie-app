@@ -1,13 +1,12 @@
-@import './variables.scss';
-@import './base.scss';
+@import "./variables.scss";
+@import "./base.scss";
 
 .homepage {
-  background: url("../assets/images/homepage/background.png") no-repeat center center;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
-
+  background-color: black;
   &-header {
     background-color: black;
 
@@ -28,7 +27,7 @@
           letter-spacing: 1.1px;
 
           @media (max-width: 767.98px) {
-            padding: .1rem;
+            padding: 0.1rem;
           }
         }
       }
@@ -40,17 +39,16 @@
       }
     }
 
-
-  //  //@media (max-width: 575.98px) {}
-  //  //@media (min-width: 576px) and (max-width: 767.98px) {}
-  //  @media (max-width: 767.98px) {
-  //
-  //  }
-  //  //@media (min-width: 768px) and (max-width: 991.98px) {
-  //  //
-  //  //}
-  //  //@media (min-width: 992px) and (max-width: 1199.98px) {}
-  //  //@media (min-width: 1200px) {}
+    //  //@media (max-width: 575.98px) {}
+    //  //@media (min-width: 576px) and (max-width: 767.98px) {}
+    //  @media (max-width: 767.98px) {
+    //
+    //  }
+    //  //@media (min-width: 768px) and (max-width: 991.98px) {
+    //  //
+    //  //}
+    //  //@media (min-width: 992px) and (max-width: 1199.98px) {}
+    //  //@media (min-width: 1200px) {}
   }
 
   &-hero {
@@ -69,13 +67,18 @@
           width: 100%;
           height: 600px;
           object-fit: cover;
+          opacity: 0.8;
+          object-position: right;
+        }
+        @media (max-width: 767.98px) {
+          height: 88vh;
         }
       }
 
       &__content {
         position: absolute;
         bottom: 20%;
-        left: 7%;
+        width: 100%;
         color: white;
 
         .subtitle {
@@ -91,7 +94,7 @@
 
         .title {
           font-size: 52px;
-          line-height: 44px ;
+          line-height: 44px;
           color: white;
 
           @media (max-width: 767.98px) {
@@ -107,7 +110,9 @@
 
           a {
             // Using global text-gradient mixin
-            @include text-gradient(linear-gradient(95.35deg, #FFC450 -38.07%, #FF7E3E 157.57%));
+            @include text-gradient(
+              linear-gradient(95.35deg, #ffc450 -38.07%, #ff7e3e 157.57%)
+            );
             font-size: 16px;
             line-height: 21px;
             font-weight: 600;
@@ -159,15 +164,10 @@
       justify-content: space-between;
       color: white;
 
-      .swiper-wrapper {
-        padding-left: 7%;
-      }
-
       &__item {
         display: flex;
         align-items: center;
-        padding: 1.5rem;
-
+        padding: 0 10px;
         @media (max-width: 767.98px) {
           padding: 0.5rem;
         }
@@ -206,7 +206,6 @@
 
   &-slider-wrapper {
     &__header {
-      padding: 0 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -214,31 +213,31 @@
       .title {
         color: white;
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 500;
         letter-spacing: 0.18px;
-        text-transform: uppercase;
         padding: 0;
-        margin-right: 3rem;
+        margin-right: 1.5rem;
 
         @media (max-width: 767.98px) {
           font-weight: bold;
-          font-size: 12px;
-          margin-right: 4px;
+          font-size: 14px;
         }
       }
 
       a {
         font-weight: 600;
-        font-size: 19px;
+        font-size: 18px;
         color: $orange-200;
-
+        padding-top: 8px;
         &:hover {
           color: $orange-100;
+          text-decoration: none;
         }
 
         @media (max-width: 767.98px) {
           font-weight: bold;
           font-size: 12px;
+          padding-top: 3px;
         }
       }
 
@@ -253,8 +252,6 @@
     }
 
     .slider {
-      padding-left: 7%;
-
       .swiper-slide {
         img {
           width: 100%;
@@ -291,18 +288,22 @@
 
               @media (max-width: 767.98px) {
                 font-weight: normal;
-                font-size: 8px;
+                font-size: 10px;
                 line-height: 14px;
                 letter-spacing: 0.18px;
                 margin-bottom: 2px;
               }
             }
           }
-
+          @media (max-width: 767.98px) {
+            .anticon {
+              padding-top: 15px;
+            }
+          }
           svg {
             @media (max-width: 767.98px) {
-              width: .5rem;
-              height: .5rem;
+              width: 0.7rem;
+              height: 0.7rem;
             }
             &:hover {
               cursor: pointer;
@@ -313,18 +314,23 @@
 
       &.default {
         padding-left: 0;
-
-        .swiper-slide {
-          padding: 0 7%;
-        }
       }
     }
+  }
+
+  &-background_block {
+    background-image: url("../assets/images/homepage/background.png");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: soft-light;
   }
 
   &-quote {
     display: flex;
     justify-content: center;
     padding: 3rem 0;
+    border-bottom: 1px solid #4f2902;
 
     @media (max-width: 767.98px) {
       padding: 1.5rem 0;
@@ -333,40 +339,59 @@
     &__wrapper {
       width: 100%;
       height: 100%;
-      background: url("../assets/images/homepage/gradient-bg.svg") no-repeat center center;
-      background-size: 100% 100%;
-      -webkit-background-size: 100% 100%;
-      -moz-background-size: 100% 100%;
-      -o-background-size: 100% 100%;
       font-weight: 600;
       font-size: 20px;
       line-height: 24px;
       letter-spacing: 0.18px;
       color: white;
-      margin: 20px 7%;
       text-align: center;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.54) 100%
+      );
+      border-radius: 8px;
+      border: 1px solid rgba(255, 122, 0, 1);
+      padding: 30px;
 
       @media (max-width: 767.98px) {
         font-weight: 600;
-        font-size: 11px;
+        font-size: 14px;
         line-height: 21px;
         letter-spacing: 0.18px;
       }
 
       .author {
-        opacity: 0.7;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
 
         @media (max-width: 767.98px) {
-          margin-top: .5rem;
+          margin-top: 0.5rem;
         }
       }
     }
   }
 
+  &-blendcolor {
+    background: linear-gradient(180deg, #f98600 0%, rgba(0, 0, 0, 0) 100%);
+    mix-blend-mode: normal;
+    opacity: 0.35;
+    transform: rotate(-180deg);
+    height: 100px;
+    margin-top: -100px;
+  }
+
+  &-hero_blendcolor {
+    background: linear-gradient(0deg, #482f36 0%, rgba(0, 0, 0, 0) 100%);
+    mix-blend-mode: normal;
+    opacity: 0.55;
+    transform: rotate(180deg);
+    height: 100px;
+    margin-bottom: -100px;
+  }
+
   &-footer {
     padding: 0 7%;
-    background-color: #14171D;
+    background-color: #14171d;
 
     .collapse-wrapper {
       &__header {
@@ -409,4 +434,3 @@
     }
   }
 }
-
