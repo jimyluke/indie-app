@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Header from "./header";
 import Hero from "./hero";
 import SliderWrapper from "./slider-wrapper";
-import Footer from "./footer";
+import {Header, Footer} from "../../components/template";
 import { Container } from "reactstrap";
 import image1 from "../../assets/images/homepage-hero/1.png";
 import image2 from "../../assets/images/homepage-hero/2.png";

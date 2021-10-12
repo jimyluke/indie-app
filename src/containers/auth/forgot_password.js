@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container } from "reactstrap";
-import { Form, Input } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { Form, Input, Breadcrumb } from "antd";
+import { LeftOutlined } from "@ant-design/icons";
 import { getForgotPasswordToken } from "../../actions/auth";
 import history from "../../history";
 import { Link } from "react-router-dom";
@@ -15,10 +14,6 @@ const ForgotForm = ({ sendMail }) => {
 
   return (
     <Form name="forgot" className="login-form" onFinish={onFinish}>
-      <div className="auth-title mb-4">
-        <div />
-        <Link to="/">Back to Home</Link>
-      </div>
       <Form.Item
         name="email"
         rules={[
@@ -31,11 +26,11 @@ const ForgotForm = ({ sendMail }) => {
         <Input
           type="email"
           size="large"
-          prefix={<UserOutlined className="site-form-item-icon" />}
           placeholder="Email"
+          className="material-input"
         />
       </Form.Item>
-      <button type="submit" className="covid-btn covid-success mt-5">
+      <button type="submit" className="material-btn mt-5">
         Reset Password
       </button>
     </Form>
@@ -50,18 +45,31 @@ class ForgotPassword extends Component {
     }
   }
 
+  renderBreadCrumb = () => (
+    <div className="auth-breadcrumb login">
+      <Breadcrumb separator=">">
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>Forgot password</Breadcrumb.Item>
+      </Breadcrumb>
+      <Link to="/">
+        <LeftOutlined /> Back to homepage
+      </Link>
+    </div>
+  );
+
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Container className="content">
-          <div className="invite-box mt-5">
-            <h3 className="summary-title text-center mb-4">
-              <b>Forgot Password</b>
-            </h3>
-            <ForgotForm sendMail={this.props.getForgotPasswordToken} />
+        <div className="main-content">
+          {this.renderBreadCrumb()}
+          <div className="register-forms">
+            <div className="register-form">
+              <h2 className="mt-5">Forgot Password</h2>
+              <ForgotForm sendMail={this.props.getForgotPasswordToken} />
+            </div>
           </div>
-        </Container>
+        </div>
         <Footer />
       </React.Fragment>
     );

@@ -28,7 +28,7 @@ export const configureSocket = (dispatch) => {
       authProfile = data.message.author.profile;
     }
     createNotification(
-      `New message from ${authProfile.first_name} ${authProfile.last_name}`,
+      `New message from ${authProfile.full_name}`,
       data.message.body
     );
     dispatch(fetchNewMessage(data.message));

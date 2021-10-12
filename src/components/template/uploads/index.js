@@ -5,9 +5,9 @@ import { xAmzDate, dateYMD } from "react-s3/lib/Date";
 import { v4 as uuidv4 } from "uuid";
 import { Upload, message, Tooltip, Modal, Button } from "antd";
 import { LoadingOutlined, CloseCircleOutlined } from "@ant-design/icons";
-import UploadUser from "../../../assets/images/upload_user.svg";
+import UploadUser from "../../../assets/images/general/upload_user.svg";
 import ImageCropper from "./image_cropper";
-import UploadPhoto from "../../../assets/images/upload-photo.svg";
+import UploadPhoto from "../../../assets/images/general/upload-photo.svg";
 
 const config = {
   bucketName: process.env.REACT_APP_S3_BUCKET,

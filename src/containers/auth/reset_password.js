@@ -1,34 +1,18 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
 import { connect } from "react-redux";
-import { resetPassword, resetPasswordSecurity } from "../../actions/auth";
+import { resetPassword } from "../../actions/auth";
 import { Header, Footer } from "../../components/template";
-import { Form, Input } from "antd";
+import { Form, Input, Breadcrumb } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
-const ResetPasswordForm = ({
-  resetPassword,
-  resetPasswordSecurity,
-  message,
-  token,
-}) => {
+const ResetPasswordForm = ({ resetPassword, token }) => {
   const onFinish = (values) => {
-    if (token && token.includes("security")) {
-      let userid = token.replace("security", "");
-      resetPasswordSecurity(userid, values.password, values.conf_password);
-    } else {
-      resetPassword(token, values.password, values.conf_password);
-    }
+    resetPassword(token, values.password, values.conf_password);
   };
 
   return (
     <Form name="reset" className="login-form" onFinish={onFinish}>
-      <div className="auth-title mb-4">
-        <div />
-        <Link to="/">Back to Home</Link>
-      </div>
-
       <Form.Item
         name="password"
         rules={[
@@ -36,9 +20,18 @@ const ResetPasswordForm = ({
             required: true,
             message: "Please input your Password!",
           },
+          {
+            min: 8,
+            message: "Must be at least 8 characters",
+          },
         ]}
       >
-        <Input size="large" type="password" placeholder="Password" />
+        <Input
+          size="large"
+          type="password"
+          placeholder="Password"
+          className="material-input"
+        />
       </Form.Item>
       <Form.Item
         name="conf_password"
@@ -47,20 +40,22 @@ const ResetPasswordForm = ({
             required: true,
             message: "Please confirm your Password!",
           },
+          {
+            min: 8,
+            message: "Must be at least 8 characters",
+          },
         ]}
       >
-        <Input size="large" type="password" placeholder="Confirm Password" />
+        <Input
+          size="large"
+          type="password"
+          placeholder="Confirm Password"
+          className="material-input"
+        />
       </Form.Item>
-      {message && <p>{message}</p>}
-      <div className="signup-btn">
-        <button type="submit" className="hk_button">
-          Reset Password
-        </button>
-      </div>
-      <div className="mt-5 v-center">
-        <LeftOutlined />
-        <Link to="/">&nbsp; RETURN TO HOME</Link>
-      </div>
+      <button type="submit" className="material-btn mt-5">
+        Reset Password
+      </button>
     </Form>
   );
 };
@@ -72,24 +67,35 @@ class ResetPassword extends Component {
     }
   }
 
+  renderBreadCrumb = () => (
+    <div className="auth-breadcrumb login">
+      <Breadcrumb separator=">">
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>Reset password</Breadcrumb.Item>
+      </Breadcrumb>
+      <Link to="/">
+        <LeftOutlined /> Back to homepage
+      </Link>
+    </div>
+  );
+
   render() {
-    const { resetPassword, resetPasswordSecurity, message, match } = this.props;
+    const { resetPassword, match } = this.props;
     return (
       <React.Fragment>
         <Header />
-        <Container className="content">
-          <div className="invite-box mt-5">
-            <h3 className="summary-title text-center mb-4">
-              <b>Reset Password</b>
-            </h3>
-            <ResetPasswordForm
-              resetPassword={resetPassword}
-              resetPasswordSecurity={resetPasswordSecurity}
-              message={message}
-              token={match.params.resetToken}
-            />
+        <div className="main-content">
+          {this.renderBreadCrumb()}
+          <div className="register-forms">
+            <div className="register-form">
+              <h2 className="mt-5">Reset Password</h2>
+              <ResetPasswordForm
+                resetPassword={resetPassword}
+                token={match.params.resetToken}
+              />
+            </div>
           </div>
-        </Container>
+        </div>
         <Footer />
       </React.Fragment>
     );
@@ -97,10 +103,9 @@ class ResetPassword extends Component {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error, message: state.auth.resetMessage };
+  return { message: state.auth.resetMessage };
 }
 
 export default connect(mapStateToProps, {
   resetPassword,
-  resetPasswordSecurity,
 })(ResetPassword);

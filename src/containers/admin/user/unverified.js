@@ -13,7 +13,7 @@ import ToolkitProvider, {
   CSVExport,
 } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import sampleUrl from "../../../assets/images/user-avatar.png";
+import sampleUrl from "../../../assets/images/general/user-avatar.png";
 
 class Participants extends Component {
   constructor(props) {

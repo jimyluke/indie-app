@@ -16,7 +16,7 @@ import UploadPage from "./containers/jwplayer/upload";
 import VideoPlayer from "./containers/jwplayer/player";
 
 // Import authentication related pages
-import Register from "./containers/auth/register";
+import Register from "./containers/auth/register/index";
 import Login from "./containers/auth/login";
 import Logout from "./containers/auth/logout";
 import ForgotPassword from "./containers/auth/forgot_password";
@@ -25,9 +25,7 @@ import Resend from "./containers/auth/resend";
 import ConfirmEmail from "./containers/auth/confirm-email";
 
 // Import user related Pages
-import UserDashboard from "./containers/user/dashboard";
-import Participant from "./containers/user/user";
-import Profile from "./containers/user/profilepage";
+import Profile from "./containers/user/profile";
 
 // Import admin related Pages
 import AdminDashboard from "./containers/admin";
@@ -76,9 +74,7 @@ class Routes extends React.Component {
           <Route path="/resend" component={Resend} />
           <Route path="/email-verify/:mode/:token" component={ConfirmEmail} />
           <Route path="/profile" component={RequireAuth(Profile)} />
-          <Route path="/user-dashboard" component={UserDashboard} />
 
-          <Route path="/participant/:id" component={Participant} />
           <Route path="/admin" component={RequireAuth(AdminDashboard)} />
           <Route path="/message" component={RequireAuth(MessageBox)} />
           <Route path="/notification" component={RequireAuth(Notification)} />

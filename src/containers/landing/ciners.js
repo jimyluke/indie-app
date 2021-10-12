@@ -11,7 +11,7 @@ class HomePage extends Component {
                 <div className="logo">
                   <Link to="/">
                     <img
-                      src={require("../../assets/images/INDIElogo.png")}
+                      src={require("../../assets/images/general/INDIElogo.png")}
                       className="img-fluid"
                       alt=""
                     />
@@ -38,7 +38,7 @@ class HomePage extends Component {
                   <a href="#theVideo">
                     <h6>Learn More</h6>
                     <img
-                      src={require("../../assets/images/down_arrow.png")}
+                      src={require("../../assets/images/landing/down_arrow.png")}
                       className="img-fluid"
                       alt=""
                     />
@@ -49,7 +49,7 @@ class HomePage extends Component {
 
             <div className="particlesss">
               <img
-                src={require("../../assets/images/particles_header.png")}
+                src={require("../../assets/images/landing/particles_header.png")}
                 className="img-fluid"
                 alt=""
               />
@@ -60,7 +60,7 @@ class HomePage extends Component {
           <div className="container">
             <div className="video_wrap">
               <img
-                src={require("../../assets/images/video_screen.png")}
+                src={require("../../assets/images/landing/video_screen.png")}
                 className="img-fluid"
                 alt=""
               />
@@ -84,7 +84,7 @@ class HomePage extends Component {
                     data-rel="youtubeVideo"
                   >
                     <img
-                      src={require("../../assets/images/play_button.png")}
+                      src={require("../../assets/images/landing/play_button.png")}
                       className="img-fluid"
                       alt=""
                     />
@@ -129,14 +129,14 @@ class HomePage extends Component {
 
                 <div className="mockup_image">
                   <img
-                    src={require("../../assets/images/mock_up1.png")}
+                    src={require("../../assets/images/landing/mock_up1.png")}
                     className="img-fluid"
                     alt=""
                   />
                 </div>
                 <div className="mockup_mobile">
                   <img
-                    src={require("../../assets/images/mock_up2.png")}
+                    src={require("../../assets/images/landing/mock_up2.png")}
                     className="img-fluid"
                     alt=""
                   />
@@ -161,7 +161,7 @@ class HomePage extends Component {
         <section className="overlap_benefits overlap_benefits_ciners">
           <div className="particlesss">
             <img
-              src={require("../../assets/images/particles_video.png")}
+              src={require("../../assets/images/landing/particles_video.png")}
               className="img-fluid"
               alt=""
             />
@@ -172,14 +172,14 @@ class HomePage extends Component {
                 <div className="images">
                   <div className="image_1 single_image">
                     <img
-                      src={require("../../assets/images/august-de-richelieu.png")}
+                      src={require("../../assets/images/landing/august-de-richelieu.png")}
                       className="img-fluid"
                       alt=""
                     />
                   </div>
                   <div className="image_2 single_image">
                     <img
-                      src={require("../../assets/images/ekaterina-bolovtsova.png")}
+                      src={require("../../assets/images/landing/ekaterina-bolovtsova.png")}
                       className="img-fluid"
                       alt=""
                     />
@@ -239,7 +239,7 @@ class HomePage extends Component {
                 <div className="single_benefit">
                   <div className="icon">
                     <img
-                      src={require("../../assets/images/huge_collection_icon.png")}
+                      src={require("../../assets/images/landing/huge_collection_icon.png")}
                       className="img-fluid"
                       alt=""
                     />
@@ -254,7 +254,7 @@ class HomePage extends Component {
                 <div className="single_benefit">
                   <div className="icon">
                     <img
-                      src={require("../../assets/images/watch_anywhere_icon.png")}
+                      src={require("../../assets/images/landing/watch_anywhere_icon.png")}
                       className="img-fluid"
                       alt=""
                     />
@@ -267,7 +267,7 @@ class HomePage extends Component {
                 <div className="single_benefit">
                   <div className="icon">
                     <img
-                      src={require("../../assets/images/make_money_icon.png")}
+                      src={require("../../assets/images/landing/make_money_icon.png")}
                       className="img-fluid"
                       alt=""
                     />
@@ -297,7 +297,7 @@ class HomePage extends Component {
               <div className="single_step">
                 <div className="image">
                   <img
-                    src={require("../../assets/images/download_app.png")}
+                    src={require("../../assets/images/landing/download_app.png")}
                     className="img-fluid"
                     alt=""
                   />
@@ -310,7 +310,7 @@ class HomePage extends Component {
               <div className="single_step">
                 <div className="image">
                   <img
-                    src={require("../../assets/images/choose_experience.png")}
+                    src={require("../../assets/images/landing/choose_experience.png")}
                     className="img-fluid"
                     alt=""
                   />
@@ -326,7 +326,7 @@ class HomePage extends Component {
               <div className="single_step">
                 <div className="image">
                   <img
-                    src={require("../../assets/images/connect.png")}
+                    src={require("../../assets/images/landing/connect.png")}
                     className="img-fluid"
                     alt=""
                   />
@@ -347,7 +347,7 @@ class HomePage extends Component {
         <section className="set_account_wrap">
           <div className="particlesss">
             <img
-              src={require("../../assets/images/particles_sign_up.png")}
+              src={require("../../assets/images/landing/particles_sign_up.png")}
               className="img-fluid"
               alt=""
             />
@@ -417,7 +417,7 @@ class HomePage extends Component {
                         <li className="google">
                           <Link to="#">
                             <img
-                              src={require("../../assets/images/google_icon.png")}
+                              src={require("../../assets/images/landing/google_icon.png")}
                               className="img-fluid"
                               alt=""
                             />{" "}
@@ -447,7 +447,7 @@ class HomePage extends Component {
               <div className="type_form">
                 <div className="type_image">
                   <img
-                    src={require("../../assets/images/typeform.png")}
+                    src={require("../../assets/images/landing/typeform.png")}
                     className="img-fluid"
                     alt=""
                   />
@@ -676,7 +676,7 @@ class HomePage extends Component {
                       />
                       <button type="submit" className="btn">
                         <img
-                          src={require("../../assets/images/subscribe_button.png")}
+                          src={require("../../assets/images/landing/subscribe_button.png")}
                           className="img-fluid"
                           alt=""
                         />

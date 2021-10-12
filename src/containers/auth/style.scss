@@ -1,0 +1,65 @@
+@import "./register/style.scss";
+
+.auth-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invite-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 600px;
+  margin: 0 auto;
+  margin: auto;
+}
+
+.forgot-form {
+  padding-top: 50px !important;
+}
+
+.verify-redirect {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  a {
+    color: white;
+  }
+}
+
+.verify-link {
+  color: blue !important;
+  font-weight: 600;
+}
+
+.register-form {
+  .login-remember {
+    display: flex;
+    justify-content: flex-start;
+    .ant-checkbox-wrapper {
+      color: $gray;
+    }
+  }
+  h5 {
+    color: inherit;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .confirm-img {
+    width: 160px;
+    margin: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-form {
+    max-width: 500px;
+    width: 98%;
+  }
+}

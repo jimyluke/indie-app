@@ -125,7 +125,7 @@ body{
 
 /* ===== CSS For "Header" Starts Here ===== */
 .header{
-	background: url(images/header_bg.png) no-repeat;
+	background: url(images/landing/header_bg.png) no-repeat;
 	background-position: center center;
 	background-size: cover;
 }
@@ -143,7 +143,7 @@ body{
 	max-width: 100%;
 }
 .header .overlay{
-	background: url(images/header_overlay.png) no-repeat;
+	background: url(images/landing/header_overlay.png) no-repeat;
 	background-position: center bottom;
 	background-size: cover;
 	padding-top: 40px;
@@ -252,7 +252,7 @@ body{
 /* ===== CSS For "Video Section" Starts Here ===== */
 .video_section{
 	padding: 40px 0px;
-	background: url(images/particles_video.png) no-repeat;
+	background: url(images/landing/particles_video.png) no-repeat;
 	background-position: center center;
 	background-size: cover;
 }
@@ -403,7 +403,7 @@ body{
 /* ============================== */
 
 .overlap_benefits{
-	background: url(images/white_bg.png) no-repeat;
+	background: url(images/landing/white_bg.png) no-repeat;
 	background-position: center center;
 	background-size: 100% 100%;
 	background-color: #000000;
@@ -411,7 +411,7 @@ body{
 	position: relative;
 }
 .overlap_benefits_ciners{
-	background: url(images/black_bg.png) no-repeat;
+	background: url(images/landing/black_bg.png) no-repeat;
 	background-position: center center;
 	background-size: 100% 100%;
 	background-color: #000000;
@@ -584,7 +584,7 @@ body{
 .how_it_works{
 	padding-top: 40px;
 	padding-bottom: 100px;
-	background: url(images/particles_how_it_works.png) no-repeat;
+	background: url(images/landing/particles_how_it_works.png) no-repeat;
 	background-position: center center;
 	background-size: cover;
 	background-color: #000000;
@@ -664,7 +664,7 @@ body{
 
 /* ===== CSS For "Sign Up" Starts Here ===== */
 .set_account_wrap{
-	background: url(images/sign_up_bg.png) no-repeat;
+	background: url(images/landing/sign_up_bg.png) no-repeat;
 	
 	background-position: center center;
 	background-size: 100% 100%;
@@ -1008,7 +1008,7 @@ body{
 
 /* ===== CSS For "Faq's" Starts Here ===== */
 .faqs_wrap{
-	background: url(images/particles_sign_up.png) no-repeat;
+	background: url(images/landing/particles_sign_up.png) no-repeat;
 	background-position: center center;
 }
 .faqs{
@@ -1113,7 +1113,7 @@ body{
 /* ===== CSS For "Interested In" Starts Here ===== */
 .interested_in_wrap{
 	padding: 120px 0px;
-	background: url(images/particles_subscribe.png) no-repeat;
+	background: url(images/landing/particles_subscribe.png) no-repeat;
 	background-position: center center;
 	background-size: cover;
 }

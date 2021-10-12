@@ -4,10 +4,18 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import SwiperCore, { Pagination } from "swiper";
-import { Row, Col, Container } from "reactstrap";
+import { Container } from "reactstrap";
 import image1 from "../../assets/images/homepage-hero/hero.png";
 
-import horrorIcon from "../../assets/images/homepage/horror.svg";
+import HorrorIcon from "../../assets/images/homepage/horror.svg";
+import ActionIcon from "../../assets/images/homepage/action.svg";
+import ComedyIcon from "../../assets/images/homepage/comedy.svg";
+import DocumentIcon from "../../assets/images/homepage/document.svg";
+import KidsIcon from "../../assets/images/homepage/kids.svg";
+import RealityIcon from "../../assets/images/homepage/reality.svg";
+import RomanceIcon from "../../assets/images/homepage/romance.svg";
+import MysteryIcon from "../../assets/images/homepage/mystery.svg";
+import SciFiIcon from "../../assets/images/homepage/sci-fi.svg";
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
@@ -21,10 +29,15 @@ const sliders = [
   { title: "Adventure time", image: image1 },
 ];
 const genres = [
-  { label: "morror", icon: horrorIcon },
-  { label: "sci-fi", icon: horrorIcon },
-  { label: "mystery", icon: horrorIcon },
-  { label: "action", icon: horrorIcon },
+  { label: "Horror", icon: HorrorIcon },
+  { label: "Sci-fi", icon: SciFiIcon },
+  { label: "Mystery", icon: MysteryIcon },
+  { label: "Action", icon: ActionIcon },
+  { label: "Comedy", icon: ComedyIcon },
+  { label: "Document", icon: DocumentIcon },
+  { label: "Reality", icon: RealityIcon },
+  { label: "Kids", icon: KidsIcon },
+  { label: "Romance", icon: RomanceIcon },
 ];
 
 const Slider = ({ title, imageUrl = "1" }) => {
@@ -72,14 +85,10 @@ const Slider = ({ title, imageUrl = "1" }) => {
 
 const Genre = ({ label, icon }) => {
   return (
-    <Row className="film-genres__item border-base m-0">
-      <Col xs={6} lg={7} className="p-0">
-        <span className="m-1 text-left">{label}</span>
-      </Col>
-      <Col xs={6} lg={5} className="p-0">
-        <img src={icon} alt="genre icon" />
-      </Col>
-    </Row>
+    <div className="film-genres__item border-base m-0">
+      <span>{label}</span>
+      <img src={icon} alt="genre icon" />
+    </div>
   );
 };
 
@@ -110,6 +119,10 @@ const HompageHero = () => {
           className="film-genres py-5"
           breakpoints={{
             1024: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+            768: {
               slidesPerView: 3,
               spaceBetween: 30,
             },

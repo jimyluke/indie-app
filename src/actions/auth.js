@@ -50,7 +50,7 @@ export function registerUser(values) {
       let user = response.data.user;
       vrf = {
         _id: user._id,
-        name: `${user.profile.first_name} ${user.profile.last_name} `,
+        name: user.profile.full_name,
         email: user.email,
       };
       localStorage.setItem("vrf", JSON.stringify(vrf));
@@ -133,28 +133,6 @@ export function resetPassword(token, password, conf_password) {
           type: RESET_PASSWORD_REQUEST,
           payload: response.data.message,
         });
-        history.push("/login");
-      })
-      .catch((error) => {
-        createNotification("Reset Password", errorMessage(error));
-      });
-  };
-}
-
-export function resetPasswordSecurity(userid, password, conf_password) {
-  return function (dispatch) {
-    if (password !== conf_password) {
-      createNotification("Reset Password", "password doesn't match");
-      return;
-    }
-    axios
-      .post(`${API_URL}/auth/reset-password-security`, { userid, password })
-      .then((response) => {
-        dispatch({
-          type: RESET_PASSWORD_REQUEST,
-          payload: response.data.message,
-        });
-        // Redirect to login page on successful password reset
         history.push("/login");
       })
       .catch((error) => {

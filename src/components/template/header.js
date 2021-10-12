@@ -12,9 +12,9 @@ import {
   DropdownItem,
 } from "reactstrap";
 import { Avatar, Badge } from "antd";
-import { BellOutlined, MailOutlined } from "@ant-design/icons";
+import { BellOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import sampleUrl from "../../assets/images/user-avatar.png";
+import sampleUrl from "../../assets/images/general/user-avatar.png";
 
 class HeaderTemplate extends Component {
   constructor(props) {
@@ -29,65 +29,65 @@ class HeaderTemplate extends Component {
   };
 
   render = () => {
-    const { authenticated, currentUser, message, notification, isAdmin } =
-      this.props;
+    const { authenticated, currentUser, notification, isAdmin } = this.props;
     const { isOpen } = this.state;
     return (
       <React.Fragment>
         <div className={`main-nav ${isAdmin && "admin-nav"}`}>
-          <Navbar className="container-nav" expand="md" light>
-            <Link className="navbar-brand" to="/">
+          <Navbar className="container-nav" expand="md" dark>
+            <Link
+              className={`navbar-brand ${authenticated ? "" : "center-logo"}`}
+              to="/"
+            >
               <img
-                src={require("../../assets/images/INDIElogo.png")}
-                height="35"
+                src={require("../../assets/images/general/INDIElogo.png")}
                 alt="logo"
-                className="mt-2"
               />
             </Link>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={isOpen} navbar>
-              <Nav className="mr-auto" navbar>
-                {authenticated && (
+            {authenticated && <NavbarToggler onClick={this.toggle} />}
+            {authenticated && (
+              <Collapse isOpen={isOpen} navbar>
+                <Nav className="mr-auto ml-auto" navbar>
                   <NavItem>
                     <Link className="nav-link" to="/home">
                       Home
                     </Link>
                   </NavItem>
-                )}
-                {authenticated && isAdmin && (
                   <NavItem>
-                    <Link className="nav-link" to="/admin">
-                      Admin
+                    <Link className="nav-link" to="#">
+                      Film
                     </Link>
                   </NavItem>
-                )}
-              </Nav>
-
-              <Nav navbar>
-                {authenticated && (
                   <NavItem>
-                    {/* <Link className="nav-link" to="/message"> */}
+                    <Link className="nav-link" to="#">
+                      Discord
+                    </Link>
+                  </NavItem>
+                  {isAdmin && (
+                    <NavItem>
+                      <Link className="nav-link" to="/admin">
+                        Admin
+                      </Link>
+                    </NavItem>
+                  )}
+                </Nav>
+                <Nav navbar>
+                  <NavItem>
                     <Link className="nav-link" to="#">
                       <div
-                        className="mr-2"
                         style={{
                           fontSize: 21,
                           color: "white",
                         }}
                       >
-                        <Badge count={message.unread}>
-                          <MailOutlined />
-                        </Badge>
+                        <SearchOutlined style={{ marginTop: "5px" }} />
                       </div>
                     </Link>
                   </NavItem>
-                )}
-                {authenticated && (
                   <NavItem>
                     {/* <Link className="nav-link" to="/notification"> */}
                     <Link className="nav-link" to="#">
                       <div
-                        className="mr-2"
                         style={{
                           fontSize: 21,
                           color: "white",
@@ -99,21 +99,22 @@ class HeaderTemplate extends Component {
                       </div>
                     </Link>
                   </NavItem>
-                )}
-                {authenticated && (
                   <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
+                    <DropdownToggle nav>
                       {currentUser.profile && (
                         <React.Fragment>
                           <Avatar
                             src={currentUser.profile.photo || sampleUrl}
-                          />{" "}
-                          &nbsp;
-                          {`${currentUser.profile.first_name} ${currentUser.profile.last_name}`}
+                          />
                         </React.Fragment>
                       )}
                     </DropdownToggle>
                     <DropdownMenu right>
+                      <DropdownItem>
+                        <Link className="nav-link" to={"/profile"}>
+                          My Profile
+                        </Link>
+                      </DropdownItem>
                       <DropdownItem>
                         <Link className="nav-link" to="/logout">
                           Logout
@@ -121,9 +122,9 @@ class HeaderTemplate extends Component {
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                )}
-              </Nav>
-            </Collapse>
+                </Nav>
+              </Collapse>
+            )}
           </Navbar>
         </div>
       </React.Fragment>

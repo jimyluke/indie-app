@@ -11,7 +11,7 @@ import ToolkitProvider, {
 } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import { Skeleton, Checkbox } from "antd";
-import sampleUrl from "../../../assets/images/user-avatar.png";
+import sampleUrl from "../../../assets/images/general/user-avatar.png";
 
 class Reports extends Component {
   _isMounted = false;

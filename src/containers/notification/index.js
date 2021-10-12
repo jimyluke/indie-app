@@ -54,7 +54,7 @@ class Notification extends Component {
   renderSender = (item) => {
     if (!item.author) return null;
     const profile = item.author.profile || {};
-    let name = `${profile.first_name} ${profile.last_name}`;
+    let name = profile.full_name;
     return (
       <div className="flex">
         <span>{name}</span>

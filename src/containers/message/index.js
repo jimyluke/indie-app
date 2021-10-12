@@ -26,9 +26,9 @@ import {
   Popconfirm,
 } from "antd";
 import moment from "moment";
-import UserAvatar from "../../assets/images/user-avatar.png";
+import UserAvatar from "../../assets/images/general/user-avatar.png";
 import { Link } from "react-router-dom";
-import TeamIcon from "../../assets/images/team-icon.png";
+import TeamIcon from "../../assets/images/general/team-icon.png";
 import { MehOutlined } from "@ant-design/icons";
 
 const { Content, Sider } = Layout;
@@ -103,7 +103,7 @@ class MessageBox extends Component {
       if (receptor._id === user._id) {
         receptor = users[1];
       }
-      name = `${receptor.profile.first_name} ${receptor.profile.last_name}`;
+      name = receptor.profile.full_name;
       photo = receptor.profile.photo || UserAvatar;
       id = receptor._id;
       isTeamChat = false;
@@ -133,7 +133,7 @@ class MessageBox extends Component {
     const messages = message.messages || [];
     let result = [];
     for (let m of messages) {
-      let author = `${m.author.profile.first_name} ${m.author.profile.last_name}`;
+      let author = m.author.profile.full_name;
       let avatar = m.author.profile.photo || UserAvatar;
       let content = <p>{m.body}</p>;
       let datetime = (
@@ -222,7 +222,7 @@ class MessageBox extends Component {
     }
     let options = temMembers.map((item) => {
       return {
-        label: `${item.participant.profile.first_name} ${item.participant.profile.last_name}`,
+        label: item.participant.profile.full_name,
         value: item.participant._id,
         disabled: curMemebers.some((cm) => cm._id === item.participant._id),
       };
@@ -248,7 +248,7 @@ class MessageBox extends Component {
     for (let cv of message.conversations) {
       if (cv._id === message.channelId) {
         curMemebers = cv.participants.map((item) => {
-          return `${item.profile.first_name} ${item.profile.last_name}`;
+          return item.profile.full_name;
         });
         return curMemebers;
       }

@@ -12,7 +12,7 @@ import ToolkitProvider, {
 } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import { Skeleton, Modal } from "antd";
-import sampleUrl from "../../../assets/images/user-avatar.png";
+import sampleUrl from "../../../assets/images/general/user-avatar.png";
 import ColumnRole from "./column_role";
 import AdminAction from "../admin_action";
 import UserProfile from "./user-edit";

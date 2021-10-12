@@ -3,17 +3,9 @@ import { Button, Form, Input, Select } from "antd";
 import { Col, Row } from "reactstrap";
 import { BigUpload } from "../../components/template";
 import { countries } from "../../constants";
-import { processLink, getFieldData } from "../../utils/helper";
+import { processLink } from "../../utils/helper";
 
-const ProfileForm = ({
-  onSubmit,
-  profile,
-  setAvatar,
-  avatarURL,
-  fieldData,
-}) => {
-  const positions = getFieldData(fieldData, "user_role");
-
+const ProfileForm = ({ onSubmit, profile, setAvatar, avatarURL }) => {
   const onFinish = (values) => {
     values.photo = avatarURL;
     values.setting = profile.setting;
@@ -21,6 +13,7 @@ const ProfileForm = ({
     values.linkedin = processLink(values.linkedin);
     values.twitter = processLink(values.twitter);
     values.web = processLink(values.web);
+    values.films = profile.films;
     onSubmit(values);
   };
 
@@ -33,9 +26,7 @@ const ProfileForm = ({
       <Row>
         <Col md={4} className="mb-4">
           <h4 className="mb-4">
-            <b>
-              {profile.first_name} {profile.last_name}
-            </b>
+            <b>{profile.full_name}</b>
           </h4>
           <BigUpload setAvatar={setAvatar} imageUrl={avatarURL} />
         </Col>
@@ -43,35 +34,19 @@ const ProfileForm = ({
           <div className="account-form-box">
             <Row>
               <Col md={6} sm={12}>
-                <span className="form-label">First name*</span>
+                <span className="form-label">Username</span>
                 <Form.Item
-                  name="first_name"
+                  name="username"
                   rules={[
                     {
                       required: true,
-                      message: "Please input the first name!",
+                      message: "Please input the username!",
                     },
                   ]}
                 >
-                  <Input size="large" />
+                  <Input size="large" disabled />
                 </Form.Item>
               </Col>
-              <Col md={6} sm={12}>
-                <span className="form-label">Last name*</span>
-                <Form.Item
-                  name="last_name"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input the last name!",
-                    },
-                  ]}
-                >
-                  <Input size="large" />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row>
               <Col md={6} sm={12}>
                 <span className="form-label">Email</span>
                 <Form.Item
@@ -83,9 +58,26 @@ const ProfileForm = ({
                     },
                   ]}
                 >
-                  <Input type="email" size="large" />
+                  <Input type="email" size="large" disabled />
                 </Form.Item>
               </Col>
+            </Row>
+            <Row>
+              <Col md={6} sm={12}>
+                <span className="form-label">Full name*</span>
+                <Form.Item
+                  name="full_name"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input the full name!",
+                    },
+                  ]}
+                >
+                  <Input size="large" />
+                </Form.Item>
+              </Col>
+
               <Col md={6} sm={12}>
                 <span className="form-label">Phone</span>
                 <Form.Item name="phone">
@@ -107,31 +99,22 @@ const ProfileForm = ({
                 </Form.Item>
               </Col>
               <Col md={6} sm={12}>
-                <span className="form-label">Position</span>
-                <Form.Item name="position">
-                  <Select size="large">
-                    {positions.map((item) => (
-                      <Select.Option key={item._id} value={item.value}>
-                        {item.value}
-                      </Select.Option>
-                    ))}
-                  </Select>
+                <span className="form-label">Address</span>
+                <Form.Item name="address">
+                  <Input size="large" />
                 </Form.Item>
               </Col>
             </Row>
-            <span className="form-label">Address</span>
-            <Form.Item name="address">
-              <Input size="large" />
-            </Form.Item>
+
             <span className="form-label">
               What is ther best way to contact you?
             </span>
             <Form.Item name="contact">
               <Input size="large" />
             </Form.Item>
-            <span className="form-label">Personal statement</span>
-            <Form.Item name="personal_statement">
-              <Input.TextArea rows={3} size="large" />
+            <span className="form-label">Films</span>
+            <Form.Item name="films">
+              <Input.TextArea rows={3} size="large" disabled />
             </Form.Item>
           </div>
 
@@ -177,3 +160,13 @@ const ProfileForm = ({
 };
 
 export default ProfileForm;
+
+
+// function mapStateToProps(state) {
+//   return {
+//     user: state.user.profile,
+//     fieldData: state.profile.fieldData,
+//   };
+// }
+
+// export default connect(mapStateToProps, { updateProfile })(ProfilePage);
