@@ -1,4 +1,5 @@
-.privacy {
+.privacy,
+.term {
   &-container {
     .container {
       padding: 0 40px;
@@ -18,7 +19,8 @@
   &-content {
     padding-top: 40px;
   }
-  &-statement {
+  &-statement,
+  &-infor {
     &--title {
       font-weight: 700;
       font-family: Montserrat;
@@ -42,6 +44,13 @@
     .text-content.text-bold {
       opacity: 1;
     }
+    .pd-bt40 {
+      padding-bottom: 40px;
+      display: block;
+    }
+    .text-fw {
+      font-weight: 800;
+    }
   }
   &-element {
     &--title {
@@ -53,6 +62,7 @@
       letter-spacing: 1px;
       color: #ffffff;
     }
+
     ul {
       margin-left: 40px;
     }
@@ -60,6 +70,7 @@
       padding-bottom: 20px;
     }
   }
+
   &-footer {
     p {
       font-family: Nunito;
@@ -73,6 +84,22 @@
       span {
         font-weight: 400;
       }
+    }
+  }
+}
+
+.term {
+  &-content {
+    ul {
+      list-style: none;
+    }
+  }
+  &-element {
+    &--title {
+      padding-left: 40px;
+    }
+    ul {
+      margin: 0;
     }
   }
 }

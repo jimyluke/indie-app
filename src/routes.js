@@ -87,6 +87,7 @@ class Routes extends React.Component {
           <Route path="/notification" component={RequireAuth(Notification)} />
           <Route path="/support" component={SupportPage} />
           <Route path="/privacy" component={PrivacyAndTerm} />
+          <Route path="/terms" component={PrivacyAndTerm} />
           <Route path="/faq" component={Faq} />
           <Route path="*" component={NotFoundPage} />
         </Switch>
