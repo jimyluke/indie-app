@@ -44,6 +44,7 @@ import { protectedTest } from "./actions/auth";
 import { fetchConversations } from "./actions/message";
 import { fetchNotifications } from "./actions/notification";
 import { listFieldData } from "./actions/profile";
+import SupportPage from "./containers/support";
 
 class Routes extends React.Component {
   componentDidMount = async () => {
@@ -78,7 +79,7 @@ class Routes extends React.Component {
           <Route path="/admin" component={RequireAuth(AdminDashboard)} />
           <Route path="/message" component={RequireAuth(MessageBox)} />
           <Route path="/notification" component={RequireAuth(Notification)} />
-
+          <Route path="/support" component={SupportPage}/>
           <Route path="/faq" component={Faq} />
           <Route path="*" component={NotFoundPage} />
         </Switch>
