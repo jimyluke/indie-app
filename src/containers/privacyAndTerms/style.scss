@@ -1,0 +1,78 @@
+.privacy {
+  &-container {
+    .container {
+      padding: 0 40px;
+    }
+    padding-bottom: 125px;
+    .auth-breadcrumb {
+      padding: 0;
+      a {
+        color: #ff7a00;
+        &:hover {
+          color: #ff7a00;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &-content {
+    padding-top: 40px;
+  }
+  &-statement {
+    &--title {
+      font-weight: 700;
+      font-family: Montserrat;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 30px;
+      color: #ffffff;
+      letter-spacing: 0.18px;
+      margin-bottom: 40px;
+    }
+    .text-content {
+      font-family: Nunito;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: rgba(239, 239, 239, 0.7);
+      mix-blend-mode: normal;
+      opacity: 0.7;
+    }
+    .text-content.text-bold {
+      opacity: 1;
+    }
+  }
+  &-element {
+    &--title {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 62px;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+    ul {
+      margin-left: 40px;
+    }
+    li {
+      padding-bottom: 20px;
+    }
+  }
+  &-footer {
+    p {
+      font-family: Nunito;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 24px;
+      color: #ffffff;
+      mix-blend-mode: normal;
+      opacity: 0.7;
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}
