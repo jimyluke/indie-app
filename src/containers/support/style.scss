@@ -1,5 +1,4 @@
 .support {
-
     &-ava {
         flex-direction: column;
         display: flex;
@@ -8,7 +7,7 @@
     }
 
     &-asterisk {
-        color: #EF854E
+        color: #ef854e;
     }
 
     &-btn {
@@ -28,12 +27,12 @@
         }
 
         &-copy {
-            background-color: #EF854E !important;
+            background-color: #ef854e !important;
             color: #ffffff;
         }
 
         &-save {
-            background-color: #EF854E !important;
+            background-color: #ef854e !important;
             color: #ffffff;
         }
     }
@@ -41,13 +40,11 @@
     &-center {
         display: flex;
         justify-content: center;
-
     }
 
     &-container {
         margin: 0 auto;
     }
-
 
     &-edit {
         display: flex;
@@ -57,7 +54,6 @@
     }
 
     &-first {
-
         color: white;
     }
 
@@ -81,7 +77,6 @@
         }
     }
 
-
     &-input {
         padding-left: 50px;
     }
@@ -97,7 +92,7 @@
         &-content {
             margin: 20px 0 10px 0;
             color: #878282;
-            font-size: 14px
+            font-size: 14px;
         }
 
         &-desc {
@@ -130,7 +125,6 @@
     }
 
     &-notify {
-
         &-center {
             margin-bottom: 0;
         }
@@ -147,7 +141,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #F6F7FA;
+            background-color: #f6f7fa;
             padding: 15px;
             margin: 20px;
             border-radius: 5px;
@@ -161,6 +155,7 @@
     &-second {
         background-color: white;
         padding-bottom: 50px;
+        z-index: 10;
     }
 
     &-setting {
@@ -188,11 +183,12 @@
         padding: 0 5%;
         overflow: hidden;
         background-size: cover !important;
-        background: url('../../assets/images/supportpage/bg.png');
+        background: url("../../assets/images/supportpage/bg.png");
+        position: relative;
     }
 }
 
-.ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
     position: absolute;
     right: -20px;
 }
@@ -208,14 +204,13 @@
 }
 
 .ant-switch-checked {
-    background-color: #EF854E !important;
+    background-color: #ef854e !important;
 }
 
 @media only screen and (max-width: 768px) {
     .support {
-
         &-ava {
-            &>img {
+            & > img {
                 width: 105px;
                 height: 105px;
             }
@@ -286,25 +281,24 @@
             padding: 0;
         }
     }
-
 }
 
-@media only screen and (min-width: 576px) and (max-width:767px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
     .support {
         &-invite-pl15 {
-            padding-left: 15px!important;
+            padding-left: 15px !important;
         }
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width:970px) {
+@media only screen and (min-width: 769px) and (max-width: 970px) {
     .support {
         &-first {
             padding-left: 0 !important;
         }
 
         &-item {
-            &-img{
+            &-img {
                 width: 18px;
             }
             &-txt {

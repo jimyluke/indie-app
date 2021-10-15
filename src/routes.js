@@ -5,7 +5,7 @@ import { BackTop } from "antd";
 
 // Import miscellaneous routes and other requirements
 import NotFoundPage from "./components/pages/not-found-page";
-
+import NotFound from "./components/pages/not-found";
 // Import static pages
 import LandingPage from "./containers/landing/landing";
 import CinersPage from "./containers/landing/ciners";
@@ -88,6 +88,7 @@ class Routes extends React.Component {
           <Route path="/support" component={SupportPage} />
           <Route path="/privacy" component={PrivacyAndTerm} />
           <Route path="/terms" component={PrivacyAndTerm} />
+          <Route path="/not-found" component={NotFound} />
           <Route path="/faq" component={Faq} />
           <Route path="*" component={NotFoundPage} />
         </Switch>

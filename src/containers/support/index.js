@@ -32,7 +32,7 @@ function SupportPage({ location }) {
   let { path, url } = useRouteMatch();
   const isMobile = windowWidth <= 640 ? true : false;
   const isShowMenu = location.pathname === "/support" && isMobile;
-  console.log('is dhow', isShowMenu)
+  console.log("is dhow", isShowMenu);
   return (
     <div style={{ backgroundColor: "#000" }}>
       <Header />
@@ -138,6 +138,7 @@ function SupportPage({ location }) {
               </Col>
             </Row>
           </Container>
+          <div className="bg-linear"></div>
         </div>
       </div>
       <Footer />
