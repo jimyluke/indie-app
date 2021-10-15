@@ -1,5 +1,6 @@
 .support {
     background-color: #000000;
+
     &-ava {
         flex-direction: column;
         display: flex;
@@ -25,6 +26,7 @@
 
         &-right {
             justify-content: end;
+            text-align: right;
         }
 
         &-copy {
@@ -46,21 +48,26 @@
     &-container {
         margin: 0 auto;
     }
-    &-control{
+
+    &-control {
         padding-top: 15px;
         padding-bottom: 15px;
-        padding-left: 30px!important;
-        &-link{
-            color:#ffffff;
+        padding-left: 30px !important;
+
+        &-link {
+            color: #ffffff;
         }
-        &-text{
+
+        &-text {
             font-size: 1rem;
             font-weight: 600;
         }
-        &-span{
+
+        &-span {
             padding: 0 10px;
         }
     }
+
     &-edit {
         display: flex;
         justify-content: center;
@@ -179,9 +186,33 @@
         font-size: 1.2rem;
         font-weight: 600;
     }
-    &-password{
-        padding: 50px 50px 0 50px ;
+
+    &-password {
+        padding: 50px 50px 0 50px;
     }
+
+    &-picker {
+        display: flex;
+        justify-content: space-between;
+
+        &-month {
+            width: 40%;
+        }
+
+        &-day {
+            width: 20%;
+        }
+
+        &-year {
+            width: 35%;
+        }
+
+        &-label {
+            color: #2e3335;
+            font-size: 14px;
+        }
+    }
+
     &-pt3 {
         padding-top: 30px;
     }
@@ -203,9 +234,13 @@
         background: url("../../assets/images/supportpage/bg.png");
         position: relative;
     }
+
+    .ant-input,.form-control {
+        background-color: #F6F7FA;
+    }
 }
 
-.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+.ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
     position: absolute;
     right: -20px;
 }
@@ -224,10 +259,28 @@
     background-color: #ef854e !important;
 }
 
+.ant-radio-checked .ant-radio-inner {
+    border-color: #cccccc !important;
+}
+
+.ant-radio-checked .ant-radio-inner:after {
+    background-color: #EF854E;
+}
+
+#month,
+#day,
+#year {
+    width: 100%;
+    padding: 4px 2px;
+    background-color: #F6F7FA;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+}
+
 @media only screen and (max-width: 767px) {
     .support {
         &-ava {
-            & > img {
+            &>img {
                 width: 105px;
                 height: 105px;
             }
@@ -289,13 +342,42 @@
                 display: none;
             }
         }
-        &-password{
+
+        &-password {
             padding-left: 0;
             padding-right: 0;
         }
+
+        &-picker {
+            flex-direction: column;
+            justify-content: space-between;
+
+            &-month {
+                width: 70%;
+            }
+
+            &-day {
+                width: 30%;
+            }
+
+            &-year {
+                width: 45%;
+            }
+
+            &-label {
+                margin-bottom: 5px;
+            }
+        }
+
         &-wrapper {
             padding: 0;
         }
+    }
+
+    #month,
+    #day,
+    #year {
+        margin-bottom: 10px;
     }
 }
 
@@ -317,6 +399,7 @@
             &-img {
                 width: 18px;
             }
+
             &-txt {
                 padding-left: 10px;
             }

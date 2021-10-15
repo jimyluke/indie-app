@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Row, Col } from "reactstrap";
 import { Button, Form, Input, Radio } from "antd";
 import PhoneInput from "react-phone-input-2";
+import { YearPicker, MonthPicker, DayPicker } from "react-dropdown-date";
 import "react-phone-input-2/lib/style.css";
 
 import avatar from "../../assets/images/supportpage/avar.png";
@@ -9,6 +10,10 @@ import avatar from "../../assets/images/supportpage/avar.png";
 function Personal() {
   const [value, setValue] = useState(1);
   const [phone, setPhone] = useState("");
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+
   const onChange = (e) => {
     setValue(e.target.value);
   };
@@ -34,7 +39,7 @@ function Personal() {
           </Button>
         </Col>
       </Row>
-      <Row className='support-pt3'>
+      <Row className="support-pt3">
         <Col md={12} sm={12} lg={4} className="support-ava">
           <img src={avatar} alt="avatar" />
           <p className="support-edit">Edit image</p>
@@ -70,15 +75,52 @@ function Personal() {
       <hr />
       <Row>
         <Col md={12} sm={12}>
-          <div>
-            <div class="support-font">Date of birth</div>
-          </div>
-          <div>
-            <Radio.Group onChange={onChange} value={value}>
-              <Radio value={1}>He/Him</Radio>
-              <Radio value={2}>Her/She</Radio>
-              <Radio value={3}>Them/They</Radio>
-            </Radio.Group>
+          <div class="support-font">Date of birth</div>
+          <div className="support-picker">
+            <div className="support-picker-month">
+              <div className="support-picker-label">Month</div>
+              <MonthPicker
+                defaultValue="Select"
+                numeric
+                short
+                caps
+                endYearGiven
+                year={year}
+                required={true}
+                value={month}
+                onChange={(month) => setMonth(month)}
+                id={"month"}
+                name={"month"}
+              />
+            </div>
+            <div className="support-picker-day">
+              <div className="support-picker-label">Day</div>
+              <DayPicker
+                defaultValue="Select"
+                year={year}
+                month={month}
+                endYearGiven
+                required={true}
+                value={day}
+                onChange={(day) => setDay(day)}
+                id={"day"}
+                name={"day"}
+              />
+            </div>
+            <div className="support-picker-year">
+              <div className="support-picker-label">Year</div>
+              <YearPicker
+                defaultValue="Select"
+                label="year"
+                start={1960}
+                reverse
+                required={true}
+                value={year}
+                onChange={(year) => setYear(year)}
+                id={"year"}
+                name={"year"}
+              />
+            </div>
           </div>
         </Col>
       </Row>
