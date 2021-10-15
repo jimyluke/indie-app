@@ -6,8 +6,8 @@ import Privacy from "./privacy";
 import { Link } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import { LeftOutlined } from "@ant-design/icons";
-import Terms from "./terms";
-function PrivacyAndTerm(props) {
+
+function PrivacyAndTerm() {
   return (
     <div style={{ backgroundColor: "#000" }}>
       <Header />

@@ -1,5 +1,5 @@
 import React from "react";
-function Privacy(props) {
+function Privacy() {
   return (
     <div className="privacy-content">
       <div className="privacy-statement">

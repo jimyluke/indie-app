@@ -3,8 +3,6 @@ import Header from "../template/header";
 import Footer from "../template/footer";
 import { Link } from "react-router-dom";
 import {
-  RightOutlined,
-  GlobalOutlined,
   FacebookOutlined,
   TwitterOutlined,
   LinkedinOutlined,

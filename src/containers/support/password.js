@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "reactstrap";
 import { Button, Form, Input } from "antd";
 
-function Password(props) {
+function Password() {
   return (
     <>
       <Row>
@@ -10,7 +10,7 @@ function Password(props) {
           PASSWORD & SECURITY
         </Col>
       </Row>
-      <Row style={{ paddingTop: "50px" }}>
+      <Row className='support-password'>
         <Col md={12} sm={12}>
           <Form layout="vertical">
             <Form.Item label="Current password" required>

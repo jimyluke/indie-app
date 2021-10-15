@@ -1,4 +1,5 @@
 .support {
+    background-color: #000000;
     &-ava {
         flex-direction: column;
         display: flex;
@@ -45,7 +46,21 @@
     &-container {
         margin: 0 auto;
     }
-
+    &-control{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 30px!important;
+        &-link{
+            color:#ffffff;
+        }
+        &-text{
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        &-span{
+            padding: 0 10px;
+        }
+    }
     &-edit {
         display: flex;
         justify-content: center;
@@ -164,7 +179,9 @@
         font-size: 1.2rem;
         font-weight: 600;
     }
-
+    &-password{
+        padding: 50px 50px 0 50px ;
+    }
     &-pt3 {
         padding-top: 30px;
     }
@@ -207,7 +224,7 @@
     background-color: #ef854e !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .support {
         &-ava {
             & > img {
@@ -272,11 +289,10 @@
                 display: none;
             }
         }
-
-        // &-second {
-        //     padding-bottom: 30px;
-        // }
-
+        &-password{
+            padding-left: 0;
+            padding-right: 0;
+        }
         &-wrapper {
             padding: 0;
         }
@@ -291,7 +307,7 @@
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 970px) {
+@media only screen and (min-width: 768px) and (max-width: 970px) {
     .support {
         &-first {
             padding-left: 0 !important;

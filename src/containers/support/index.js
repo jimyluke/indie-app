@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Header, Footer } from "../../components/template";
 import { Row, Col, Container } from "reactstrap";
-import { BellOutlined } from "@ant-design/icons";
+import { BellOutlined, RightOutlined } from "@ant-design/icons";
 import { Switch, Route, Link, Redirect, useRouteMatch } from "react-router-dom";
 import "react-phone-input-2/lib/style.css";
 import "./style.scss";
@@ -31,14 +31,34 @@ function SupportPage({ location }) {
 
   let { path, url } = useRouteMatch();
   const isMobile = windowWidth <= 640 ? true : false;
-  const isShowMenu = location.pathname === "/support" && isMobile;
-  console.log("is dhow", isShowMenu);
+  const isShowSetting=location.pathname === "/support" 
+  const isShowMenu = isShowSetting && isMobile;
   return (
-    <div style={{ backgroundColor: "#000" }}>
+    <div className="support">
       <Header />
       <div className="support-wrapper">
         <div className="support-container">
           <Container fluid>
+            <Row>
+              <Col
+                xs={12}
+                className={`support-control d-sm-none d-md-none d-lg-none ${isShowSetting && 'd-none'}`} 
+              >
+                <div className="support-control-text">
+                  <Link to="/" className="support-control-link">Home</Link>
+                  <span className="support-control-span">
+                    <RightOutlined
+                      style={{
+                        fontSize: "14px",
+                        strokeWidth: "80",
+                        stroke: "white",
+                      }}
+                    />
+                  </span>
+                  <Link to={url} className="support-control-link">Settings</Link>
+                </div>
+              </Col>
+            </Row>
             <Row>
               <Col
                 md={3}

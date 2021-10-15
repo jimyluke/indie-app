@@ -45,7 +45,6 @@ import { fetchConversations } from "./actions/message";
 import { fetchNotifications } from "./actions/notification";
 import { listFieldData } from "./actions/profile";
 import SupportPage from "./containers/support";
-import Privacy from "./containers/privacyAndTerms";
 import PrivacyAndTerm from "./containers/privacyAndTerms";
 
 class Routes extends React.Component {
