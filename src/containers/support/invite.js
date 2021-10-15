@@ -17,19 +17,19 @@ function Invite() {
       </Row>
       <Row>
         <Col md={12} sm={12} className="support-invite-content">
-          <p>
+          <div>
             Get your referral link with one click and share it via social media,
             emails or simply with your friends & family.
-          </p>
+          </div>
         </Col>
       </Row>
       <Row>
         <Col md={12} sm={12}>
-          <p className="support-invite-referral">Referral link</p>
+          <div className="support-invite-desc">Referral link</div>
         </Col>
       </Row>
       <Row>
-        <Col md={9} sm={9}>
+        <Col xs={9} md={9} sm={9}>
           <Form.Item>
             <Input
               placeholder="https://invite.india/promo/id_1938569"
@@ -37,11 +37,11 @@ function Invite() {
             />
           </Form.Item>
         </Col>
-        <Col md={3} sm={9}>
+        <Col xs={3} md={3} sm={9} className="support-invite-pl0 support-invite-pl15">
           <Button
             type="primary"
             shape="round"
-            className="support-btn support-btn-copy"
+            className="support-btn support-btn-copy support-invite-copy"
             size="large"
           >
             Copy

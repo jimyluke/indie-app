@@ -17,10 +17,10 @@ function Password(props) {
               <Input placeholder="Enter current password" size="large" />
             </Form.Item>
             <Form.Item label="New password" required>
-              <Input placeholder="Enter new password" size="large"/>
+              <Input placeholder="Enter new password" size="large" />
             </Form.Item>
             <Form.Item label="Confirm new password" required>
-              <Input placeholder="Confirm new password" size="large"/>
+              <Input placeholder="Confirm new password" size="large" />
             </Form.Item>
           </Form>
         </Col>
@@ -35,6 +35,14 @@ function Password(props) {
             size="large"
           >
             Save
+          </Button>
+          <Button
+            type="primary"
+            shape="round"
+            className="support-btn support-btn-cancel support-invite-cancel"
+            size="large"
+          >
+            Cancel
           </Button>
         </Col>
       </Row>

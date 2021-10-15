@@ -13,28 +13,33 @@ function Personal() {
     setValue(e.target.value);
   };
   return (
-    <>
-      <Row className="support-center d-text-align-center">
-        <Col md={12} sm={12} lg={6} className="support-title">
+    <div className="support-personal">
+      <Row className="support-center">
+        <Col md={12} sm={12} lg={9} className="support-title">
           PERSONAL INFORMATION
         </Col>
-        <Col md={6} sm={12} lg={6} className="support-btn-right d-none d-lg-block ">
+        <Col
+          md={6}
+          sm={12}
+          lg={3}
+          className="support-btn-right d-none d-lg-block "
+        >
           <Button
             type="primary"
             shape="round"
-            className="support-btn support-btn-save support-btn-right"
+            className="support-btn support-btn-save"
             size="large"
           >
             Save
           </Button>
         </Col>
       </Row>
-      <Row style={{ paddingTop: "50px" }}>
-        <Col md={12} sm={12} className="support-ava">
+      <Row className='support-pt3'>
+        <Col md={12} sm={12} lg={4} className="support-ava">
           <img src={avatar} alt="avatar" />
           <p className="support-edit">Edit image</p>
         </Col>
-        <Col md={12} sm={12} style={{ paddingLeft: "50px" }}>
+        <Col md={12} sm={12} lg={8} class="support-input">
           <Form layout="vertical">
             <Form.Item label="First name" required>
               <Input placeholder="Jane" />
@@ -47,13 +52,17 @@ function Personal() {
       </Row>
       <hr />
       <Row className="support-identify">
-        <Col md={4} sm={12}>
-          <p>How do you identify?</p>
+        <Col md={4} sm={12} style={{ paddingRight: "0" }}>
+          <div className="support-identify-title">How do you identify?</div>
         </Col>
-        <Col md={8} sm={12}>
+        <Col md={8} sm={12} style={{ paddingLeft: "5", paddingRight: "0" }}>
           <Radio.Group onChange={onChange} value={value}>
-            <Radio value={1}>He/Him</Radio>
+            <Radio value={1} size="small">
+              He/Him
+            </Radio>
+            <span className="support-br" />
             <Radio value={2}>Her/She</Radio>
+            <span className="support-br" />
             <Radio value={3}>Them/They</Radio>
           </Radio.Group>
         </Col>
@@ -62,7 +71,7 @@ function Personal() {
       <Row>
         <Col md={12} sm={12}>
           <div>
-            <p>Date of birth</p>
+            <div class="support-font">Date of birth</div>
           </div>
           <div>
             <Radio.Group onChange={onChange} value={value}>
@@ -77,9 +86,9 @@ function Personal() {
       <Row>
         <Col md={12} sm={12}>
           <div>
-            <p>
+            <div className="support-font">
               Email address <span className="support-asterisk">*</span>
-            </p>
+            </div>
           </div>
           <div>
             <Form layout="vertical">
@@ -106,7 +115,7 @@ function Personal() {
       </Row>
 
       <Row>
-        <Col md={2} sm={12}>
+        <Col className="support-btn-footer" xs={12} md={12} sm={12} lg={6}>
           <Button
             type="primary"
             shape="round"
@@ -115,8 +124,6 @@ function Personal() {
           >
             Save
           </Button>
-        </Col>
-        <Col md={2} sm={12}>
           <Button
             type="primary"
             shape="round"
@@ -126,9 +133,9 @@ function Personal() {
             Cancel
           </Button>
         </Col>
-        <Col md={8} sm={12} />
+        <Col xs={0} md={6} sm={12} className="d-xs-none d-md-none d-lg-block" />
       </Row>
-    </>
+    </div>
   );
 }
 

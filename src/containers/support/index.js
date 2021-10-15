@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Header, Footer } from "../../components/template";
 import { Row, Col, Container } from "reactstrap";
 import { BellOutlined } from "@ant-design/icons";
+import { Switch, Route, Link, Redirect, useRouteMatch } from "react-router-dom";
 import "react-phone-input-2/lib/style.css";
 import "./style.scss";
 
@@ -17,7 +18,21 @@ import Password from "./password";
 import Notifications from "./notifications";
 import Invite from "./invite";
 
-function SupportPage() {
+function SupportPage({ location }) {
+  let resizeWindow = () => {
+    setWindowWidth(window.innerWidth);
+  };
+  const [windowWidth, setWindowWidth] = useState(0);
+  useEffect(() => {
+    resizeWindow();
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
+  }, []);
+
+  let { path, url } = useRouteMatch();
+  const isMobile = windowWidth <= 640 ? true : false;
+  const isShowMenu = location.pathname === "/support" && isMobile;
+  console.log('is dhow', isShowMenu)
   return (
     <div style={{ backgroundColor: "#000" }}>
       <Header />
@@ -28,49 +43,94 @@ function SupportPage() {
               <Col
                 md={3}
                 sm={12}
-                className="support-first support-pd5"
+                lg={3}
+                className={`support-first support-pd2 ${
+                  !isShowMenu && "d-none d-lg-block d-md-block"
+                }`}
                 style={{ color: "white" }}
               >
-                <p className="support-setting">SETTINGS</p>
+                <div className="support-setting">SETTINGS</div>
                 <div className="support-menu">
-                  <p className="support-item">
-                    <img
-                      src={user}
-                      className="support-item-img"
-                      alt="personal information"
-                    />
-                    <p className="support-item-txt">Personal Information</p>
-                  </p>
-                  <p className="support-item">
-                    <img
-                      src={security}
-                      className="support-item-img"
-                      alt="password"
-                    />
-                    <p className="support-item-txt">Password & Security</p>
-                  </p>
-                  <p className="support-item">
-                    <BellOutlined
-                      className="support-item-img"
-                      alt="notifications"
-                    />
-                    <p className="support-item-txt">Notifications</p>
-                  </p>
-                  <p className="support-item">
-                    <img src={mail} className="support-item-img" alt="invite" />
-                    <p className="support-item-txt">Invite Friends</p>
-                  </p>
+                  <Link to={`${url}/personal`}>
+                    <div className="support-item">
+                      <img
+                        src={user}
+                        className="support-item-img"
+                        alt="personal information"
+                      />
+                      <div className="support-item-txt">
+                        Personal Information
+                      </div>
+                    </div>
+                  </Link>
+                  <Link to={`${url}/password`}>
+                    <div className="support-item">
+                      <img
+                        src={security}
+                        className="support-item-img"
+                        alt="password"
+                      />
+                      <div className="support-item-txt">
+                        Password & Security
+                      </div>
+                    </div>
+                  </Link>
+                  <Link to={`${url}/notifications`}>
+                    <div className="support-item">
+                      <BellOutlined
+                        style={{ fontSize: "22px" }}
+                        className="support-item-img"
+                        alt="notifications"
+                      />
+                      <div className="support-item-txt">Notifications</div>
+                    </div>
+                  </Link>
+                  <Link to={`${url}/invite`}>
+                    <div className="support-item">
+                      <img
+                        src={mail}
+                        className="support-item-img"
+                        alt="invite"
+                      />
+                      <div className="support-item-txt">Invite Friends</div>
+                    </div>
+                  </Link>
                 </div>
               </Col>
-              <Col md={6} sm={12} className="support-second support-pd5">
-                <Container>
-                  <Personal />
-                  {/* <Password/> */}
-                  {/* <Notifications/> */}
-                  {/* <Invite/> */}
-                </Container>
+              <Col
+                md={9}
+                sm={12}
+                lg={6}
+                className={`support-second support-pt3 ${
+                  isShowMenu && "d-none d-lg-block"
+                }`}
+              >
+                <Switch>
+                  <Route path={`${path}/personal`}>
+                    <Personal />
+                  </Route>
+                  <Route path={`${path}/password`}>
+                    <Password />
+                  </Route>
+                  <Route path={`${path}/notifications`}>
+                    <Notifications />
+                  </Route>
+                  <Route path={`${path}/invite`}>
+                    <Invite />
+                  </Route>
+                  {!isMobile && (
+                    <Route path={path}>
+                      <Redirect to={`${path}/personal`} />
+                    </Route>
+                  )}
+                </Switch>
               </Col>
-              <Col md={3} sm={12} className="d-none d-lg-block">
+              <Col
+                md={3}
+                sm={12}
+                lg={3}
+                className="support-third d-none d-lg-block d-md-none"
+              >
                 <img src={movie1} alt="movie1" className="support-img" />
                 <img src={movie2} alt="movie2" className="support-img" />
                 <img src={movie3} alt="movie3" className="support-img" />

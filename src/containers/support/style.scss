@@ -1,4 +1,12 @@
 .support {
+
+    &-ava {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     &-asterisk {
         color: #EF854E
     }
@@ -7,7 +15,7 @@
         border: none !important;
         font-weight: bold;
         outline: none !important;
-        padding: 5px 30px !important;
+        padding: 0px 15px !important;
 
         &-cancel {
             background-color: transparent !important;
@@ -16,7 +24,6 @@
         }
 
         &-right {
-            display: flex;
             justify-content: end;
         }
 
@@ -30,15 +37,17 @@
             color: #ffffff;
         }
     }
-    &-center{
+
+    &-center {
         display: flex;
         justify-content: center;
-        
+
     }
+
     &-container {
-        // max-width: 1440px;
         margin: 0 auto;
     }
+
 
     &-edit {
         display: flex;
@@ -48,65 +57,93 @@
     }
 
     &-first {
-        padding-left: 0 !important;
+
         color: white;
     }
 
+    &-font {
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
     &-identify {
-        font-weight: bold;
+        font-weight: 500;
+        font-size: 13px;
     }
 
     &-img {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
+
+        &:nth-last-child(1) {
+            margin-bottom: 0;
+        }
     }
 
-    &-invite{
-        padding:0 40px;
-        font-size: 1.2rem;
 
-        &-content{
-            margin: 20px 0 25px 0;
+    &-input {
+        padding-left: 50px;
+    }
+
+    &-invite {
+        padding: 0 40px;
+        font-size: 1.1rem;
+
+        &-cancel {
+            display: none !important;
+        }
+
+        &-content {
+            margin: 20px 0 10px 0;
             color: #878282;
+            font-size: 14px
         }
-        &-desc{
-            font-weight: 500;
-            margin-top: 40px;
-        }
-        &-referral{
 
+        &-desc {
+            font-weight: 500;
+            margin-top: 20px;
+            font-size: 1rem;
         }
-        &-title{
+
+        &-title {
             font-weight: 600;
             font-size: 1.4rem;
         }
-       
-       
     }
 
     &-item {
+        padding-bottom: 15px;
+        color: white;
+
         &-img {
             display: inline-block;
-            margin-right: 20px;
+            width: 20px;
         }
 
         &-txt {
+            padding-left: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
             display: inline-block;
         }
     }
- 
-    &-notify{
-       
-        &-center{
+
+    &-notify {
+
+        &-center {
             margin-bottom: 0;
         }
-        &-footer{
+
+        &-footer {
             display: flex;
             padding: 15px 40px;
             color: #878282;
             font-size: 14px;
             line-height: 137%;
         }
-        &-item{
+
+        &-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -114,38 +151,43 @@
             padding: 15px;
             margin: 20px;
             border-radius: 5px;
-            .ant-form-item{
+
+            .ant-form-item {
                 margin-bottom: 0;
             }
         }
     }
+
     &-second {
         background-color: white;
-        
+        padding-bottom: 50px;
     }
 
     &-setting {
         margin-bottom: 20px;
+        padding-top: 20px;
+        font-size: 1.2rem;
+        font-weight: 600;
     }
 
-    &-pd5 {
-        padding-top: 50px;
+    &-pt3 {
+        padding-top: 30px;
+    }
+
+    &-third {
+        overflow-x: hidden;
     }
 
     &-title {
-        padding: 1rem;
-        font-size: 16px;
-        line-height: 16px;
+        padding: 0;
         font-weight: 500;
         color: #000000;
     }
 
     &-wrapper {
         padding: 0 5%;
-        height: fit-content;
-        max-height: 1214px;
         overflow: hidden;
-        // background-size: 100% 100%;
+        background-size: cover !important;
         background: url('../../assets/images/supportpage/bg.png');
     }
 }
@@ -159,23 +201,115 @@
     border-color: #d9d9d9 !important;
     width: 100% !important;
 }
-.ant-switch-checked {
-    background-color: #EF854E!important;
+
+.ant-radio-wrapper {
+    font-size: 11px !important;
+    line-height: 11px !important;
 }
+
+.ant-switch-checked {
+    background-color: #EF854E !important;
+}
+
 @media only screen and (max-width: 768px) {
-    .support{
-        &-ava{
-            flex-direction: column;
-            display: flex;
-            align-items: center;
-            &>img{
+    .support {
+
+        &-ava {
+            &>img {
                 width: 105px;
                 height: 105px;
             }
         }
-        &-center{
+
+        &-br {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        &-btn {
+            &-footer {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        &-center {
             text-align: center;
         }
+
+        &-first {
+            padding-left: 30px !important;
+            padding-bottom: 50px !important;
+        }
+
+        &-identify {
+            font-size: 14px;
+
+            &-title {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-invite {
+            padding: 0;
+
+            &-cancel {
+                display: block !important;
+            }
+
+            &-copy {
+                padding: 5px 20px !important;
+            }
+
+            &-desc {
+                font-weight: 700;
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            &-pl0 {
+                padding-left: 0 !important;
+            }
+        }
+
+        &-notify {
+            &-footer {
+                display: none;
+            }
+        }
+
+        // &-second {
+        //     padding-bottom: 30px;
+        // }
+
+        &-wrapper {
+            padding: 0;
+        }
     }
-    
+
+}
+
+@media only screen and (min-width: 576px) and (max-width:767px) {
+    .support {
+        &-invite-pl15 {
+            padding-left: 15px!important;
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width:970px) {
+    .support {
+        &-first {
+            padding-left: 0 !important;
+        }
+
+        &-item {
+            &-img{
+                width: 18px;
+            }
+            &-txt {
+                padding-left: 10px;
+            }
+        }
+    }
 }
