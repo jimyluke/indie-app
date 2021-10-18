@@ -19,7 +19,7 @@ class ProfileInfo extends Component {
   );
 
   renderUserInfo = () => {
-    const { user, toggleEdit } = this.props;
+    const { user } = this.props;
     const userInfo = user.profile;
     if (!userInfo) {
       return null;

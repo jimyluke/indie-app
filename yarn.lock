@@ -7222,10 +7222,20 @@ lodash.memoize@^4.1.2:
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
 
+lodash.reduce@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.reduce/-/lodash.reduce-4.6.0.tgz#f1ab6b839299ad48f784abbf476596f03b914d3b"
+  integrity sha1-8atrg5KZrUj3hKu/R2WW8DuRTTs=
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
+
+lodash.startswith@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/lodash.startswith/-/lodash.startswith-4.2.1.tgz#c598c4adce188a27e53145731cdc6c0e7177600c"
+  integrity sha1-xZjErc4YiiflMUVzHNxsDnF3YAw=
 
 lodash.template@^4.4.0, lodash.template@^4.5.0:
   version "4.5.0"
@@ -9893,6 +9903,11 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
+react-dropdown-date@^2.2.7:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/react-dropdown-date/-/react-dropdown-date-2.2.7.tgz#56cbe9811beb0b61615d53adf3c213d073dd1a02"
+  integrity sha512-THYL/9tTeBPtvUlyhvu69G627ta/RZWkN8K5Ew+w2XWPM3VNlOi++4UI2YeIyPrOIDmq3shB2REm//+LxcA7rQ==
+
 react-easy-crop@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/react-easy-crop/-/react-easy-crop-3.5.2.tgz#1fc65249e82db407c8c875159589a8029a9b7a06"
@@ -9964,6 +9979,18 @@ react-parallax@^3.0.3:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-3.2.1.tgz#0c41e6e187ccf47ee6547be8d55971cdfb51d030"
   integrity sha512-tT10KgmE2akycI3KtUR9C+wTPI57xwQT4D4Z/5kI/JT+VG4+mgv4hvRJN9zFRMs6xB/4mUPF1Kt9Gu2pwN35iw==
+
+react-phone-input-2@^2.14.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/react-phone-input-2/-/react-phone-input-2-2.14.0.tgz#75dff7ba503becc7a19e0e8ff5aa3d878265af77"
+  integrity sha512-gOY3jUpwO7ulryXPEdqzH7L6DPqI9RQxKfBxZbgqAwXyALGsmwLWFyi2RQwXlBLWN/EPPT4Nv6I9TESVY2YBcg==
+  dependencies:
+    classnames "^2.2.6"
+    lodash.debounce "^4.0.8"
+    lodash.memoize "^4.1.2"
+    lodash.reduce "^4.6.0"
+    lodash.startswith "^4.2.1"
+    prop-types "^15.7.2"
 
 react-player@^2.0.1:
   version "2.9.0"

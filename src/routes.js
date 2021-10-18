@@ -5,7 +5,7 @@ import { BackTop } from "antd";
 
 // Import miscellaneous routes and other requirements
 import NotFoundPage from "./components/pages/not-found-page";
-
+import NotFound from "./components/pages/not-found";
 // Import static pages
 import LandingPage from "./containers/landing/landing";
 import CinersPage from "./containers/landing/ciners";
@@ -44,6 +44,8 @@ import { protectedTest } from "./actions/auth";
 import { fetchConversations } from "./actions/message";
 import { fetchNotifications } from "./actions/notification";
 import { listFieldData } from "./actions/profile";
+import SupportPage from "./containers/support";
+import PrivacyAndTerm from "./containers/privacyAndTerms";
 
 class Routes extends React.Component {
   componentDidMount = async () => {
@@ -61,7 +63,11 @@ class Routes extends React.Component {
           <Route exact path="/ciners" component={CinersPage} />
           <Route exact path="/home" component={RequireAuth(HomePage)} />
           <Route exact path="/jwp-upload" component={RequireAuth(UploadPage)} />
-          <Route exact path="/jwp-player" component={RequireAuth(VideoPlayer)} />
+          <Route
+            exact
+            path="/jwp-player"
+            component={RequireAuth(VideoPlayer)}
+          />
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
@@ -78,7 +84,10 @@ class Routes extends React.Component {
           <Route path="/admin" component={RequireAuth(AdminDashboard)} />
           <Route path="/message" component={RequireAuth(MessageBox)} />
           <Route path="/notification" component={RequireAuth(Notification)} />
-
+          <Route path="/support" component={SupportPage} />
+          <Route path="/privacy" component={PrivacyAndTerm} />
+          <Route path="/terms" component={PrivacyAndTerm} />
+          <Route path="/not-found" component={NotFound} />
           <Route path="/faq" component={Faq} />
           <Route path="*" component={NotFoundPage} />
         </Switch>

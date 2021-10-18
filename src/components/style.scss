@@ -29,3 +29,97 @@
   position: relative;
   height: 400px;
 }
+
+.not-found {
+  position: relative;
+  padding: 40px;
+  background-image: url("../assets/images/homepage/background.png");
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: overlay;
+  color: #f2f2f3;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  height: 925px;
+  &--title {
+    padding-top: 222px;
+    padding-bottom: 40px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 136px;
+    line-height: 62px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #ffffff;
+  }
+  &--text {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 40px;
+  }
+  .button-link {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #ef854e;
+  }
+  .contact-us {
+    padding-top: 71px;
+  }
+  .title-contact {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    padding-bottom: 18px;
+    color: #ffffff;
+  }
+}
+.bg-linear {
+  position: absolute;
+  width: 100%;
+  height: 303px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, #ffc700 0%, #f98600 0.15%, rgba(0, 0, 0, 0) 60%);
+  mix-blend-mode: normal;
+  opacity: 0.49;
+  transform: rotate(-180deg);
+}
+@media only screen and (min-width: 280px) and (max-width: 576px) {
+  .not-found {
+    height: 600px;
+    &--title {
+      padding-top: 70px;
+      font-size: 80px;
+    }
+    &--text {
+      font-size: 14px;
+    }
+    .button-link {
+      font-size: 14px;
+    }
+    .title-contact {
+      font-size: 12px;
+    }
+  }
+  .bg-linear {
+    height: 150px;
+    background: linear-gradient(180deg, #ffc700 0%, #f98600 0.15%, rgba(0, 0, 0, 0) 30%);
+  }
+}
