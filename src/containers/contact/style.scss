@@ -1,0 +1,126 @@
+.contact {
+    background: url("../../assets/images/contactpage/bg.png") #000000;
+
+    &-btn {
+        width: 100%;
+        border-radius: 2px !important;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        background-color: #FF9426 !important;
+        border-color: #FF9426 !important;
+        padding: 20px 0 20px 0 !important;
+        font-weight: 700 !important;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-control {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 30px !important;
+
+        &-link {
+            color: #ffffff;
+        }
+
+        &-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #867d7d;
+        }
+
+        &-span {
+            padding: 0 10px;
+        }
+    }
+
+    &-desc {
+        width: 82%;
+        font-size: 16px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &-email {
+        font-size: 18px;
+        font-weight: 600;
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
+    &-group {
+        &-item {
+            margin-right: 15px;
+        }
+
+        &-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+    }
+
+    &-header {
+        top: 20px;
+        position: absolute;
+    }
+
+    &-left {
+        color: #ffffff;
+    }
+
+    &-lorem {
+        font-size: 60px;
+        width: 80%;
+        font-weight: 300;
+    }
+
+    &-right {
+        background-color: #ffffff;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        padding-bottom: 0px !important;
+        border-radius: 10px;
+        margin-top: 20px;
+
+        &-desc {
+            color: #575757;
+            font-size: 16px;
+            font-weight: 400;
+            padding-bottom: 20px;
+        }
+
+        &-title {
+            color: #FF9838;
+            padding-top: 50px;
+            font-weight: 500;
+            font-size: 27px;
+        }
+    }
+
+    &-title {
+        padding-top: 80px;
+        font-size: 14px;
+    }
+
+    &-wrapper {
+        padding: 100px 5%;
+        margin-bottom: 70px;
+        overflow: hidden;
+        position: relative;
+
+        background-size: 100% 100% !important;
+        background: url("../../assets/images/contactpage/bg-orange.png");
+    }
+
+    .ant-input,
+    .ant-input-affix-wrapper {
+        background-color: #f6f7fa;
+        color: #9D9FA0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+   
+}

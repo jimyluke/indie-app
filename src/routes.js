@@ -45,6 +45,8 @@ import { fetchConversations } from "./actions/message";
 import { fetchNotifications } from "./actions/notification";
 import { listFieldData } from "./actions/profile";
 import SupportPage from "./containers/support";
+import ContactPage from "./containers/contact";
+
 import PrivacyAndTerm from "./containers/privacyAndTerms";
 
 class Routes extends React.Component {
@@ -86,6 +88,8 @@ class Routes extends React.Component {
           <Route path="/notification" component={RequireAuth(Notification)} />
           <Route path="/support" component={SupportPage} />
           <Route path="/privacy" component={PrivacyAndTerm} />
+          <Route path="/contact" component={ContactPage} />
+
           <Route path="/terms" component={PrivacyAndTerm} />
           <Route path="/not-found" component={NotFound} />
           <Route path="/faq" component={Faq} />
