@@ -106,7 +106,6 @@
 
     &-wrapper {
         padding: 100px 5%;
-        margin-bottom: 70px;
         overflow: hidden;
         position: relative;
 
@@ -122,5 +121,60 @@
 }
 
 @media only screen and (max-width: 767px) {
-   
+    .contact {
+
+        &-desc {
+            width: 90%;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        &-email {
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        &-footer{
+            padding-top: 30px;
+            color: #ffffff;
+        }
+        
+        &-header {
+            position: relative;
+            z-index: 10;
+            top: 0;
+            padding: 10px 5%;
+
+        }
+
+        &-lorem {
+            font-size: 46px;
+            line-height: 62.5px;
+            width: 100%;
+        }
+
+        &-right {
+            border-radius: 0;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+    
+            &-title {
+                font-size: 20px;
+                padding-bottom: 10px;
+            }
+        }
+
+        &-title {
+            padding-top: 40px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        &-wrapper {
+            padding: 100px 0;
+            padding-top: 40px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(221.59deg, #F0BE70 11.45%, #EF854E 61.71%, #BA3C61 113.03%);
+        }
+    }
 }

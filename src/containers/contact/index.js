@@ -17,10 +17,30 @@ export default function ContactPage() {
   return (
     <div className="contact">
       <Header />
-
+      <div className="contact-header d-block d-md-none d-lg-none">
+        <Row>
+          <Col md={12} lg={12}>
+            <div className="contact-control-text">
+              <Link to="/" className="contact-control-link">
+                Home
+              </Link>
+              <span className="contact-control-span">
+                <RightOutlined
+                  style={{
+                    fontSize: "14px",
+                    strokeWidth: "80",
+                    stroke: "white",
+                  }}
+                />
+              </span>
+              Contact Us
+            </div>
+          </Col>
+        </Row>
+      </div>
       <div className="contact-wrapper">
         <Container fluid>
-          <div className="contact-header">
+          <div className="contact-header d-none d-md-block d-lg-block">
             <Row>
               <Col md={12} lg={12}>
                 <div className="contact-control-text">
@@ -51,7 +71,7 @@ export default function ContactPage() {
                 lorem.
               </div>
               <div className="contact-email">hello@sparxsstudio.com</div>
-              <div>
+              <div className="d-none d-md-block d-lg-block">
                 <div className="contact-group-title">
                   Or you can find us here:
                 </div>
@@ -92,6 +112,24 @@ export default function ContactPage() {
                     SEND
                   </Button>
                 </Form>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className='contact-footer d-block d-md-none d-xl-none'>
+                <div className="contact-group-title">
+                  Or you can find us here:
+                </div>
+                <div className="contact-group-icon">
+                  <img src={fb} alt="fb" className="contact-group-item" />
+                  <img
+                    src={twitter}
+                    alt="twitter"
+                    className="contact-group-item"
+                  />
+                  <img src={inIcon} alt="in" className="contact-group-item" />
+                </div>
               </div>
             </Col>
           </Row>
