@@ -1,0 +1,177 @@
+.contact {
+    background: url("../../assets/images/contactpage/bg.png") #000000;
+
+    &-btn {
+        width: 100%;
+        border-radius: 2px !important;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        background-color: #ff9426 !important;
+        border-color: #ff9426 !important;
+        padding: 20px 0 20px 0 !important;
+        font-weight: 700 !important;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-control {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 30px !important;
+
+        &-link {
+            color: #ffffff;
+        }
+
+        &-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #867d7d;
+        }
+
+        &-span {
+            padding: 0 10px;
+        }
+    }
+
+    &-desc {
+        width: 82%;
+        font-size: 16px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &-email {
+        font-size: 18px;
+        font-weight: 600;
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
+    &-group {
+        &-item {
+            margin-right: 15px;
+        }
+
+        &-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &-header {
+        top: 20px;
+        position: absolute;
+    }
+
+    &-left {
+        color: #ffffff;
+    }
+
+    &-lorem {
+        font-size: 60px;
+        width: 80%;
+        font-weight: 300;
+    }
+
+    &-right {
+        background-color: #ffffff;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        padding-bottom: 0px !important;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 1px 6px 19px #ff9e3a;
+        &-desc {
+            color: #575757;
+            font-size: 16px;
+            font-weight: 400;
+            padding-bottom: 20px;
+        }
+
+        &-title {
+            color: #ff9838;
+            padding-top: 50px;
+            font-weight: 500;
+            font-size: 27px;
+        }
+    }
+
+    &-title {
+        padding-top: 80px;
+        font-size: 14px;
+    }
+
+    &-wrapper {
+        padding: 100px 5%;
+        overflow: hidden;
+        position: relative;
+
+        background-size: 100% 100% !important;
+        background: url("../../assets/images/contactpage/bg-orange.png");
+    }
+
+    .ant-input,
+    .ant-input-affix-wrapper {
+        background-color: #f6f7fa;
+        color: #9d9fa0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .contact {
+        &-desc {
+            width: 90%;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        &-email {
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        &-footer {
+            padding-top: 30px;
+            color: #ffffff;
+        }
+
+        &-header {
+            position: relative;
+            z-index: 10;
+            top: 0;
+            padding: 10px 5%;
+        }
+
+        &-lorem {
+            font-size: 46px;
+            line-height: 62.5px;
+            width: 100%;
+        }
+
+        &-right {
+            border-radius: 0;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+
+            &-title {
+                font-size: 20px;
+                padding-bottom: 10px;
+            }
+        }
+
+        &-title {
+            padding-top: 40px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        &-wrapper {
+            padding: 100px 0;
+            padding-top: 40px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(221.59deg, #f0be70 11.45%, #ef854e 61.71%, #ba3c61 113.03%);
+        }
+    }
+}
