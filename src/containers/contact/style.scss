@@ -6,8 +6,8 @@
         border-radius: 2px !important;
         margin-top: 20px;
         margin-bottom: 40px;
-        background-color: #FF9426 !important;
-        border-color: #FF9426 !important;
+        background-color: #ff9426 !important;
+        border-color: #ff9426 !important;
         padding: 20px 0 20px 0 !important;
         font-weight: 700 !important;
         justify-content: center;
@@ -58,7 +58,6 @@
             font-size: 16px;
             margin-bottom: 10px;
         }
-
     }
 
     &-header {
@@ -83,7 +82,7 @@
         padding-bottom: 0px !important;
         border-radius: 10px;
         margin-top: 20px;
-
+        box-shadow: 1px 6px 19px #ff9e3a;
         &-desc {
             color: #575757;
             font-size: 16px;
@@ -92,7 +91,7 @@
         }
 
         &-title {
-            color: #FF9838;
+            color: #ff9838;
             padding-top: 50px;
             font-weight: 500;
             font-size: 27px;
@@ -116,13 +115,12 @@
     .ant-input,
     .ant-input-affix-wrapper {
         background-color: #f6f7fa;
-        color: #9D9FA0;
+        color: #9d9fa0;
     }
 }
 
 @media only screen and (max-width: 767px) {
     .contact {
-
         &-desc {
             width: 90%;
             font-size: 14px;
@@ -133,17 +131,16 @@
             font-size: 14px;
             padding-bottom: 20px;
         }
-        &-footer{
+        &-footer {
             padding-top: 30px;
             color: #ffffff;
         }
-        
+
         &-header {
             position: relative;
             z-index: 10;
             top: 0;
             padding: 10px 5%;
-
         }
 
         &-lorem {
@@ -156,7 +153,7 @@
             border-radius: 0;
             padding-left: 15px !important;
             padding-right: 15px !important;
-    
+
             &-title {
                 font-size: 20px;
                 padding-bottom: 10px;
@@ -174,7 +171,7 @@
             padding-top: 40px;
             overflow: hidden;
             position: relative;
-            background: linear-gradient(221.59deg, #F0BE70 11.45%, #EF854E 61.71%, #BA3C61 113.03%);
+            background: linear-gradient(221.59deg, #f0be70 11.45%, #ef854e 61.71%, #ba3c61 113.03%);
         }
     }
 }
