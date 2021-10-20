@@ -1,61 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import LandingHeader from "./landing_header";
+
 class HomePage extends Component {
   render() {
     return (
       <div className="home_layout">
-        <header className="header">
-          <div className="overlay">
-            <div className="container-fluid">
-              <div className="logo_login">
-                <div className="logo">
-                  <Link to="/">
-                    <img
-                      src={require("../../assets/images/general/INDIElogo.png")}
-                      className="img-fluid"
-                      alt=""
-                    />
-                  </Link>
-                </div>
-                <div className="login grid_item">
-                  <Link to="/login">LOG IN</Link>
-                </div>
-              </div>
-
-              <div className="contents">
-                <h2>
-                  A STAGE FOR <span className="break"></span> UNHEARD STORIES
-                </h2>
-                <h4>
-                  Feel the power of <span className="color">cinematic</span>{" "}
-                  connection
-                </h4>
-                <p>Unlimited movies, TV shows and more.</p>
-                <div className="clickable_link">
-                  <Link to="/register">Get Started</Link>
-                </div>
-                <div className="learn_more">
-                  <a href="#theVideo">
-                    <h6>Learn More</h6>
-                    <img
-                      src={require("../../assets/images/landing/down_arrow.png")}
-                      className="img-fluid"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="particlesss">
-              <img
-                src={require("../../assets/images/landing/particles_header.png")}
-                className="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-        </header>
+        <LandingHeader />
         <section className="video_section" id="theVideo">
           <div className="container">
             <div className="video_wrap">
@@ -94,6 +45,7 @@ class HomePage extends Component {
               </div>
             </div>
           </div>
+          <div className="video-overlay" />
         </section>
 
         <section className="be_real_wrap">
@@ -197,11 +149,12 @@ class HomePage extends Component {
                   </div>
                   <div className="para_texts">
                     <p>
-                      A simple love for sitting on the couch and enjoying the
-                      moving picture is the common denominator among our
-                      community. In addition to streaming, you can choose to
-                      vote on your favorite films/shows, start a thread on the
-                      Forum, or interact with your favorite filmmakers.
+                      As a <span style={{ color: "#ff7e3e" }}>Ciner,</span> you
+                      can attend premiere parties, get access to exclusive
+                      events, connect with filmmakers and meet other like-minded
+                      cinephiles. Did we mention you get to be a part of the
+                      INDIE collective and help select our Filmmaker of the
+                      Year?
                     </p>
                   </div>
                   <div className="clickable_link">
@@ -356,14 +309,15 @@ class HomePage extends Component {
             <div className="sign_up_wrap">
               <div className="set_account set_account_ciners">
                 <div className="texts grid_item">
-                  <h6>Streaming is old news</h6>
+                  <h6>Ready to join the fun?</h6>
                   <div className="heading">
-                    <h2>Let’s talk about the experience!</h2>
+                    <h2>Let’s set up your account!</h2>
                   </div>
                   <div className="para_texts">
                     <p>
-                      Join us to submit your films, enjoy indie stories, and get
-                      started in a new world of social streaming.
+                      If you want to join us and start submitting your work,
+                      just fill this little form and look out for an email from
+                      us!
                     </p>
                   </div>
                 </div>
@@ -524,7 +478,7 @@ class HomePage extends Component {
                       className="collapsed"
                       data-toggle="collapse"
                     >
-                      How long will it take for my film to be approved?
+                      Can I upload my film or short?
                     </Link>
                   </div>
                   <div
@@ -548,7 +502,7 @@ class HomePage extends Component {
                       className="collapsed"
                       data-toggle="collapse"
                     >
-                      What if my film hasn’t been at a festival?
+                      I hate ads. Do I have to watch any?
                     </Link>
                   </div>
                   <div
@@ -557,12 +511,12 @@ class HomePage extends Component {
                     data-parent="#theFaq"
                   >
                     <p>
-                      You can still submit! Please be sure you do not want to
-                      put your film in the festival circuit. Some film festivals
-                      will disqualify your film if it has been streamed before
-                      you have submitted it. If you are certain, Please upload
-                      your film but it will take between 1-4 weeks of processing
-                      time to make sure it meets our community guidelines.
+                      No ads in the paid version! And even as a free user, you
+                      will only be subject to viewing ads at the beginning of a
+                      showing, just like watching previews in a traditional
+                      theater. In the beta testing stage, you may see ads to
+                      make sure that the ad-supported tier of our platform is
+                      working properly.
                     </p>
                   </div>
                 </div>
@@ -599,7 +553,7 @@ class HomePage extends Component {
                       className="collapsed"
                       data-toggle="collapse"
                     >
-                      Is INDIE Sparxs specific to one genre?
+                      Is this platform specific to one genre?
                     </Link>
                   </div>
                   <div
@@ -697,7 +651,8 @@ class HomePage extends Component {
                     <ul>
                       <li>Have a question? We'd love to hear from you!</li>
                       <li>
-                        Please send a note directly to{" "}
+                        Please contact <Link to="/contact">here</Link> or send a
+                        note directly to{" "}
                         <a href="mailto:info@sparxsstudio.com">
                           info@sparxsstudio.com
                         </a>

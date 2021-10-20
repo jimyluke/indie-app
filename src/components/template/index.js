@@ -1,7 +1,8 @@
 import Header from "./header";
-import UploadFile from "./upload_file";
 import Footer from "./footer";
 import BigUpload from "./uploads";
+import ImageUpload from "./image-upload";
+import VideoUpload from "./video-upload";
 import CustomCard from "./custom-card";
 
-export { Header, UploadFile, Footer, BigUpload, CustomCard };
+export { Header, Footer, ImageUpload, BigUpload, VideoUpload, CustomCard };

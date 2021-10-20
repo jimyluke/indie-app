@@ -6,13 +6,13 @@ export default function (ComposedComponent) {
   class Authentication extends Component {
     componentDidMount() {
       if (!this.props.authenticated) {
-        history.push('/login');
+        history.push('/');
       }
     }
 
     componentDidUpdate(nextProps) {
       if (!nextProps.authenticated) {
-        history.push('/login');
+        history.push('/');
       }
     }
 

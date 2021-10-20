@@ -39,7 +39,8 @@
 
 .form-label {
   font-size: 12px;
-  font-weight: bold;
+  margin-bottom: 0;
+  font-weight: 500;
 }
 
 .profile-label {
@@ -124,10 +125,6 @@ a.card-link {
 
 .ant-comment-avatar {
   margin-top: 7px;
-}
-
-.form-label {
-  margin-bottom: 0;
 }
 
 .ant-message {
@@ -261,6 +258,15 @@ a.card-link {
   }
 }
 
+.ant-input,
+.ant-select:not(.ant-select-customize-input) .ant-select-selector,
+.ant-picker {
+  background: rgba(246, 247, 250, 1);
+  border-color: rgba(225, 225, 225, 1);
+  border-radius: 3px;
+  font-weight: 400;
+}
+
 .top-bordered-content {
   background: black;
   border-top: 1px solid $orange;
@@ -290,6 +296,12 @@ a.card-link {
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
     transition: all 5000s ease-in-out 0s;
+  }
+
+  .ant-select-selector {
+    background: black !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 }
 
@@ -324,6 +336,10 @@ a.card-link {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
 }
 
 .material-btn-outline {
@@ -346,12 +362,39 @@ a.card-link {
   background: transparent;
   cursor: pointer;
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all .5s;
+  transition: all 0.5s;
   &:hover {
     color: #ef854e;
   }
+}
+
+.material-btn-rectangle {
+  padding: 13px 40px;
+  background: linear-gradient(170deg, #ff7a00 0%, #f0b87c 100%);
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-with-shadow .ant-modal-content {
+  box-shadow: 0px 1px 15px $orange;
+  border-radius: 7px;
+}
+
+.ant-picker {
+  width: 100%;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+  background: #bcb1a7;
 }

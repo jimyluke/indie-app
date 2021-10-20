@@ -4,16 +4,19 @@ import { connect } from "react-redux";
 import { BackTop } from "antd";
 
 // Import miscellaneous routes and other requirements
-import NotFoundPage from "./components/pages/not-found-page";
 import NotFound from "./components/pages/not-found";
+
 // Import static pages
 import LandingPage from "./containers/landing/landing";
 import CinersPage from "./containers/landing/ciners";
 import HomePage from "./containers/home";
-
-// JWPlayer pages
-import UploadPage from "./containers/jwplayer/upload";
-import VideoPlayer from "./containers/jwplayer/player";
+import Library from "./containers/library";
+import SearchVideo from "./containers/library/search";
+import VideoDetail from "./containers/library/movie";
+import SupportPage from "./containers/support";
+import PrivacyPage from "./containers/privacyAndTerms/privacy";
+import TermsPage from "./containers/privacyAndTerms/terms";
+import ContactPage from "./containers/contact";
 
 // Import authentication related pages
 import Register from "./containers/auth/register/index";
@@ -25,7 +28,7 @@ import Resend from "./containers/auth/resend";
 import ConfirmEmail from "./containers/auth/confirm-email";
 
 // Import user related Pages
-import Profile from "./containers/user/profile";
+import Profile from "./containers/user/profile/index";
 
 // Import admin related Pages
 import AdminDashboard from "./containers/admin";
@@ -41,20 +44,15 @@ import Faq from "./containers/faq";
 // Import higher order components
 import RequireAuth from "./containers/auth/require_auth";
 import { protectedTest } from "./actions/auth";
-import { fetchConversations } from "./actions/message";
-import { fetchNotifications } from "./actions/notification";
-import { listFieldData } from "./actions/profile";
-import SupportPage from "./containers/support";
-import ContactPage from "./containers/contact";
-
-import PrivacyAndTerm from "./containers/privacyAndTerms";
+// import { fetchConversations } from "./actions/message";
+// import { fetchNotifications } from "./actions/notification";
+// import { listFieldData } from "./actions/profile";
+import { fetchJWVideos } from "./actions/jwplayer";
 
 class Routes extends React.Component {
   componentDidMount = async () => {
     await this.props.protectedTest();
-    this.props.fetchConversations();
-    this.props.fetchNotifications();
-    this.props.listFieldData();
+    this.props.fetchJWVideos();
   };
 
   render() {
@@ -64,12 +62,9 @@ class Routes extends React.Component {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/ciners" component={CinersPage} />
           <Route exact path="/home" component={RequireAuth(HomePage)} />
-          <Route exact path="/jwp-upload" component={RequireAuth(UploadPage)} />
-          <Route
-            exact
-            path="/jwp-player"
-            component={RequireAuth(VideoPlayer)}
-          />
+          <Route exact path="/library" component={RequireAuth(Library)} />
+          <Route exact path="/videos/:media_id" component={VideoDetail} />
+          <Route exact path="/search" component={RequireAuth(SearchVideo)} />
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
@@ -86,14 +81,13 @@ class Routes extends React.Component {
           <Route path="/admin" component={RequireAuth(AdminDashboard)} />
           <Route path="/message" component={RequireAuth(MessageBox)} />
           <Route path="/notification" component={RequireAuth(Notification)} />
-          <Route path="/support" component={SupportPage} />
-          <Route path="/privacy" component={PrivacyAndTerm} />
-          <Route path="/contact" component={ContactPage} />
 
-          <Route path="/terms" component={PrivacyAndTerm} />
-          <Route path="/not-found" component={NotFound} />
+          <Route path="/support" component={SupportPage} />
+          <Route path="/privacy" component={PrivacyPage} />
+          <Route path="/terms" component={TermsPage} />
+          <Route path="/contact" component={ContactPage} />
           <Route path="/faq" component={Faq} />
-          <Route path="*" component={NotFoundPage} />
+          <Route path="*" component={NotFound} />
         </Switch>
         <BackTop />
       </div>
@@ -107,7 +101,5 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
   protectedTest,
-  fetchConversations,
-  fetchNotifications,
-  listFieldData,
+  fetchJWVideos,
 })(Routes);

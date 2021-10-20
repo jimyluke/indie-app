@@ -1,11 +1,206 @@
+.main-nav {
+  text-transform: uppercase;
+  width: 100%;
+  z-index: 100;
+  background-color: black;
+  position: relative;
+  height: 90px;
+  padding-top: 35px;
+
+  .center-logo {
+    position: absolute;
+    left: 48%;
+    width: 100px;
+    top: 35px;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 36px;
+    left: 5%;
+    img {
+      width: 100px;
+    }
+  }
+
+  .nav-toggler {
+    display: none;
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+  }
+
+  .nav-items {
+    width: 280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 10px;
+    a {
+      color: $gray;
+      &:hover {
+        text-decoration: none;
+        color: $orange;
+      }
+    }
+  }
+
+  .side-nav-items {
+    position: absolute;
+    right: 5%;
+    top: 30px;
+    display: flex;
+    .nav-link .anticon {
+      font-size: 21px;
+      color: white;
+      margin-top: 7px;
+    }
+    .nav-link:hover .anticon {
+      transition: all 0.5s;
+      color: $orange;
+    }
+  }
+
+  .header-collapse {
+    width: 100%;
+    background: #200f21;
+    transition: all 0.5s;
+    height: 0;
+    position: absolute;
+    top: 80px;
+    overflow: hidden;
+    .nav-items {
+      margin: 5px 3%;
+      display: flex;
+      flex-direction: column;
+      a {
+        padding: 5px 0;
+      }
+    }
+  }
+
+  .header-collapse.active {
+    height: 130px;
+    box-shadow: 0px 1px 5px black;
+  }
+  .search-box {
+    position: absolute;
+    right: calc(5vw + 135px);
+    top: 40px;
+    display: flex;
+    .search-inputbox:focus-within {
+      border-bottom: 1px solid $orange;
+      .ant-input-group-addon {
+        background: black;
+        border-radius: 0;
+      }
+      .ant-input {
+        background: black;
+        border-radius: 0;
+      }
+    }
+    .search-inputbox {
+      border-radius: 5px;
+      .ant-input-group-addon {
+        background: #212020;
+        color: white;
+        border: none;
+        padding-left: 10px;
+        padding-right: 0;
+        font-size: 19px;
+      }
+      .ant-input {
+        background: #212020;
+        color: white;
+        border: none;
+      }
+    }
+    .search-close {
+      margin-left: -22px;
+      color: $gray-500;
+      z-index: 11;
+      padding-top: 4px;
+      cursor: pointer;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      height: 80px;
+      padding-top: 35px;
+      .nav-toggler {
+        display: block;
+      }
+      .nav-items {
+        display: none;
+      }
+      .center-logo {
+        left: 39%;
+        width: 85px;
+        top: 30px;
+      }
+      .navbar-logo {
+        top: 28px;
+        left: 39%;
+        img {
+          width: 85px;
+        }
+      }
+      .side-nav-items {
+        right: 3%;
+        top: 20px;
+        .nav-link {
+          padding: 0.5rem 5px;
+        }
+      }
+      .search-box {
+        right: 90px;
+        top: 29px;
+        width: 200px;
+        .search-inputbox {
+          .ant-input {
+            height: 33px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-badge {
+  font-size: inherit !important;
+  .ant-badge-count {
+    height: 16px;
+    min-width: 16px;
+    border-radius: 8px;
+    right: -2px;
+    padding: 0 5px;
+    line-height: 16px;
+    top: 5px;
+  }
+}
+
+.anticon {
+  vertical-align: 2px !important;
+}
+
 .big-uploader {
-  max-width: 250px;
+  max-width: 200px;
   position: relative;
 
   .ant-upload-select-picture-card {
     width: 100% !important;
     height: auto !important;
-    padding: 40px 30px !important;
+    background: transparent;
+    border: none;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   .ant-upload-text {
@@ -13,21 +208,45 @@
   }
   .upload-remove {
     position: absolute;
-    top: 26px;
-    right: 17px;
-    opacity: 0;
+    right: 10px;
+    bottom: 10px;
+    opacity: 1;
     transition-property: opacity;
     transition-duration: 0.7s, 0.7s;
   }
 }
 
-.big-uploader:hover .upload-remove {
-  opacity: 1;
-}
-
 .cropper {
   position: relative;
   height: 400px;
+}
+
+.avatar-uploader {
+  margin-top: 12px;
+  .ant-upload.ant-upload-select-picture-card {
+    width: 100%;
+    height: 140px;
+    margin-top: 7px;
+  }
+  .ant-upload {
+    color: rgba(148, 148, 150, 1);
+  }
+  .ant-upload img {
+    max-height: 100%;
+  }
+  .ant-upload .anticon {
+    font-size: 48px;
+  }
+  .ant-upload .upload-cover {
+    position: absolute;
+    color: $gray-400;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    .anticon {
+      font-size: 12px;
+    }
+  }
 }
 
 .not-found {
@@ -96,7 +315,12 @@
   height: 303px;
   left: 0;
   bottom: 0;
-  background: linear-gradient(180deg, #ffc700 0%, #f98600 0.15%, rgba(0, 0, 0, 0) 60%);
+  background: linear-gradient(
+    180deg,
+    #ffc700 0%,
+    #f98600 0.15%,
+    rgba(0, 0, 0, 0) 60%
+  );
   mix-blend-mode: normal;
   opacity: 0.49;
   transform: rotate(-180deg);
@@ -120,6 +344,11 @@
   }
   .bg-linear {
     height: 150px;
-    background: linear-gradient(180deg, #ffc700 0%, #f98600 0.15%, rgba(0, 0, 0, 0) 30%);
+    background: linear-gradient(
+      180deg,
+      #ffc700 0%,
+      #f98600 0.15%,
+      rgba(0, 0, 0, 0) 30%
+    );
   }
 }

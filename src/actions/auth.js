@@ -80,7 +80,7 @@ export function confirmEmail({ token, mode }) {
   };
 }
 
-export function updateProfile({ profile }) {
+export function updateProfile(profile) {
   return function (dispatch) {
     const client = Client(true);
     client
@@ -99,7 +99,7 @@ export function logoutUser(error) {
     dispatch({ type: UNAUTH_USER, payload: error || "" });
     cookie.remove("token", { path: "/" });
     cookie.remove("user", { path: "/" });
-    history.push(`/login`);
+    history.push(`/`);
   };
 }
 
@@ -133,7 +133,7 @@ export function resetPassword(token, password, conf_password) {
           type: RESET_PASSWORD_REQUEST,
           payload: response.data.message,
         });
-        history.push("/login");
+        history.push("/");
       })
       .catch((error) => {
         createNotification("Reset Password", errorMessage(error));

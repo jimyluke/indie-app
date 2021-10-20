@@ -1,6 +1,11 @@
 import React from "react";
+import { Header, Footer } from "../../components/template";
+import "./style.scss";
+import { Link } from "react-router-dom";
+import { Container, Row } from "reactstrap";
+import { LeftOutlined } from "@ant-design/icons";
 
-function Terms(props) {
+const RenderTerms = () => {
   return (
     <div className="term-content">
       <div className="term-infor">
@@ -143,6 +148,31 @@ function Terms(props) {
       </div>
     </div>
   );
-}
+};
+
+const Terms = () => {
+  return (
+    <div style={{ backgroundColor: "#000" }}>
+      <Header />
+      <div className="privacy-wrapper">
+        <div className="privacy-container">
+          <Container>
+            <Row>
+              <div className="auth-breadcrumb">
+                <Link to="/">
+                  <LeftOutlined /> Back to homepage
+                </Link>
+              </div>
+            </Row>
+            <Row>
+              <RenderTerms />
+            </Row>
+          </Container>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
 export default Terms;

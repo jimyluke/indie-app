@@ -51,7 +51,7 @@ class ConfirmEmail extends React.Component {
               {loading && <h5>Verifing your accout ...</h5>}
               {!loading && <h5>{message}</h5>}
               {!loading && (
-                <Link className="material-btn mt-5" to={"/login"}>
+                <Link className="material-btn mt-5" to={"/"}>
                   LogIn
                 </Link>
               )}

@@ -48,6 +48,9 @@
 	.header .contents p{
 		font-size: 16px;
 	}
+	.header .contents .learn_more{
+		margin-top: 80px;
+	}
 	.header .contents .learn_more h6{
 		font-size: 14px;
 	}

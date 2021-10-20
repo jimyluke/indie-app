@@ -3,11 +3,11 @@ import Policy from "react-s3/lib/Policy";
 import Signature from "react-s3/lib/Signature";
 import { xAmzDate, dateYMD } from "react-s3/lib/Date";
 import { v4 as uuidv4 } from "uuid";
-import { Upload, message, Tooltip, Modal, Button } from "antd";
-import { LoadingOutlined, CloseCircleOutlined } from "@ant-design/icons";
-import UploadUser from "../../../assets/images/general/upload_user.svg";
+import { Upload, message, Modal, Button } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
+import UploadPhoto from "../../../assets/images/general/user-avatar.png";
 import ImageCropper from "./image_cropper";
-import UploadPhoto from "../../../assets/images/general/upload-photo.svg";
+import PencilIcon from "../../../assets/images/general/pencil-editor.svg";
 
 const config = {
   bucketName: process.env.REACT_APP_S3_BUCKET,
@@ -81,7 +81,7 @@ export const uploadFile = async (file) => {
 class Avatar extends React.Component {
   state = {
     loading: false,
-    imageUrl: this.props.imageUrl || "",
+    imageUrl: this.props.value || "",
     blob: null,
     inputImg: null,
     filename: "",
@@ -109,7 +109,7 @@ class Avatar extends React.Component {
           loading: false,
           showCropModal: false,
         });
-        this.props.setAvatar(imageUrl);
+        this.props.onChange(imageUrl);
       })
       .catch((err) => {
         console.log(err);
@@ -141,27 +141,12 @@ class Avatar extends React.Component {
     });
   };
 
-  onRemoveImg = (e) => {
-    e.stopPropagation();
-    this.setState({ imageUrl: "" });
-    this.props.setAvatar("");
-  };
-
   render() {
     const { imageUrl, loading, showCropModal, inputImg } = this.state;
-    const { subject } = this.props;
-    const uploadButton = (
-      <div>
-        {loading ? (
-          <LoadingOutlined style={{ fontSize: "50px" }} />
-        ) : (
-          <img src={subject ? UploadPhoto : UploadUser} alt="" />
-        )}
-        <div className="ant-upload-text">
-          Drag and drop {subject || "profile"} photo here or{" "}
-          <span className="underscore">choose file manually</span>
-        </div>
-      </div>
+    const uploadButton = loading ? (
+      <LoadingOutlined style={{ fontSize: "50px" }} />
+    ) : (
+      <img src={UploadPhoto} alt="" style={{ width: "100%" }} />
     );
 
     return (
@@ -180,13 +165,7 @@ class Avatar extends React.Component {
             uploadButton
           )}
           {imageUrl && (
-            <Tooltip title="Remove">
-              <CloseCircleOutlined
-                className="upload-remove"
-                onClick={this.onRemoveImg}
-                style={{ fontSize: "16px", color: "#999" }}
-              />
-            </Tooltip>
+            <img src={PencilIcon} alt="" className="upload-remove" />
           )}
         </Upload>
         {showCropModal && (
@@ -211,11 +190,7 @@ class Avatar extends React.Component {
                 className="black-btn ml-3"
                 onClick={this.startUpload}
               >
-                {loading ? (
-                  <LoadingOutlined className="mr-3 ml-3" />
-                ) : (
-                  "Upload"
-                )}
+                {loading ? <LoadingOutlined className="mr-3 ml-3" /> : "Upload"}
               </Button>
             </div>
           </Modal>

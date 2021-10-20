@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Skeleton } from "antd";
 import { getAdminUser, updateParticipantProfile } from "../../../actions/admin";
 import { getFieldData } from "../../../utils/helper";
-import ProfileForm from "../../user/profile-form";
+import ProfileForm from "../../user/profile/profile-form";
 
 class UserEdit extends Component {
   constructor(props) {

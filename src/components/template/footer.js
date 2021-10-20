@@ -3,12 +3,13 @@ import { Row, Col, Container, NavLink } from "reactstrap";
 import {
   RightOutlined,
   GlobalOutlined,
-  FacebookOutlined,
   TwitterOutlined,
-  LinkedinOutlined,
 } from "@ant-design/icons";
 import { Button } from "antd";
 import { Collapse } from "reactstrap";
+import FacebookIcon from "../../assets/images/general/facebook_icon.svg";
+import LinkedinIcon from "../../assets/images/general/linkedin_icon.svg";
+import { Link } from "react-router-dom";
 
 const CollapseWrapper = ({
   title = "genres",
@@ -48,10 +49,10 @@ const footerItems = [
   {
     title: "genres",
     items: [
-      { label: "Mystery", url: "/" },
-      { label: "Sci-Fi", url: "/" },
-      { label: "Horror", url: "/" },
-      { label: "Romance", url: "/" },
+      { label: "Mystery", url: "/library?category=Mystery" },
+      { label: "Sci-Fi", url: "/library?category=Sci-Fi" },
+      { label: "Horror", url: "/library?category=Horror" },
+      { label: "Romance", url: "/library?category=Romance" },
     ],
   },
   {
@@ -68,8 +69,8 @@ const footerItems = [
   {
     title: "for you",
     items: [
-      { label: "Privacy Policy", url: "/" },
-      { label: "Terms of Use", url: "/" },
+      { label: "Privacy Policy", url: "/privacy" },
+      { label: "Terms of Use", url: "/terms" },
       { label: "Subscriber", url: "/" },
     ],
   },
@@ -78,7 +79,7 @@ const footerItems = [
     items: [
       { label: "FAQ", url: "/" },
       { label: "Email Support", url: "/" },
-      { label: "Sitemap", url: "/" },
+      { label: "Sitemap", url: "/support" },
     ],
   },
 ];
@@ -89,6 +90,22 @@ const Footer = () => {
   const [languageCollapseOpen, setLanguageCollapseOpen] = useState(false);
   // const [selectedLanguage, selectLanguage] = useState("English");
   const toggle = () => setLanguageCollapseOpen(!languageCollapseOpen);
+
+  const socialBtns = (
+    <div>
+      <Button
+        className="mr-3 black-btn"
+        shape="circle"
+        icon={<img src={FacebookIcon} alt="" />}
+      />
+      <Button className="mr-3" shape="circle" icon={<TwitterOutlined />} />
+      <Button
+        className="black-btn"
+        shape="circle"
+        icon={<img src={LinkedinIcon} alt="" />}
+      />
+    </div>
+  );
 
   return (
     <div className="homepage-footer">
@@ -121,19 +138,7 @@ const Footer = () => {
             distribution channel dedicated to independently produced film and
             TV.
           </Row>
-          <Row className="mt-3">
-            <Button
-              className="mr-3"
-              shape="circle"
-              icon={<FacebookOutlined />}
-            />
-            <Button
-              className="mr-3"
-              shape="circle"
-              icon={<TwitterOutlined />}
-            />
-            <Button shape="circle" icon={<LinkedinOutlined />} />
-          </Row>
+          <Row className="mt-3">{socialBtns}</Row>
           <Row className="mt-3 pb-5 text-white">
             <Col className="p-0 font-normal" xs={8}>
               <div className="links-item">Designed with by Oak Theory</div>
@@ -177,26 +182,14 @@ const Footer = () => {
                 distribution channel dedicated to independently produced film
                 and TV.
               </div>
-              <div>
-                <Button
-                  className="mr-3"
-                  shape="circle"
-                  icon={<FacebookOutlined />}
-                />
-                <Button
-                  className="mr-3"
-                  shape="circle"
-                  icon={<TwitterOutlined />}
-                />
-                <Button shape="circle" icon={<LinkedinOutlined />} />
-              </div>
+              {socialBtns}
             </Col>
             {footerItems.map(({ title, items }, itemIndex) => (
               <Col className="links" key={itemIndex}>
                 <div className="links-title mb-3">{title}</div>
-                {items.map(({ label }, index) => (
-                  <div className="links-item my-2" key={index}>
-                    {label}
+                {items.map((item) => (
+                  <div className="links-item my-2" key={item.label}>
+                    <Link to={item.url}>{item.label}</Link>
                   </div>
                 ))}
               </Col>

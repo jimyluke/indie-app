@@ -2,21 +2,10 @@ import React from "react";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
 import SwiperCore, { Pagination } from "swiper";
 import { Container } from "reactstrap";
 import image1 from "../../assets/images/homepage-hero/hero.png";
-
-import HorrorIcon from "../../assets/images/homepage/horror.svg";
-import ActionIcon from "../../assets/images/homepage/action.svg";
-import ComedyIcon from "../../assets/images/homepage/comedy.svg";
-import DocumentIcon from "../../assets/images/homepage/document.svg";
-import KidsIcon from "../../assets/images/homepage/kids.svg";
-import RealityIcon from "../../assets/images/homepage/reality.svg";
-import RomanceIcon from "../../assets/images/homepage/romance.svg";
-import MysteryIcon from "../../assets/images/homepage/mystery.svg";
-import SciFiIcon from "../../assets/images/homepage/sci-fi.svg";
-
+import { genres } from "../../constants";
 // install Swiper modules
 SwiperCore.use([Pagination]);
 
@@ -27,17 +16,6 @@ const sliders = [
   { title: "Adventure time", image: image1 },
   { title: "Adventure time", image: image1 },
   { title: "Adventure time", image: image1 },
-];
-const genres = [
-  { label: "Horror", icon: HorrorIcon },
-  { label: "Sci-fi", icon: SciFiIcon },
-  { label: "Mystery", icon: MysteryIcon },
-  { label: "Action", icon: ActionIcon },
-  { label: "Comedy", icon: ComedyIcon },
-  { label: "Document", icon: DocumentIcon },
-  { label: "Reality", icon: RealityIcon },
-  { label: "Kids", icon: KidsIcon },
-  { label: "Romance", icon: RomanceIcon },
 ];
 
 const Slider = ({ title, imageUrl = "1" }) => {
@@ -83,12 +61,15 @@ const Slider = ({ title, imageUrl = "1" }) => {
   );
 };
 
-const Genre = ({ label, icon }) => {
+const Genre = ({ name, icon }) => {
   return (
-    <div className="film-genres__item border-base m-0">
-      <span>{label}</span>
+    <Link
+      to={`/library?category=${name}`}
+      className="film-genres__item border-base m-0"
+    >
+      <span>{name}</span>
       <img src={icon} alt="genre icon" />
-    </div>
+    </Link>
   );
 };
 
@@ -128,8 +109,8 @@ const HompageHero = () => {
             },
           }}
         >
-          {genres.map((genre, index) => (
-            <SwiperSlide key={index}>
+          {genres.map((genre) => (
+            <SwiperSlide key={genre.name}>
               <Genre {...genre} />
             </SwiperSlide>
           ))}

@@ -14,9 +14,52 @@
 }
 
 .login-form {
-  width: 600px;
-  margin: 0 auto;
-  margin: auto;
+  padding: 20px 10px;
+  h3 {
+    color: $orange;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .forgot {
+    color: $orange;
+    font-weight: 500;
+  }
+  .login-divider {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    p {
+      text-align: center;
+      width: 50px;
+      background: white;
+      z-index: 1;
+      margin: auto;
+      margin-top: -28px;
+    }
+  }
+  .login-social-btns {
+    display: flex;
+    justify-content: space-between;
+    .ant-btn-lg {
+      height: auto;
+      padding: 10px 21px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .login-bottom {
+    color: #aaa;
+    text-align: center;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 20px;
+    a {
+      font-weight: 500;
+    }
+  }
 }
 
 .forgot-form {
@@ -60,6 +103,16 @@
 @media screen and (max-width: 768px) {
   .login-form {
     max-width: 500px;
-    width: 98%;
+    padding: 15px 3px;
+    .login-social-btns {
+      .ant-btn-lg {
+        padding: 10px 9px;
+        font-size: 12px;
+        letter-spacing: 0px;
+        .mr-2 {
+          margin-right: 0 !important;
+        }
+      }
+    }
   }
 }

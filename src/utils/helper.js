@@ -1,39 +1,8 @@
+import moment from "moment";
+
 export const getFieldData = (fieldData = [], field) => {
   let result = fieldData.filter((item) => item.field === field);
   return result;
-};
-
-export const getOrgTypesData = (fieldData = []) => {
-  let result = fieldData.filter((item) => item.field === "org_type");
-  result = result.sort((a, b) => {
-    if (a.value === "Other") return 1;
-    if (b.value === "Other") return -1;
-    if (a.value.toLowerCase() > b.value.toLowerCase()) return 1;
-    return -1;
-  });
-  return result;
-};
-
-export const getOneFieldData = (fieldData = [], field) => {
-  for (let fd of fieldData) {
-    if (fd.field === field) return fd.value;
-  }
-  return "";
-};
-
-export const getFieldDataById = (fieldData = [], id) => {
-  for (let fd of fieldData) {
-    if (fd._id === id) return fd;
-  }
-  return null;
-};
-
-export const getFieldDataByNameValue = (fieldData = [], name, value = "") => {
-  for (let fd of fieldData) {
-    if (fd.field === name && fd.value.toLowerCase() === value.toLowerCase())
-      return fd;
-  }
-  return null;
 };
 
 export const getTargetFieldName = (prefix, fieldData) => {
@@ -43,13 +12,6 @@ export const getTargetFieldName = (prefix, fieldData) => {
   }
   let result = list.filter((v, i, a) => a.indexOf(v) === i);
   return result;
-};
-
-export const processTargetSectionName = (prefix, name) => {
-  if (!name || name.length < 2) return "";
-  let result = name.toLowerCase();
-  result = result.split(" ").join("_");
-  return prefix + "_" + result;
 };
 
 export const getTargetLabelFromSection = (prefix, sectionFieldName) => {
@@ -98,18 +60,6 @@ export const sortByValue = (arrObj = []) => {
   });
 };
 
-export const extractContent = (s, space) => {
-  var span = document.createElement("span");
-  span.innerHTML = s;
-  if (space) {
-    var children = span.querySelectorAll("*");
-    for (var i = 0; i < children.length; i++) {
-      if (children[i].textContent) children[i].textContent += " ";
-      else children[i].innerText += " ";
-    }
-  }
-  return [span.textContent || span.innerText].toString().replace(/ +/g, " ");
-};
 
 export const checkPwdStrength = (password) => {
   var strongRegex = new RegExp(
@@ -125,4 +75,13 @@ export const processLink = (link) => {
     return "http://" + link;
   }
   return link;
+};
+
+export const durationFormatter = (duration) => {
+  let value = "";
+  const dur = moment.utc(duration * 1000);
+  if (dur.hours() > 0) value += dur.hours() + "h ";
+  if (dur.minutes() > 0) value += dur.minutes() + "m ";
+  if (dur.seconds() > 0) value += dur.seconds() + "s";
+  return value;
 };

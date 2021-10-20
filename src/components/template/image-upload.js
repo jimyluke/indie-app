@@ -5,8 +5,12 @@ import Signature from "react-s3/lib/Signature";
 import { xAmzDate, dateYMD } from "react-s3/lib/Date";
 
 import { v4 as uuidv4 } from "uuid";
-import { Upload, Button } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { Upload, message } from "antd";
+import {
+  LoadingOutlined,
+  CloudUploadOutlined,
+  SyncOutlined,
+} from "@ant-design/icons";
 
 const config = {
   bucketName: process.env.REACT_APP_S3_BUCKET,
@@ -15,7 +19,22 @@ const config = {
   secretAccessKey: process.env.REACT_APP_SECRETACCESSKEY,
 };
 
-const uploadFile = async (file, config) => {
+const beforeUpload = (file) => {
+  const isJpgOrPngOrGif =
+    file.type === "image/jpeg" ||
+    file.type === "image/png" ||
+    file.type === "image/gif";
+  if (!isJpgOrPngOrGif) {
+    message.error("You can only upload JPG/PNG/GIF file!");
+  }
+  const isLt2M = file.size / 1024 / 1024 < 20;
+  if (!isLt2M) {
+    message.error("Image must smaller than 2MB!");
+  }
+  return isJpgOrPngOrGif && isLt2M;
+};
+
+export const uploadFile = async (file) => {
   const originalFilename = file.name;
   const fileExtension = originalFilename.split(".").pop();
   const newfileName = `${uuidv4()}.${fileExtension}`;
@@ -62,31 +81,64 @@ const uploadFile = async (file, config) => {
   });
 };
 
-class UploadFile extends React.Component {
+class Avatar extends React.Component {
+  state = {
+    loading: false,
+    imageUrl: this.props.value || "",
+  };
+
   handleChange = (info) => {
-    uploadFile(info, config)
+    this.setState({ loading: true });
+    uploadFile(info)
       .then((data) => {
-        this.props.setUploadedFile(data.location);
+        const imageUrl = data.location;
+        this.setState({
+          imageUrl,
+          loading: false,
+        });
+        this.props.onChange(imageUrl);
       })
       .catch((err) => {
         console.log(err);
+        this.setState({ loading: false });
       });
   };
 
   render() {
+    const { label, cover } = this.props;
+    const uploadButton = (
+      <div>
+        {this.state.loading ? <LoadingOutlined /> : <CloudUploadOutlined />}
+        <div className="ant-upload-text" style={{ marginTop: "10px" }}>
+          {label}
+        </div>
+      </div>
+    );
+    const { imageUrl } = this.state;
     return (
       <Upload
-        name="file"
+        name="avatar"
+        listType="picture-card"
+        className="avatar-uploader"
         showUploadList={false}
+        beforeUpload={beforeUpload}
         data={this.handleChange}
-        accept="application/pdf"
       >
-        <Button>
-          <UploadOutlined /> Upload PDF
-        </Button>
+        {imageUrl ? (
+          <React.Fragment>
+            <img src={imageUrl} alt="avatar" style={{ width: "85%" }} />
+            {cover && (
+              <span className="upload-cover">
+                <SyncOutlined />&nbsp; {cover}
+              </span>
+            )}
+          </React.Fragment>
+        ) : (
+          uploadButton
+        )}
       </Upload>
     );
   }
 }
 
-export default UploadFile;
+export default Avatar;

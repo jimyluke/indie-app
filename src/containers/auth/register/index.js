@@ -57,14 +57,17 @@ class Register extends Component {
   );
 
   onGoBack = () => {
-    const { step } = this.state;
-    if (step === 1) return;
-    this.setState({ step: step - 1 });
+    const { step, card } = this.state;
+    let target = step - 1
+    if (step === 9 && card !== "creator") target = 7
+    this.setState({ step: target });
   };
 
   onSkip = () => {
-    const { step } = this.state;
-    this.setState({ step: step + 1 });
+    const { step, card } = this.state;
+    let target = step + 1
+    if (step === 7 && card !== "creator") target = 9
+    this.setState({ step: target });
   };
 
   onSelectCard = (card) => {
@@ -92,7 +95,8 @@ class Register extends Component {
   };
 
   onSetFilms = (films) => {
-    this.setState({ films, step: 8 });
+    const { card } = this.state;
+    this.setState({ films, step: card === "creator" ? 8 : 9});
   };
 
   onFileUpload = () => {

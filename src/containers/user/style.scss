@@ -4,6 +4,39 @@
   letter-spacing: 1px;
   font-weight: 100;
 
+  .ant-form {
+    color: $gray;
+    .material-input {
+      text-align: left;
+    }
+    .user-info-value {
+      margin-bottom: 0px;
+      & > b {
+        flex: 2;
+        margin-top: 7px;
+        font-size: 16px;
+      }
+      & > div {
+        flex: 3;
+        @media screen and (min-width: 768px) {
+          .ant-form-item-control-input-content {
+            max-width: 84%;
+          }
+        }
+      }
+      .flex {
+        align-items: flex-start;
+        .ant-form-item-control-input-content {
+          max-width: 100%;
+        }
+        img {
+          margin-right: 7px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
   b {
     font-weight: 500;
   }
@@ -12,10 +45,14 @@
     align-items: center;
     .user-card-desc {
       margin-left: 40px;
-      margin-top: 50px;
+      margin-top: 70px;
     }
     h4 {
       color: $gray;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0;
     }
 
     @media screen and (max-width: 768px) {
@@ -41,6 +78,11 @@
   .material-btn {
     padding: 10px 30px;
   }
+
+  .social-icon {
+    cursor: pointer;
+    margin-right: 15px;
+  }
 }
 
 .profile-filmbox {
@@ -53,6 +95,7 @@
   color: $gray;
   position: relative;
   padding: 50px 0;
+  min-height: 450px;
   a {
     color: inherit;
     &:hover {
@@ -60,33 +103,101 @@
     }
   }
 
-  .video-card {
-    width: 100%;
-    margin-bottom: 40px;
+  .ant-tabs-nav::before {
+    border-bottom: none;
+  }
 
-    img {
-      height: 220px;
-      width: 100%;
-      border-radius: 10px;
+  .ant-tabs {
+    color: $gray;
+    .ant-tabs-tab {
+      font-weight: 600;
+      font-size: 16px;
+      color: $gray-600;
     }
-    .slide-footer {
-      position: relative;
-      margin: 15px;
-      .title {
-        font-weight: 600;
-        font-size: 16px;
-        margin-bottom: 0px;
-      }
-      .description {
-        font-size: 12px;
-      }
-      .anticon {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
+    .ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: white;
     }
   }
+
+  .video_upload {
+    height: 200px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px dashed #555;
+    border-radius: 10px;
+    @media screen and (max-width: 768px) {
+      height: 95px;
+    }
+  }
+}
+
+.video-card {
+  width: 100%;
+  margin-bottom: 40px;
+  cursor: pointer;
+  position: relative;
+
+  img {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    &:hover {
+      box-shadow: 1px 1px 11px $orange;
+    }
+    @media screen and (max-width: 768px) {
+      height: 95px;
+    }
+  }
+  .slide-footer {
+    position: relative;
+    margin: 15px;
+    .title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 0px;
+      @media (max-width: 767.98px) {
+        font-size: 14px;
+      }
+    }
+    .description {
+      font-size: 12px;
+    }
+    .anticon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  a {
+    position: absolute;
+    top: 85px;
+    left: 43%;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    display: none;
+    &:hover {
+      color: $orange;
+    }
+    @media (max-width: 767.98px) {
+      top: 35px;
+      left: 50px;
+    }
+  }
+  &:hover {
+    a {
+      display: block;
+    }
+  }
+}
+
+.video-card.wide-card img {
+  height: auto;
 }
 
 .filmbox-blendcolor {
@@ -96,4 +207,36 @@
   transform: rotate(-180deg);
   height: 100px;
   margin-top: -100px;
+}
+
+.upload-form-box {
+  padding: 10px;
+  .upload-box {
+    display: flex;
+    justify-content: space-between;
+    .ant-form-item {
+      width: 47%;
+    }
+  }
+  .video-delete-box {
+    font-weight: 600;
+    float: right;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 5px;
+    &:hover {
+      color: $orange;
+    }
+  }
+  .edit-award-box {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (max-width: 768px) {
+    h5 {
+      font-size: 18px;
+    }
+  }
 }
