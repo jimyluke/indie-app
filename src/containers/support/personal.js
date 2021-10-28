@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Row, Col } from "reactstrap";
-import { Button, Form, Input, Radio } from "antd";
+import { Row, Col, Label } from "reactstrap";
+import { Button, Form, Input, Radio, Checkbox } from "antd";
 import PhoneInput from "react-phone-input-2";
 import { YearPicker, MonthPicker, DayPicker } from "react-dropdown-date";
 import "react-phone-input-2/lib/style.css";
@@ -20,23 +20,8 @@ function Personal() {
   return (
     <div className="support-personal">
       <Row className="support-center">
-        <Col md={12} sm={12} lg={9} className="support-title">
+        <Col md={12} sm={12} className="support-title">
           PERSONAL INFORMATION
-        </Col>
-        <Col
-          md={6}
-          sm={12}
-          lg={3}
-          className="support-btn-right d-none d-lg-block "
-        >
-          <Button
-            type="primary"
-            shape="round"
-            className="support-btn support-btn-save"
-            size="large"
-          >
-            Save
-          </Button>
         </Col>
       </Row>
       <Row className="support-pt3">
@@ -125,58 +110,6 @@ function Personal() {
         </Col>
       </Row>
       <hr />
-      <Row>
-        <Col md={12} sm={12}>
-          <div>
-            <div className="support-font">
-              Email address <span className="support-asterisk">*</span>
-            </div>
-          </div>
-          <div>
-            <Form layout="vertical">
-              <Form.Item label="Use an address you'll always have access to">
-                <Input placeholder="jane.snow@gmail.c|" />
-              </Form.Item>
-            </Form>
-          </div>
-        </Col>
-      </Row>
-      <hr />
-      <Row>
-        <Col md={12} sm={12}>
-          <Form layout="vertical">
-            <Form.Item label="Select your country code">
-              <PhoneInput
-                country={"us"}
-                value={phone}
-                onChange={(phone) => setPhone(phone)}
-              />
-            </Form.Item>
-          </Form>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col className="support-btn-footer" xs={12} md={12} sm={12} lg={6}>
-          <Button
-            type="primary"
-            shape="round"
-            className="support-btn support-btn-save"
-            size="large"
-          >
-            Save
-          </Button>
-          <Button
-            type="primary"
-            shape="round"
-            className="support-btn support-btn-cancel"
-            size="large"
-          >
-            Cancel
-          </Button>
-        </Col>
-        <Col xs={0} md={6} sm={12} className="d-xs-none d-md-none d-lg-block" />
-      </Row>
     </div>
   );
 }

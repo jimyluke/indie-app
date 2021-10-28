@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import { LeftOutlined } from "@ant-design/icons";
 
+import background from "../../assets/images/homepage/background.png";
 const RenderTerms = () => {
   return (
     <div className="term-content">
-      <div className="term-infor">
+      <div className="term-infor z-100">
         <div className="term-infor--title">Indie terms of use</div>
         <p className="text-content">
           <span className="pd-bt40">
@@ -141,11 +142,15 @@ const RenderTerms = () => {
         </ul>
       </div>
 
-      <div className="privacy-footer">
+      <div className="privacy-footer z-100">
         <p>
           Last Updated: <span>January 1, 2021</span>
         </p>
       </div>
+      <div className="background-image">
+        <img src={background} alt="background"></img>
+      </div>
+      <div className="bg-linear"></div>
     </div>
   );
 };
