@@ -313,7 +313,88 @@
         border-radius: 2px !important;
     }
 }
+.ant-modal-content {
+    width: 372px;
+    height: 372px;
+    margin: 0 auto;
+    .tick-box {
+        background-color: #fcfcfc;
+        border: 0.2px solid rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        width: 136px;
+        height: 136px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        &--sub {
+            background: #ffffff;
+            border: 0.2px solid rgba(0, 0, 0, 0.05);
+            align-items: center;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin-right: auto;
+            transform: translate(12px, 12px);
+            .checkmark {
+                display: inline-block;
+                width: 110px;
+                height: 110px;
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
 
+            .checkmark_stem {
+                position: absolute;
+                width: 15px;
+                height: 60px;
+                background-color: #27ae60;
+                top: 10px;
+                left: 50px;
+                border-radius: 1px 1;
+                border-radius: 7px 7px 7px 0;
+            }
+
+            .checkmark_kick {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: #27ae60;
+                left: 36px;
+                bottom: 40px;
+                border-radius: 7px 0 0 7px;
+            }
+        }
+    }
+    .text-notifi {
+        &--main {
+            font-family: Montserrat;
+            font-style: normal;
+            text-align: center;
+            color: #000000;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 0 32px;
+            line-height: 60px;
+            margin: 0;
+        }
+        &--sub {
+            font-family: Montserrat;
+            font-style: normal;
+            text-align: center;
+            color: #000000;
+            text-align: center;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 30px;
+            padding: 0 47px;
+        }
+    }
+}
+.ant-modal-footer {
+    display: none;
+}
 .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
     position: absolute;
     right: -20px;

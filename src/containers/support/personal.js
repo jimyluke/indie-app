@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Label } from "reactstrap";
 import "react-phone-input-2/lib/style.css";
-import { Button } from "antd";
+import { Modal, Button } from "antd";
 
 import avatar from "../../assets/images/supportpage/avar.png";
 
 function Personal() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
   return (
     <div className="support-personal">
       <Row className="support-center">
@@ -37,9 +45,24 @@ function Personal() {
             shape="round"
             className="support-btn support-btn-cancel"
             size="large"
+            onClick={showModal}
           >
             delete account
           </Button>
+          <Modal visible={isModalVisible} onCancel={handleCancel}>
+            <div className="tick-box">
+              <div className="tick-box--sub">
+                <span class="checkmark">
+                  <div class="checkmark_stem"></div>
+                  <div class="checkmark_kick"></div>
+                </span>
+              </div>
+            </div>
+            <p className="text-notifi--main">Account deleted successfully!</p>
+            <p className="text-notifi--sub">
+              Your account will be logged out automatically
+            </p>
+          </Modal>
         </Col>
         <Col xs={0} md={6} sm={12} className="d-xs-none d-md-none d-lg-block" />
       </Row>
