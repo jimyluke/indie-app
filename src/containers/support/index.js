@@ -87,7 +87,7 @@ function SupportPage({ location }) {
                       </div>
                     </div>
                   </Link>
-                  <Link to={`${url}/password`}>
+                  <Link to={`${url}/account-access`}>
                     <div className="support-item">
                       <img
                         src={security}
@@ -95,7 +95,7 @@ function SupportPage({ location }) {
                         alt="password"
                       />
                       <div className="support-item-txt">
-                        Password & Security
+                        Account access
                       </div>
                     </div>
                   </Link>
@@ -133,7 +133,7 @@ function SupportPage({ location }) {
                   <Route path={`${path}/personal`}>
                     <Personal />
                   </Route>
-                  <Route path={`${path}/acount-access`}>
+                  <Route path={`${path}/account-access`}>
                     <Password />
                   </Route>
                   <Route path={`${path}/notifications`}>

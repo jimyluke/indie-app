@@ -29,7 +29,7 @@ function Invite() {
         </Col>
       </Row>
       <Row>
-        <Col xs={9} md={9} sm={9}>
+        <Col xs={8} md={9} sm={8}>
           <Form.Item>
             <Input
               placeholder="https://invite.india/promo/id_1938569"
@@ -37,7 +37,7 @@ function Invite() {
             />
           </Form.Item>
         </Col>
-        <Col xs={3} md={3} sm={9} className="support-invite-pl0 support-invite-pl15">
+        <Col xs={4} md={3} sm={4} className="support-invite-pl0 support-invite-pl15">
           <Button
             type="primary"
             shape="round"

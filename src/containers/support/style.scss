@@ -46,7 +46,7 @@
         border: none !important;
         font-weight: bold;
         outline: none !important;
-        padding: 8px 24px !important;
+        padding: 8px 40px !important;
         font-family: Montserrat;
         font-style: normal;
         font-weight: bold;
@@ -68,7 +68,9 @@
             justify-content: end;
             text-align: right;
         }
-
+        &-update{
+            padding: 8px 15px!important;
+        }
         &-copy {
             background-color: #ef854e !important;
             color: #ffffff;
@@ -78,6 +80,10 @@
         &-save {
             background-color: #ef854e !important;
             color: #ffffff;
+        }
+        &-footer{
+            display: flex;
+            justify-content: center;
         }
     }
 
@@ -447,6 +453,9 @@
         }
 
         &-btn {
+            &-personal{
+                padding: 8px 20px!important;
+            }
             &-footer {
                 display: flex;
                 justify-content: center;
@@ -523,7 +532,9 @@
                 margin-bottom: 5px;
             }
         }
-
+        &-second{
+            padding: 60px 2% !important;
+        }
         &-wrapper {
             padding: 0;
         }
@@ -538,6 +549,10 @@
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .support {
+        &-second{
+            padding: 60px 5% !important;
+        }
+        
         &-invite-pl15 {
             padding-left: 15px !important;
         }
@@ -549,7 +564,9 @@
         &-first {
             padding-left: 0 !important;
         }
-
+        &-second{
+            padding: 60px 5% !important;
+        }
         &-item {
             &-img {
                 width: 18px;
@@ -558,6 +575,13 @@
             &-txt {
                 padding-left: 10px;
             }
+        }
+    }
+}
+@media only screen and (min-width: 971px) and (max-width: 1500px) {
+    .support {
+        &-second{
+            padding: 60px 5% !important;
         }
     }
 }

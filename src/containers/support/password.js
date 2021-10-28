@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 
 import { Row, Col, Label } from "reactstrap";
-import { Button, Form, Input, Radio, Checkbox } from "antd";
+import { Button, Form, Input, Checkbox } from "antd";
 import PhoneInput from "react-phone-input-2";
 function Password() {
-  const [value, setValue] = useState(1);
-
+  const [value, setValue] = useState(false);
   const [phone, setPhone] = useState("");
-  const onChange = (e) => {
-    setValue(e.target.value);
-  };
+  
   return (
     <div className="support-password">
       <Row>
@@ -85,7 +82,7 @@ function Password() {
               />
             </Form.Item>
             <Form.Item>
-              <Checkbox onChange={onChange} className="check-box">
+              <Checkbox onChange={(e)=>{setValue(e.target.checked)}} className="check-box" value={value}>
                 Require all devices to sign in with new password
               </Checkbox>
             </Form.Item>

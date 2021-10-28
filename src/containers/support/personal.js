@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Label } from "reactstrap";
+import { Row, Col} from "reactstrap";
 import "react-phone-input-2/lib/style.css";
 import { Modal, Button } from "antd";
 
@@ -35,7 +35,7 @@ function Personal() {
           <Button
             type="primary"
             shape="round"
-            className="support-btn support-btn-save"
+            className="support-btn support-btn-save support-btn-update support-btn-personal"
             size="large"
           >
             update personal details
@@ -43,7 +43,7 @@ function Personal() {
           <Button
             type="primary"
             shape="round"
-            className="support-btn support-btn-cancel"
+            className="support-btn support-btn-cancel support-btn-personal"
             size="large"
             onClick={showModal}
           >
@@ -52,9 +52,9 @@ function Personal() {
           <Modal visible={isModalVisible} onCancel={handleCancel}>
             <div className="tick-box">
               <div className="tick-box--sub">
-                <span class="checkmark">
-                  <div class="checkmark_stem"></div>
-                  <div class="checkmark_kick"></div>
+                <span className="checkmark">
+                  <div className="checkmark_stem"></div>
+                  <div className="checkmark_kick"></div>
                 </span>
               </div>
             </div>
