@@ -4,11 +4,12 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import { LeftOutlined } from "@ant-design/icons";
+import background from "../../assets/images/homepage/background.png";
 
 const RenderPrivacy = () => {
   return (
     <div className="privacy-content">
-      <div className="privacy-statement">
+      <div className="privacy-statement z-100">
         <div className="privacy-statement--title">Privacy Statement</div>
         <p className="text-content">
           This Privacy Statement explains our practices, including your choices,
@@ -25,8 +26,10 @@ const RenderPrivacy = () => {
           </p>
           <ul>
             <li className="text-content">
-              Information you provide to us: We collect information you provide
-              to us which includes:
+              <span className="color-white">
+                Information you provide to us:&nbsp;
+              </span>
+              We collect information you provide to us which includes:
             </li>
             <ul>
               <li className="text-content">
@@ -36,20 +39,23 @@ const RenderPrivacy = () => {
                 service, interact with our customer service, or participate in
                 surveys or marketing promotions;
               </li>
-              <li className="text-content">
+              <li className="text-content color-white">
                 information when you choose to provide ratings, taste
                 preferences, account settings (including preferences set in the
                 "Account" section of our website), or otherwise provide
                 information to us through our service or elsewhere.
               </li>
               <p className="text-content">
-                Information you provide to us: We collect information about you
-                and your use of our service, your interactions with us and our
-                advertising, as well as information regarding your network,
-                network devices, and your computer or other Netflix capable
-                devices you might use to access our service (such as gaming
-                systems, smart TVs, mobile devices, set top boxes, and other
-                streaming media devices). This information includes:
+                <span className="color-white">
+                  Information you provide to us:&nbsp;
+                </span>
+                We collect information about you and your use of our service,
+                your interactions with us and our advertising, as well as
+                information regarding your network, network devices, and your
+                computer or other Netflix capable devices you might use to
+                access our service (such as gaming systems, smart TVs, mobile
+                devices, set top boxes, and other streaming media devices). This
+                information includes:
               </p>
               <li className="text-content">
                 your activity on the Netflix service, such as title selections,
@@ -114,8 +120,9 @@ const RenderPrivacy = () => {
             of your personal information (including legal bases and transfer
             mechanisms we rely on), cookies or similar technologies, please
             contact our Data Protection Officer/Privacy Office by email at
-            privacy@indie.com. Please visit our online help center at
-            help.netflix.com for more information about these topics.
+            <span className="email-color"> privacy@indie.com. </span>Please
+            visit our online help center at help.netflix.com for more
+            information about these topics.
           </p>
         </div>
         <div className="privacy-element">
@@ -129,7 +136,7 @@ const RenderPrivacy = () => {
               to the website. This function uses technology that enables us to
               provide direct account access and to help administer the Netflix
               service without requiring reentry of any password or other user
-              identification when your browser revisits the service.{" "}
+              identification when your browser revisits the service.
             </li>
             <li className="text-content">
               Giving others access to your account: If you share or otherwise
@@ -143,17 +150,21 @@ const RenderPrivacy = () => {
               streaming media devices on the Wi-Fi network to which you are
               connected. If you use that feature, those devices will remain
               signed into your account unless you later log out of those
-              devices.{" "}
+              devices.
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="privacy-footer">
+      <div className="privacy-footer z-100">
         <p>
           Last Updated: <span>January 1, 2021</span>
         </p>
       </div>
+      <div className="background-image">
+        <img src={background} alt="background"></img>
+      </div>
+      <div className="bg-linear"></div>
     </div>
   );
 };

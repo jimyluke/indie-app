@@ -10,8 +10,6 @@ import mail from "../../assets/images/supportpage/mail_open.png";
 import security from "../../assets/images/supportpage/security.png";
 import user from "../../assets/images/supportpage/user.png";
 import movie1 from "../../assets/images/supportpage/movie1.png";
-import movie2 from "../../assets/images/supportpage/movie2.png";
-import movie3 from "../../assets/images/supportpage/movie3.png";
 import movie4 from "../../assets/images/supportpage/movie4.png";
 import Personal from "./personal";
 import Password from "./password";
@@ -31,7 +29,7 @@ function SupportPage({ location }) {
 
   let { path, url } = useRouteMatch();
   const isMobile = windowWidth <= 640 ? true : false;
-  const isShowSetting=location.pathname === "/support" 
+  const isShowSetting = location.pathname === "/support";
   const isShowMenu = isShowSetting && isMobile;
   return (
     <div className="support">
@@ -42,10 +40,14 @@ function SupportPage({ location }) {
             <Row>
               <Col
                 xs={12}
-                className={`support-control d-sm-none d-md-none d-lg-none ${isShowSetting && 'd-none'}`} 
+                className={`support-control d-sm-none d-md-none d-lg-none ${
+                  isShowSetting && "d-none"
+                }`}
               >
                 <div className="support-control-text">
-                  <Link to="/" className="support-control-link">Home</Link>
+                  <Link to="/" className="support-control-link">
+                    Home
+                  </Link>
                   <span className="support-control-span">
                     <RightOutlined
                       style={{
@@ -55,7 +57,9 @@ function SupportPage({ location }) {
                       }}
                     />
                   </span>
-                  <Link to={url} className="support-control-link">Settings</Link>
+                  <Link to={url} className="support-control-link">
+                    Settings
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -83,7 +87,7 @@ function SupportPage({ location }) {
                       </div>
                     </div>
                   </Link>
-                  <Link to={`${url}/password`}>
+                  <Link to={`${url}/account-access`}>
                     <div className="support-item">
                       <img
                         src={security}
@@ -91,7 +95,7 @@ function SupportPage({ location }) {
                         alt="password"
                       />
                       <div className="support-item-txt">
-                        Password & Security
+                        Account access
                       </div>
                     </div>
                   </Link>
@@ -129,7 +133,7 @@ function SupportPage({ location }) {
                   <Route path={`${path}/personal`}>
                     <Personal />
                   </Route>
-                  <Route path={`${path}/password`}>
+                  <Route path={`${path}/account-access`}>
                     <Password />
                   </Route>
                   <Route path={`${path}/notifications`}>
@@ -152,8 +156,7 @@ function SupportPage({ location }) {
                 className="support-third d-none d-lg-block d-md-none"
               >
                 <img src={movie1} alt="movie1" className="support-img" />
-                <img src={movie2} alt="movie2" className="support-img" />
-                <img src={movie3} alt="movie3" className="support-img" />
+
                 <img src={movie4} alt="movie4" className="support-img" />
               </Col>
             </Row>

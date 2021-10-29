@@ -1,10 +1,16 @@
+.privacy-wrapper {
+  position: relative;
+}
+
 .privacy,
 .term {
   &-container {
+    position: relative;
+    z-index: 100;
+    padding-bottom: 100px;
     .container {
       padding: 0 40px;
     }
-    padding-bottom: 125px;
     .auth-breadcrumb {
       padding: 0;
       a {
@@ -18,7 +24,20 @@
   }
   &-content {
     padding-top: 40px;
+    .bg-linear {
+      display: none;
+    }
+    .background-image {
+      display: none;
+      img {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
   }
+
   &-statement,
   &-infor {
     &--title {
@@ -40,6 +59,12 @@
       color: rgba(239, 239, 239, 0.7);
       mix-blend-mode: normal;
       opacity: 0.7;
+      .email-color {
+        color: #fb8d1d;
+      }
+      .color-white {
+        color: #ffffff;
+      }
     }
     .text-content.text-bold {
       opacity: 1;
@@ -88,6 +113,10 @@
   }
 }
 
+.z-100 {
+  position: relative;
+  z-index: 100;
+}
 .term {
   &-content {
     ul {
@@ -100,6 +129,24 @@
     }
     ul {
       margin: 0;
+    }
+  }
+}
+@media only screen and (min-width: 280px) and (max-width: 576px) {
+  .privacy,
+  .term {
+    &-content {
+      .bg-linear {
+        display: block;
+      }
+      .background-image {
+        display: block;
+      }
+    }
+    &-element {
+      ul {
+        margin-left: 20px;
+      }
     }
   }
 }
