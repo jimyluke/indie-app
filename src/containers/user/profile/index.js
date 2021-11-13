@@ -7,12 +7,11 @@ import { Tabs, Modal } from "antd";
 import UploadForm from "./video-upload-form.js";
 import EitForm from "./video-edit-form";
 import { fetchMyVideos } from "../../../actions/jwplayer";
+import { listWatch } from "../../../actions/watch";
 import { Header, Footer } from "../../../components/template";
 import ProfileForm from "./profile-form";
 import ProfileInfo from "./profile-info";
-import image1 from "../../../assets/images/homepage-hero/1.png";
-import image2 from "../../../assets/images/homepage-hero/2.png";
-import image3 from "../../../assets/images/homepage-hero/3.png";
+import history from "../../../history";
 
 const { TabPane } = Tabs;
 
@@ -26,15 +25,20 @@ class Profile extends Component {
 
   componentDidMount = () => {
     this.props.fetchMyVideos();
+    this.props.listWatch();
+  };
+
+  goToVideo = (mediaId) => {
+    history.push(`/videos/${mediaId}`);
   };
 
   renderFilmItem = (data) => (
     <div className="video-card">
       <img
-        src={`https://cdn.jwplayer.com/thumbs/${data.id}-720.jpg`}
+        src={data.metadata.custom_params.cover}
         alt="video preview"
         className="default-slide"
-        onClick={() => this.openVideoModal(data)}
+        onClick={() => this.goToVideo(data.id)}
       />
       <Link to="#" onClick={() => this.openEditModal(data)}>
         Edit
@@ -52,18 +56,43 @@ class Profile extends Component {
     </div>
   );
 
-  renderSimpleFilmItem = (data) => (
-    <div className="video-card">
-      <img src={data.image} alt="video preview" className="default-slide" />
-      <div className="slide-footer">
-        <div className="slide-footer__content">
-          <p className="title">{data.title}</p>
-          <p className="description">{data.description}</p>
-        </div>
-        <RightOutlined />
-      </div>
-    </div>
-  );
+  renderRecentFilms = () => {
+    const { jwplayer } = this.props;
+
+    const allVideos = jwplayer.all_videos;
+    const recentWatches = jwplayer.mywatches || [];
+    let recent_data = [];
+    for (let watch of recentWatches) {
+      let flt = allVideos.filter((item) => item.id === watch.media);
+      if (flt.length > 0) recent_data.push(flt[0]);
+    }
+    return (
+      <Row>
+        {recent_data.map((item) => (
+          <Col xs={6} sm={6} md={6} lg={4} key={item.id}>
+            <div className="video-card">
+              <img
+                src={item.metadata.custom_params.cover}
+                alt="video preview"
+                className="default-slide"
+                onClick={() => this.goToVideo(item.id)}
+              />
+              <div className="slide-footer">
+                <div className="slide-footer__content">
+                  <p className="title">{item.metadata.title}</p>
+                  <p className="description">
+                    {item.metadata.custom_params.release_date} •{" "}
+                    {item.metadata.tags.join(", ")}
+                  </p>
+                </div>
+                <RightOutlined />
+              </div>
+            </div>
+          </Col>
+        ))}
+      </Row>
+    );
+  };
 
   toggleEdit = () => {
     this.setState({ isEdit: !this.state.isEdit });
@@ -84,24 +113,6 @@ class Profile extends Component {
   renderFilms = () => {
     const { jwplayer, user } = this.props;
     const isCreator = user.role === "Creator";
-    const recent_data = [
-      {
-        image: image1,
-        title: "Beauty and the Beast",
-        description: "1994 • Crime, Drama",
-      },
-      {
-        image: image2,
-        title: "Las Brujas",
-        description: "1994 • Crime, Drama",
-      },
-      {
-        image: image3,
-        title: "Sylvie’s Love",
-        description: "1994 • Crime, Drama",
-      },
-    ];
-
     return (
       <div className="profile-filmbox">
         <Container>
@@ -126,13 +137,7 @@ class Profile extends Component {
               </TabPane>
             )}
             <TabPane tab="Recently Watched Films" key={isCreator ? "2" : "1"}>
-              <Row>
-                {recent_data.map((item) => (
-                  <Col xs={6} sm={6} md={6} lg={4} key={item.title}>
-                    {this.renderSimpleFilmItem(item)}
-                  </Col>
-                ))}
-              </Row>
+              {this.renderRecentFilms()}
             </TabPane>
             <TabPane tab="Continue Watching" key="3">
               Content of Tab Pane 3
@@ -156,7 +161,6 @@ class Profile extends Component {
           {showModal && (
             <Modal
               visible={showModal}
-              centered
               width={800}
               footer={false}
               closable={false}
@@ -168,7 +172,6 @@ class Profile extends Component {
           {showEditModal && (
             <Modal
               visible={showEditModal}
-              centered
               width={700}
               footer={false}
               closable={false}
@@ -191,4 +194,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchMyVideos })(Profile);
+export default connect(mapStateToProps, { fetchMyVideos, listWatch })(Profile);

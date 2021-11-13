@@ -5,7 +5,7 @@ import { RightOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import SliderWrapper from "../../components/video/slider-wrapper";
 import { Header, Footer } from "../../components/template";
-import { queryJWVideos, filterVideoByGenre } from "../../actions/jwplayer";
+import { queryJWVideos } from "../../actions/jwplayer";
 import history from "../../history";
 
 class Library extends Component {
@@ -32,7 +32,7 @@ class Library extends Component {
   renderFilmItem = (data) => (
     <div className="video-card">
       <img
-        src={`https://cdn.jwplayer.com/thumbs/${data.id}-720.jpg`}
+        src={data.metadata.custom_params.cover}
         alt="video preview"
         className="default-slide"
         onClick={() => this.goToVideo(data.id)}
@@ -63,9 +63,9 @@ class Library extends Component {
   );
 
   render() {
-    const { jwplayer, filterVideoByGenre } = this.props;
+    const { jwplayer } = this.props;
     const { category } = this.state;
-    const featuredFilms = filterVideoByGenre("Horror");
+    const featuredFilms = jwplayer.videos.filter((flm) => flm.featured);
 
     return (
       <React.Fragment>
@@ -85,7 +85,7 @@ class Library extends Component {
           <Container className="mt-5">
             <h5 className="mb-3">All Movies</h5>
             <Row style={{ minHeight: "70vh" }}>
-              {jwplayer.all_videos.map((item) => (
+              {jwplayer.videos.map((item) => (
                 <Col xs={6} sm={6} md={6} lg={4} key={item.id}>
                   {this.renderFilmItem(item)}
                 </Col>
@@ -107,6 +107,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { queryJWVideos, filterVideoByGenre })(
-  Library
-);
+export default connect(mapStateToProps, { queryJWVideos })(Library);

@@ -4,7 +4,7 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import { LeftOutlined } from "@ant-design/icons";
-import background from "../../assets/images/homepage/background.png";
+import background from "../../assets/images/homepage/background.webp";
 
 const RenderPrivacy = () => {
   return (

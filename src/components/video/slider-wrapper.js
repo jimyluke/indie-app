@@ -18,7 +18,7 @@ const Slide = ({ video, defaultSlide }) => {
   return (
     <>
       <img
-        src={`https://cdn.jwplayer.com/thumbs/${video.id}-720.jpg`}
+        src={video.metadata.custom_params.cover}
         alt={"video preview"}
         className={defaultSlide ? "default-slide" : ""}
         onClick={() => goToVideo(video.id)}
@@ -79,6 +79,9 @@ const SliderWrapper = ({
             className={sliderClass}
             slidesPerView={2}
             spaceBetween={20}
+            autoplay={{
+              delay: 5000,
+            }}
             onInit={(swiper) => {
               swiper.params.navigation.prevEl = prevRef.current;
               swiper.params.navigation.nextEl = nextRef.current;
@@ -97,7 +100,10 @@ const SliderWrapper = ({
             }}
           >
             {videos.map((video) => (
-              <SwiperSlide key={video.id}>
+              <SwiperSlide
+                key={video.id}
+                className={defaultSlide ? "featured" : ""}
+              >
                 <Slide video={video} defaultSlide className={"p-3"} />
               </SwiperSlide>
             ))}

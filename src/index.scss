@@ -1,26 +1,88 @@
-@import "./assets/base.scss";
-@import "./assets/variables.scss";
-@import url("./assets/style.css");
-@import url("./assets/responsive.css");
+@import "./assets/css/base.scss";
+@import "./assets/css/variables.scss";
 @import "./components/style.scss";
 @import "./containers/auth/style.scss";
 @import "./containers/home/style.scss";
 @import "./containers/user/style.scss";
 @import "./containers/message/style.scss";
 @import "./containers/admin/style.scss";
+@import "./containers/support/style.scss";
 @import "./containers/library/style.scss";
 @import "~swiper/swiper-bundle.min.css";
+
+@font-face {
+  font-family: "Austina Capitton";
+  src: url("./assets/fonts/AustinaCapittonRegular.woff2") format("woff2"),
+    url("./assets/fonts/AustinaCapittonRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Light.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1rem;
+  // font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
   color: #212529;
-  font-family: var(--baseHeading);
+  font-family: "Montserrat", sans-serif;
 }
 
 .layout {
@@ -33,7 +95,7 @@ body {
 }
 
 .ant-modal-content {
-  font-family: var(--baseHeading) !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .home_layout {
@@ -56,11 +118,6 @@ body {
     font-size: 13px;
     font-weight: bolder;
   }
-}
-
-.ant-popover {
-  max-height: 50vh;
-  overflow-y: auto;
 }
 
 @media screen and (max-width: 768px) {

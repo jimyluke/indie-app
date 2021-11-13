@@ -6,6 +6,7 @@ export const AUTH_USER = "auth_user",
   AUTH_ERROR = "auth_error",
   FORGOT_PASSWORD_REQUEST = "forgot_password_request",
   RESET_PASSWORD_REQUEST = "reset_password_request",
+  SET_SIGNUP_DATA = "set_signup_data",
   PROTECTED_TEST = "protected_test";
 
 //= =====================
@@ -60,4 +61,5 @@ export const FETCH_FAQ_LIST = "fetch_faq_list",
 export const FETCH_VIDEOS = "fetch_videos",
   FETCH_ALL_VIDEOS = "fetch_all_videos",
   FETCH_SEARCH_VIDEOS = "featch_search_videos",
-  FETCH_VIDEO_BYID = "fetch_video_byid";
+  FETCH_VIDEO_BYID = "fetch_video_byid",
+  FETCH_MY_WATCHES = "fetch_my_watches";

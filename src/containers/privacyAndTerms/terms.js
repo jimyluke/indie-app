@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import { LeftOutlined } from "@ant-design/icons";
 
-import background from "../../assets/images/homepage/background.png";
+import background from "../../assets/images/homepage/background.webp";
 const RenderTerms = () => {
   return (
     <div className="term-content">
@@ -83,60 +83,58 @@ const RenderTerms = () => {
               account with a third party as a Payment Method, you can find the
               billing information about your Netflix membership by visiting your
               account with the applicable third party.
-              <li className="text-content">
-                <span className="text-fw">3.2. Payment Methods.</span> To use
-                the Netflix service you must provide one or more Payment
-                Methods. You authorize us to charge any Payment Method
-                associated to your account in case your primary Payment Method
-                is declined or no longer available to us for payment of your
-                subscription fee. You remain responsible for any uncollected
-                amounts. If a payment is not successfully settled, due to
-                expiration, insufficient funds, or otherwise, and you do not
-                cancel your account, we may suspend your access to the service
-                until we have successfully charged a valid Payment Method. For
-                some Payment Methods, the issuer may charge you certain fees,
-                such as foreign transaction fees or other fees relating to the
-                processing of your Payment Method. Local tax charges may vary
-                depending on the Payment Method used. Check with your Payment
-                Method service provider for details.
-              </li>
-              <li className="text-content">
-                <span className="text-fw">
-                  3.3. Updating your Payment Methods.
-                </span>
-                You can update your Payment Methods by going to the "Account"
-                page. We may also update your Payment Methods using information
-                provided by the payment service providers. Following any update,
-                you authorize us to continue to charge the applicable Payment
-                Method(s).
-              </li>
-              <li className="text-content">
-                <span className="text-fw"> 3.4. Cancellation.</span> You can
-                cancel your Netflix membership at any time, and you will
-                continue to have access to the Netflix service through the end
-                of your billing period. Payments are non-refundable and we do
-                not provide refunds or credits for any partial membership
-                periods or unwatched Netflix content. To cancel, go to the
-                "Account" page and follow the instructions for cancellation. If
-                you cancel your membership, your account will automatically
-                close at the end of your current billing period. To see when
-                your account will close, click "Billing details" on the
-                "Account" page. If you signed up for Netflix using your account
-                with a third party as a Payment Method and wish to cancel your
-                Netflix membership, you may need to do so through such third
-                party, for example by visiting your account with the applicable
-                third party and turning off auto-renew, or unsubscribing from
-                the Netflix service through that third party.
-              </li>
-              <li className="text-content">
-                <span className="text-fw">
-                  3.5. Changes to the Price and Subscription Plans.
-                </span>
-                We may change our subscription plans and the price of our
-                service from time to time; however, any price changes or changes
-                to your subscription plans will apply no earlier than 30 days
-                following notice to you.
-              </li>
+            </li>
+            <li className="text-content">
+              <span className="text-fw">3.2. Payment Methods.</span> To use the
+              Netflix service you must provide one or more Payment Methods. You
+              authorize us to charge any Payment Method associated to your
+              account in case your primary Payment Method is declined or no
+              longer available to us for payment of your subscription fee. You
+              remain responsible for any uncollected amounts. If a payment is
+              not successfully settled, due to expiration, insufficient funds,
+              or otherwise, and you do not cancel your account, we may suspend
+              your access to the service until we have successfully charged a
+              valid Payment Method. For some Payment Methods, the issuer may
+              charge you certain fees, such as foreign transaction fees or other
+              fees relating to the processing of your Payment Method. Local tax
+              charges may vary depending on the Payment Method used. Check with
+              your Payment Method service provider for details.
+            </li>
+            <li className="text-content">
+              <span className="text-fw">
+                3.3. Updating your Payment Methods.
+              </span>
+              You can update your Payment Methods by going to the "Account"
+              page. We may also update your Payment Methods using information
+              provided by the payment service providers. Following any update,
+              you authorize us to continue to charge the applicable Payment
+              Method(s).
+            </li>
+            <li className="text-content">
+              <span className="text-fw"> 3.4. Cancellation.</span> You can
+              cancel your Netflix membership at any time, and you will continue
+              to have access to the Netflix service through the end of your
+              billing period. Payments are non-refundable and we do not provide
+              refunds or credits for any partial membership periods or unwatched
+              Netflix content. To cancel, go to the "Account" page and follow
+              the instructions for cancellation. If you cancel your membership,
+              your account will automatically close at the end of your current
+              billing period. To see when your account will close, click
+              "Billing details" on the "Account" page. If you signed up for
+              Netflix using your account with a third party as a Payment Method
+              and wish to cancel your Netflix membership, you may need to do so
+              through such third party, for example by visiting your account
+              with the applicable third party and turning off auto-renew, or
+              unsubscribing from the Netflix service through that third party.
+            </li>
+            <li className="text-content">
+              <span className="text-fw">
+                3.5. Changes to the Price and Subscription Plans.
+              </span>
+              We may change our subscription plans and the price of our service
+              from time to time; however, any price changes or changes to your
+              subscription plans will apply no earlier than 30 days following
+              notice to you.
             </li>
           </ul>
         </ul>

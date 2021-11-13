@@ -7,12 +7,13 @@ import { BackTop } from "antd";
 import NotFound from "./components/pages/not-found";
 
 // Import static pages
-import LandingPage from "./containers/landing/landing";
+import LandingPage from "./containers/landing/index";
 import CinersPage from "./containers/landing/ciners";
 import HomePage from "./containers/home";
 import Library from "./containers/library";
 import SearchVideo from "./containers/library/search";
 import VideoDetail from "./containers/library/movie";
+import VideoPlayer from "./containers/library/player";
 import SupportPage from "./containers/support";
 import PrivacyPage from "./containers/privacyAndTerms/privacy";
 import TermsPage from "./containers/privacyAndTerms/terms";
@@ -21,11 +22,13 @@ import ContactPage from "./containers/contact";
 // Import authentication related pages
 import Register from "./containers/auth/register/index";
 import Login from "./containers/auth/login";
+import Welcome from "./containers/auth/register/welcome";
 import Logout from "./containers/auth/logout";
 import ForgotPassword from "./containers/auth/forgot_password";
 import ResetPassword from "./containers/auth/reset_password";
 import Resend from "./containers/auth/resend";
 import ConfirmEmail from "./containers/auth/confirm-email";
+import Festival from "./containers/auth/register/festival";
 
 // Import user related Pages
 import Profile from "./containers/user/profile/index";
@@ -64,11 +67,17 @@ class Routes extends React.Component {
           <Route exact path="/home" component={RequireAuth(HomePage)} />
           <Route exact path="/library" component={RequireAuth(Library)} />
           <Route exact path="/videos/:media_id" component={VideoDetail} />
+          <Route
+            exact
+            path="/videos/player/:media_id"
+            component={VideoPlayer}
+          />
           <Route exact path="/search" component={RequireAuth(SearchVideo)} />
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/logout" component={Logout} />
+          <Route path="/welcome" component={RequireAuth(Welcome)} />
           <Route path="/forgot-password/:mode" component={ForgotPassword} />
           <Route
             path="/reset-password/:mode/:resetToken"
@@ -77,6 +86,7 @@ class Routes extends React.Component {
           <Route path="/resend" component={Resend} />
           <Route path="/email-verify/:mode/:token" component={ConfirmEmail} />
           <Route path="/profile" component={RequireAuth(Profile)} />
+          <Route path="/festival" component={Festival} />
 
           <Route path="/admin" component={RequireAuth(AdminDashboard)} />
           <Route path="/message" component={RequireAuth(MessageBox)} />

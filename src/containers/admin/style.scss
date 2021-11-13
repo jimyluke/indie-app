@@ -4,86 +4,118 @@
   border-radius: 20px;
 }
 
+.table-film-photo {
+  height: 40px;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 1px 1px 6px $orange;
+  }
+}
+
 .unresolved-report {
   background-color: #defafa;
 }
 
-.site-layout {
+.admin-box {
+  border-top: 1px solid $orange;
+  height: calc(100vh - 90px);
   overflow-y: auto;
-}
+  aside {
+    height: 100%;
+    overflow-y: auto;
+  }
+  .site-layout {
+    background: black;
+    overflow-y: auto;
 
-.message-box {
+    .ant-breadcrumb,
+    .ant-breadcrumb-separator {
+      color: $gray;
+      font-weight: 500;
+      & > span:last-child {
+        color: $gray-500;
+      }
+    }
+
+    .admin-main {
+      padding: 30px 20px;
+    }
+
+    .content-admin {
+      h5 {
+        color: $gray;
+      }
+      .card {
+        background: #242428;
+        table {
+          color: $gray;
+          td {
+            font-size: 14px;
+            max-width: 300px;
+          }
+          .video-table-desc {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 200px;
+          }
+          th.sortable {
+            cursor: pointer;
+            span {
+              font-size: 18px;
+            }
+            .caret-4-desc:before {
+              margin-left: 3.5px;
+              content: "\2191";
+              opacity: 0.4;
+            }
+            .caret-4-desc:after {
+              content: "\2193";
+            }
+            .caret-4-asc:before {
+              margin-left: 3.5px;
+              content: "\2191";
+            }
+            .caret-4-asc:after {
+              content: "\2193";
+              opacity: 0.4;
+            }
+            .order-4 {
+              -ms-flex-order: 4;
+              order: 4;
+              &::after {
+                content: "\2193";
+                opacity: 0.4;
+              }
+              &::before {
+                margin-left: 3.5px;
+                content: "\2191";
+                opacity: 0.4;
+              }
+            }
+          }
+        }
+        input.form-control {
+          background: #111;
+          border: none;
+          color: $gray;
+          box-shadow: none;
+          font-weight: 400;
+        }
+      }
+    }
+  }
   .ant-tabs-bar {
     border-bottom: 1px solid #ddd;
   }
-  
+
   .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
     border-color: #ddd;
   }
   .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
     border-bottom: 0;
   }
-}
-
-.admin-const {
-  padding-top: 10px;
-  min-height: 60vh;
-  
-  .const-block {
-    margin-top: 20px;
-    margin-bottom: 50px;
-
-    .const-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
-    }
-
-    .const-label {
-      margin-left: 10px;
-    }
-
-    .const-field {
-      min-height: 100px;
-      background: white;
-      border: 2px inset #ccc;
-      padding: 10px;
-
-      .ant-tag {
-        margin-bottom: 7px;
-      }
-    }
-    .add-box {
-      display: flex;
-      width: 400px;
-    }
-  }
-
-  .profile-add-section {
-    margin-top: 50px;
-    display: flex;
-    max-width: 500px;
-  }
-
-  .profile-form-item {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-
-    .anticon {
-      font-size: 1.2rem;
-      color: #777;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    input, button {
-      width: 80%;
-      max-width: 350px;
-    }
-  }
-
 }
 
 .column-btn {
@@ -109,45 +141,6 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
-  }
-}
-
-.admin-list-column {
-  display: flex;
-
-  .list-box {
-    margin-left: 50px;
-
-    .ant-radio-wrapper {
-      margin-right: 50px;
-    }
-
-    .list-column-box {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 300px;
-      height: 200px;
-      background-color: $gray-300;
-
-      .row {
-        width: 96%;
-      }
-
-      .col {
-        padding-left: 5px;
-        padding-right: 5px;
-
-      }
-
-      .list-tile {
-        width: 100%;
-        height: 100px;
-        background-color: white;
-        border-radius: 10px;
-      }
-    }
   }
 }
 

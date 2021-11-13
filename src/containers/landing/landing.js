@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LandingHeader from "./landing_header";
+import SignupForm from "./signup_form";
 
 class HomePage extends Component {
   render() {
@@ -11,7 +12,7 @@ class HomePage extends Component {
           <div className="container">
             <div className="video_wrap">
               <img
-                src={require("../../assets/images/landing/video_screen.png")}
+                src={require("../../assets/images/landing/video_screen.webp")}
                 className="img-fluid"
                 alt=""
               />
@@ -76,14 +77,14 @@ class HomePage extends Component {
 
                 <div className="mockup_image">
                   <img
-                    src={require("../../assets/images/landing/mock_up1.png")}
+                    src={require("../../assets/images/landing/mock_up1.webp")}
                     className="img-fluid"
                     alt=""
                   />
                 </div>
                 <div className="mockup_mobile">
                   <img
-                    src={require("../../assets/images/landing/mock_up2.png")}
+                    src={require("../../assets/images/landing/mock_up2.webp")}
                     className="img-fluid"
                     alt=""
                   />
@@ -119,14 +120,14 @@ class HomePage extends Component {
                 <div className="images">
                   <div className="image_1 single_image">
                     <img
-                      src={require("../../assets/images/landing/dan-senior.png")}
+                      src={require("../../assets/images/landing/dan-senior.webp")}
                       className="img-fluid"
                       alt=""
                     />
                   </div>
                   <div className="image_2 single_image">
                     <img
-                      src={require("../../assets/images/landing/william-rouse.png")}
+                      src={require("../../assets/images/landing/william-rouse.webp")}
                       className="img-fluid"
                       alt=""
                     />
@@ -316,88 +317,7 @@ class HomePage extends Component {
                 </div>
 
                 <div className="form_wrap">
-                  <div className="sign_up_methods">
-                    <form action="">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          placeholder="Full Name"
-                          className="form-control"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          placeholder="Email"
-                          className="form-control"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <div className="input_icon">
-                          <input
-                            type="password"
-                            placeholder="Password"
-                            className="form-control"
-                          />
-                          <i className="fas fa-eye-slash"></i>
-                        </div>
-                      </div>
-                      <div className="submit_button">
-                        <button type="button" className="btn sign_up_button">
-                          SIGN UP
-                        </button>
-                      </div>
-                    </form>
-
-                    <div className="or">
-                      <h6>or</h6>
-                    </div>
-
-                    <div className="alter_login">
-                      <ul>
-                        <li className="facebook">
-                          <Link to="#">
-                            <i className="fab fa-facebook"></i> Log in with
-                            Facebook
-                          </Link>
-                        </li>
-                        <li className="google">
-                          <Link to="#">
-                            <img
-                              src={require("../../assets/images/landing/google_icon.png")}
-                              className="img-fluid"
-                              alt=""
-                            />{" "}
-                            Log in with Google
-                          </Link>
-                        </li>
-                        <li className="twitter">
-                          <Link to="#">
-                            <i className="fab fa-twitter"></i> Log in with
-                            TWITTER
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="alert_texts">
-                      <p>
-                        By signing up you accept the{" "}
-                        <Link to="#">Terms of Service</Link> and{" "}
-                        <Link to="#">Privacy Policy</Link>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="type_form">
-                <div className="type_image">
-                  <img
-                    src={require("../../assets/images/landing/typeform.png")}
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <SignupForm />
                 </div>
               </div>
             </div>

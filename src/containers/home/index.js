@@ -4,13 +4,21 @@ import Hero from "./hero";
 import SliderWrapper from "../../components/video/slider-wrapper";
 import { Header, Footer } from "../../components/template";
 import { Container } from "reactstrap";
-import { filterVideoByGenre } from "../../actions/jwplayer";
+import { filterVideoByGenre, fetchJWVideos } from "../../actions/jwplayer";
 
 class HomePage extends Component {
+  componentDidMount = () => {
+    const { fetchJWVideos, jwplayer } = this.props;
+    const allvideos = jwplayer.all_videos;
+    if (allvideos.length === 0) {
+      fetchJWVideos();
+    }
+  };
+
   render() {
     const { filterVideoByGenre, jwplayer } = this.props;
-    const featuredFilms = filterVideoByGenre("Horror");
     const justAddedFilms = jwplayer.all_videos;
+    const featuredFilms = justAddedFilms.filter((flm) => flm.featured);
     const actionFilms = filterVideoByGenre("Action");
     const mysteryFilms = filterVideoByGenre("Mystery");
     return (
@@ -60,4 +68,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { filterVideoByGenre })(HomePage);
+export default connect(mapStateToProps, { filterVideoByGenre, fetchJWVideos })(
+  HomePage
+);

@@ -86,7 +86,7 @@
 }
 
 .profile-filmbox {
-  background-image: url("../../assets/images/general/main-bg.png");
+  background-image: url("../../assets/images/general/main-bg.webp");
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -154,11 +154,16 @@
   }
   .slide-footer {
     position: relative;
-    margin: 15px;
+    margin: 15px 10px;
+    width: 100%;
     .title {
+      width: 100%;
       font-weight: 600;
       font-size: 16px;
-      margin-bottom: 0px;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       @media (max-width: 767.98px) {
         font-size: 14px;
       }

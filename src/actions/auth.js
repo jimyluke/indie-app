@@ -7,6 +7,7 @@ import {
   RESET_PASSWORD_REQUEST,
   FETCH_USER,
   FORGOT_PASSWORD_REQUEST,
+  SET_SIGNUP_DATA,
 } from "./types";
 import history from "../history";
 import { setMessageUserId } from "./message";
@@ -30,7 +31,7 @@ export function loginUser({ email, password }) {
         dispatch({ type: AUTH_USER });
         dispatch({ type: FETCH_USER, payload: user });
         setMessageUserId({ userId: user._id })(dispatch);
-        history.push("/home");
+        history.push("/welcome");
       }
     } catch (err) {
       createNotification("Login Failed", errorMessage(err));
@@ -178,5 +179,12 @@ export function resendVerification() {
     axios.post(`${API_URL}/auth/resend`, vrf).catch((err) => {
       createNotification("Resend", errorMessage(err));
     });
+  };
+}
+
+export function setSignUpData(values) {
+  return (dispatch) => {
+    dispatch({ type: SET_SIGNUP_DATA, payload: values });
+    history.push("/register");
   };
 }

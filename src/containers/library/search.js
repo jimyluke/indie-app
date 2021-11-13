@@ -28,7 +28,7 @@ class Search extends Component {
   renderFilmItem = (data) => (
     <div className="video-card wide-card">
       <img
-        src={`https://cdn.jwplayer.com/thumbs/${data.key}-720.jpg`}
+        src={data.custom.cover}
         alt="video preview"
         className="default-slide"
         onClick={() => this.goToVideo(data.key)}
@@ -56,7 +56,7 @@ class Search extends Component {
 
   render() {
     const { jwplayer, filterVideoByGenre } = this.props;
-    const trendingFilms = filterVideoByGenre("Horror");
+    const trendingFilms = filterVideoByGenre("Kids");
     const searchFilms = jwplayer.search_videos;
     return (
       <React.Fragment>

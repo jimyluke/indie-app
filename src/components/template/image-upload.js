@@ -10,6 +10,7 @@ import {
   LoadingOutlined,
   CloudUploadOutlined,
   SyncOutlined,
+  DeleteOutlined,
 } from "@ant-design/icons";
 
 const config = {
@@ -23,13 +24,14 @@ const beforeUpload = (file) => {
   const isJpgOrPngOrGif =
     file.type === "image/jpeg" ||
     file.type === "image/png" ||
+    file.type === "image/webp" ||
     file.type === "image/gif";
   if (!isJpgOrPngOrGif) {
-    message.error("You can only upload JPG/PNG/GIF file!");
+    message.error("You can only upload JPG/PNG/WEBP/GIF file!");
   }
   const isLt2M = file.size / 1024 / 1024 < 20;
   if (!isLt2M) {
-    message.error("Image must smaller than 2MB!");
+    message.error("Image must smaller than 20MB!");
   }
   return isJpgOrPngOrGif && isLt2M;
 };
@@ -104,8 +106,14 @@ class Avatar extends React.Component {
       });
   };
 
+  onDelete = (e) => {
+    this.setState({ imageUrl: "" });
+    this.props.onChange("");
+    e.stopPropagation();
+  };
+
   render() {
-    const { label, cover } = this.props;
+    const { label, cover, disabled } = this.props;
     const uploadButton = (
       <div>
         {this.state.loading ? <LoadingOutlined /> : <CloudUploadOutlined />}
@@ -123,13 +131,19 @@ class Avatar extends React.Component {
         showUploadList={false}
         beforeUpload={beforeUpload}
         data={this.handleChange}
+        disabled={disabled}
       >
         {imageUrl ? (
           <React.Fragment>
             <img src={imageUrl} alt="avatar" style={{ width: "85%" }} />
-            {cover && (
+            {cover === "delete" && (
+              <span className="upload-cover" onClick={this.onDelete}>
+                <DeleteOutlined /> &nbsp; {cover}
+              </span>
+            )}
+            {cover && cover !== "delete" && (
               <span className="upload-cover">
-                <SyncOutlined />&nbsp; {cover}
+                <SyncOutlined /> &nbsp; {cover}
               </span>
             )}
           </React.Fragment>

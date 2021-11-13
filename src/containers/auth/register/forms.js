@@ -151,7 +151,6 @@ export const Form5 = ({ onSubmit, state }) => {
   return (
     <div className="register-form">
       <h2>Please enter your username</h2>
-      <span>Lorem Ipsum</span>
       <Form
         name="username-input"
         className="mt-5"
@@ -285,7 +284,7 @@ export const Form7 = ({ onSubmit, onSkip, state }) => {
         >
           <Input
             size="large"
-            placeholder="Puop fiction, Notebook..."
+            placeholder="Pop fiction, Notebook..."
             className="material-input"
           />
         </Form.Item>

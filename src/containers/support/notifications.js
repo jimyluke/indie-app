@@ -4,7 +4,7 @@ import { Form, Switch, Button } from "antd";
 
 function Notifications(props) {
   return (
-    <>
+    <Form>
       <Row>
         <Col md={12} sm={12} className="support-title support-center">
           NOTIFICATIONS
@@ -15,7 +15,7 @@ function Notifications(props) {
           <div className="support-notify-item">
             <p className="support-notify-center">Email Notification</p>
             <Form.Item className="support-notify-center">
-              <Switch checked />
+              <Switch />
             </Form.Item>
           </div>
           <div className="support-notify-item">
@@ -27,7 +27,7 @@ function Notifications(props) {
           <div className="support-notify-item">
             <p className="support-notify-center">Watched Movie Updates</p>
             <Form.Item className="support-notify-center">
-              <Switch checked />
+              <Switch />
             </Form.Item>
           </div>
           <div className="support-notify-item">
@@ -47,7 +47,18 @@ function Notifications(props) {
             eli gendi ad omnis sim il ique lorem.
           </p>
         </Col>
-        <Col className="support-btn-footer d-md-none" xs={12} md={12} sm={12} lg={12} style={{display:'flex',justifyContent:'center', paddingTop:'30px'}}>
+        <Col
+          className="support-btn-footer d-md-none"
+          xs={12}
+          md={12}
+          sm={12}
+          lg={12}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            paddingTop: "30px",
+          }}
+        >
           <Button
             type="primary"
             shape="round"
@@ -58,7 +69,7 @@ function Notifications(props) {
           </Button>
         </Col>
       </Row>
-    </>
+    </Form>
   );
 }
 

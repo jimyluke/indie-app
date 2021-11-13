@@ -64,13 +64,17 @@ class HeaderTemplate extends Component {
   };
 
   renderNavs = () => {
-    const { isAdmin } = this.props;
     return (
       <div className="nav-items">
         <Link to="/home">Home</Link>
-        <Link to="#">Film</Link>
-        <Link to="#">Discord</Link>
-        {isAdmin && <Link to="/admin">Admin</Link>}
+        <Link to="/library">Library</Link>
+        <a
+          href="https://discord.gg/uG8UZbxMAR"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discord
+        </a>
       </div>
     );
   };
@@ -99,7 +103,7 @@ class HeaderTemplate extends Component {
   );
 
   render = () => {
-    const { authenticated, currentUser } = this.props;
+    const { authenticated, currentUser, isAdmin } = this.props;
     const { isOpen, searchOpen } = this.state;
 
     if (!authenticated) {
@@ -142,6 +146,18 @@ class HeaderTemplate extends Component {
               <DropdownItem>
                 <Link className="nav-link" to={"/profile"}>
                   My Profile
+                </Link>
+              </DropdownItem>
+              {isAdmin && (
+                <DropdownItem>
+                  <Link className="nav-link" to={"/admin"}>
+                    Admin
+                  </Link>
+                </DropdownItem>
+              )}
+              <DropdownItem>
+                <Link className="nav-link" to={"/support"}>
+                  Setting
                 </Link>
               </DropdownItem>
               <DropdownItem>

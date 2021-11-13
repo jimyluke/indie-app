@@ -25,11 +25,11 @@ class Register extends Component {
     this.state = {
       step: 1,
       card: "creator",
-      full_name: "",
+      full_name: props.signup_data.full_name || "",
       dob: "",
-      email: "",
+      email: props.signup_data.email || "",
       username: "",
-      password: "",
+      password: props.signup_data.password || "",
       films: "",
     };
   }
@@ -58,15 +58,15 @@ class Register extends Component {
 
   onGoBack = () => {
     const { step, card } = this.state;
-    let target = step - 1
-    if (step === 9 && card !== "creator") target = 7
+    let target = step - 1;
+    if (step === 9 && card !== "creator") target = 7;
     this.setState({ step: target });
   };
 
   onSkip = () => {
     const { step, card } = this.state;
-    let target = step + 1
-    if (step === 7 && card !== "creator") target = 9
+    let target = step + 1;
+    if (step === 7 && card !== "creator") target = 9;
     this.setState({ step: target });
   };
 
@@ -96,7 +96,7 @@ class Register extends Component {
 
   onSetFilms = (films) => {
     const { card } = this.state;
-    this.setState({ films, step: card === "creator" ? 8 : 9});
+    this.setState({ films, step: card === "creator" ? 8 : 9 });
   };
 
   onFileUpload = () => {
@@ -171,6 +171,7 @@ function mapStateToProps(state) {
   return {
     authenticated: state.auth.authenticated,
     fields: state.profile,
+    signup_data: state.auth.signup,
   };
 }
 

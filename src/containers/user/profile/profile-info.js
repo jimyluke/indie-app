@@ -78,7 +78,7 @@ class ProfileInfo extends Component {
                 </div>
               )}
               <div className="user-info-value">
-                <b>Favorite films</b>
+                <b>Films that Define me</b>
                 <span>{userInfo.films}</span>
               </div>
               {isCreator && (

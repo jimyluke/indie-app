@@ -141,7 +141,7 @@ const EditForm = ({ onSubmit, profile, onClose, isCreator }) => {
             </div>
           )}
           <div className="user-info-value">
-            <b>Favorite films</b>
+            <b>Films that Define me</b>
             <Form.Item name="films">
               <Input
                 size="large"

@@ -65,7 +65,7 @@
           height: 600px;
           object-fit: cover;
           opacity: 0.8;
-          object-position: right;
+          object-position: center;
         }
         @media (max-width: 767.98px) {
           height: 88vh;
@@ -105,15 +105,13 @@
           display: flex;
           align-items: center;
 
-          a {
-            // Using global text-gradient mixin
-            @include text-gradient(
-              linear-gradient(95.35deg, #ffc450 -38.07%, #ff7e3e 157.57%)
-            );
-            font-size: 16px;
-            line-height: 21px;
-            font-weight: 600;
-          }
+          // Using global text-gradient mixin
+          @include text-gradient(
+            linear-gradient(95.35deg, #ffc450 -38.07%, #ff7e3e 157.57%)
+          );
+          font-size: 16px;
+          line-height: 21px;
+          font-weight: 600;
         }
 
         .description {
@@ -132,16 +130,28 @@
 
         &-action {
           text-transform: uppercase;
-
+          .material-btn {
+            padding: 14px 40px;
+            background-color: #ef854e;
+          }
           button {
             width: 130px;
             height: 46px;
-
+            font-weight: 600;
             @media (max-width: 767.98px) {
               width: 90px;
               height: 35px;
               font-weight: bold;
-              font-size: 10px;
+              font-size: 12px;
+            }
+          }
+          @media (max-width: 767.98px) {
+            button {
+              font-size: 12px;
+            }
+            .material-btn {
+              padding: 10px 30px;
+              font-size: 12px;
             }
           }
         }
@@ -251,45 +261,75 @@
           width: 100%;
           border-radius: $border-radius-base;
           margin: 3px;
+          height: 140px;
           &:hover {
             box-shadow: 1px 2px 7px $orange;
+          }
+          @media (max-width: 1180px) {
+            height: 130px;
+          }
+          @media (max-width: 560px) {
+            height: 100px;
+          }
+        }
+
+        &.featured {
+          img {
+            height: 270px;
+            @media (max-width: 1180px) {
+              height: 260px;
+            }
+            @media (max-width: 975px) {
+              height: 160px;
+            }
+            @media (max-width: 560px) {
+              height: 100px;
+            }
           }
         }
 
         .slide-footer {
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          align-items: flex-end;
           color: white;
-          padding: 4% 6%;
+          padding: 4% 3%;
 
           &__content {
+            width: 100%;
             .title {
               font-weight: 600;
-              font-size: 20px;
-              line-height: 20px;
+              font-size: 16px;
+              line-height: 16px;
               letter-spacing: 0.18px;
+              margin-bottom: 10px;
+              margin-top: 5px;
+              width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
 
               @media (max-width: 767.98px) {
                 font-weight: 600;
                 font-size: 11px;
                 line-height: 20px;
                 letter-spacing: 0.18px;
-                margin-bottom: 2px;
+                margin-bottom: 5px;
               }
             }
             .description {
-              font-size: 14px;
+              font-size: 13px;
               line-height: 14px;
               letter-spacing: 0.18px;
               font-style: normal;
+              margin-bottom: 3px;
 
               @media (max-width: 767.98px) {
                 font-weight: normal;
                 font-size: 10px;
                 line-height: 14px;
                 letter-spacing: 0.18px;
-                margin-bottom: 2px;
+                margin-bottom: 0;
               }
             }
           }
@@ -317,7 +357,7 @@
   }
 
   &-background_block {
-    background-image: url("../../assets/images/homepage/background.png");
+    background-image: url("../../assets/images/homepage/background.webp");
     background-position: center;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);

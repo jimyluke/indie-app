@@ -1,12 +1,11 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import { Form, Input, Select, Spin } from "antd";
-import { DeleteOutlined, Loading3QuartersOutlined } from "@ant-design/icons";
+import { Loading3QuartersOutlined } from "@ant-design/icons";
 import { Col, Row } from "reactstrap";
 import { ImageUpload } from "../../../components/template";
 import { updateVideo, fetchMyVideos } from "../../../actions/jwplayer";
 import { genres } from "../../../constants";
-import { Link } from "react-router-dom";
 import { durationFormatter } from "../../../utils/helper";
 
 const EditForm = ({ onSubmit, onClose, data }) => {
@@ -33,6 +32,9 @@ const EditForm = ({ onSubmit, onClose, data }) => {
     director: data.metadata.custom_params.director,
     award: data.metadata.custom_params.award,
     release_date: data.metadata.custom_params.release_date,
+    cover: data.metadata.custom_params.cover,
+    trivia: data.metadata.custom_params.trivia,
+    video: `https://cdn.jwplayer.com/thumbs/${data.id}-720.jpg`,
   };
 
   const loadingIcon = (
@@ -47,9 +49,6 @@ const EditForm = ({ onSubmit, onClose, data }) => {
     >
       <h5>
         <b>Update the details</b>
-        <Link to="#" onClick={() => {}} className="video-delete-box">
-          <DeleteOutlined /> delete
-        </Link>
       </h5>
       <Row className="mt-4">
         <Col md={6} sm={12}>
@@ -87,32 +86,75 @@ const EditForm = ({ onSubmit, onClose, data }) => {
           <Form.Item name="duration">
             <Input size="large" />
           </Form.Item>
-          <span className="form-label">Director</span>
-          <Form.Item name="director">
-            <Input size="large" />
-          </Form.Item>
-          <span className="form-label">Cast</span>
-          <Form.Item name="cast">
-            <Input.TextArea rows={5} size="large" />
-          </Form.Item>
-        </Col>
-        <Col md={6} sm={12}>
           <span className="form-label">Release Date</span>
           <Form.Item name="release_date">
             <Input size="large" />
           </Form.Item>
-          <span className="form-label">Description</span>
-          <Form.Item name="description">
-            <Input.TextArea rows={8} size="large" />
+          <span className="form-label">Director</span>
+          <Form.Item name="director">
+            <Input size="large" />
           </Form.Item>
-          <div className="edit-award-box">
-            <Form.Item name="award">
-              <ImageUpload
-                label="Browse your award to upload"
-                cover="change award"
-              />
-            </Form.Item>
-          </div>
+        </Col>
+        <Col md={6} sm={12}>
+          <span className="form-label">Cast</span>
+          <Form.Item name="cast">
+            <Input.TextArea rows={4} size="large" />
+          </Form.Item>
+          <span className="form-label">Film Description (max 450 symbols)</span>
+          <Form.Item
+            name="description"
+            rules={[
+              {
+                max: 450,
+                message: "Value should be less than 450 character",
+              },
+            ]}
+          >
+            <Input.TextArea rows={4} size="large" />
+          </Form.Item>
+          <span className="form-label">Trivia Fact (max 160 symbols)</span>
+          <Form.Item
+            name="trivia"
+            rules={[
+              {
+                max: 160,
+                message: "Value should be less than 160 character",
+              },
+            ]}
+          >
+            <Input.TextArea rows={3} size="large" />
+          </Form.Item>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={4} sm={6} xs={12}>
+          <span className="form-label">Film</span>
+          <Form.Item name="video">
+            <ImageUpload label="Browse your cover to upload" disabled />
+          </Form.Item>
+        </Col>
+        <Col md={4} sm={6} xs={12}>
+          <span className="form-label">Cover</span>
+          <Form.Item
+            name="cover"
+            rules={[
+              {
+                required: true,
+                message: "Cover image is requried!",
+              },
+            ]}
+          >
+            <ImageUpload
+              label="Browse your cover to upload"
+              cover="change cover"
+            />
+          </Form.Item>
+        </Col>
+        <Col md={4} sm={6} xs={12}>
+          <span className="form-label">Award</span>
+          <Form.Item name="award">
+            <ImageUpload label="Browse your award to upload" cover="delete" />
+          </Form.Item>
         </Col>
       </Row>
       <div className="m-flex mt-4 mb-4">

@@ -66,40 +66,80 @@ const UploadForm = ({ onSubmit, onClose }) => {
           <Form.Item name="duration">
             <Input size="large" />
           </Form.Item>
-          <span className="form-label">Director</span>
-          <Form.Item name="director">
-            <Input size="large" />
-          </Form.Item>
-          <span className="form-label">Cast</span>
-          <Form.Item name="cast">
-            <Input.TextArea rows={5} size="large" />
-          </Form.Item>
-        </Col>
-        <Col md={6} sm={12}>
           <span className="form-label">Release Date</span>
           <Form.Item name="release_date">
             <Input size="large" />
           </Form.Item>
-          <span className="form-label">Description</span>
-          <Form.Item name="description">
-            <Input.TextArea rows={8} size="large" />
+          <span className="form-label">Director</span>
+          <Form.Item name="director">
+            <Input size="large" />
           </Form.Item>
-          <div className="upload-box">
-            <Form.Item
-              name="video"
-              rules={[
-                {
-                  required: true,
-                  message: "Video file is requried!",
-                },
-              ]}
-            >
-              <VideoUpload label="Browse your film to upload" />
-            </Form.Item>
-            <Form.Item name="award">
-              <ImageUpload label="Browse your award to upload" />
-            </Form.Item>
-          </div>
+        </Col>
+        <Col md={6} sm={12}>
+          <span className="form-label">Cast</span>
+          <Form.Item name="cast">
+            <Input.TextArea rows={4} size="large" />
+          </Form.Item>
+          <span className="form-label">Film Description (max 450 symbols)</span>
+          <Form.Item
+            name="description"
+            rules={[
+              {
+                max: 450,
+                message: "Value should be less than 450 character",
+              },
+            ]}
+          >
+            <Input.TextArea rows={4} size="large" />
+          </Form.Item>
+          <span className="form-label">Trivia Fact (max 160 symbols)</span>
+          <Form.Item
+            name="trivia"
+            rules={[
+              {
+                max: 160,
+                message: "Value should be less than 160 character",
+              },
+            ]}
+          >
+            <Input.TextArea rows={3} size="large" />
+          </Form.Item>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={4} sm={6} xs={12}>
+          <span className="form-label">Film</span>
+          <Form.Item
+            name="video"
+            rules={[
+              {
+                required: true,
+                message: "Video file is requried!",
+              },
+            ]}
+          >
+            <VideoUpload label="Browse your film to upload" />
+          </Form.Item>
+        </Col>
+        <Col md={4} sm={6} xs={12}>
+          <span className="form-label">Cover</span>
+          <Form.Item
+            name="cover"
+            rules={[
+              {
+                required: true,
+                message: "Cover image is requried!",
+              },
+            ]}
+          >
+            <ImageUpload label="Browse your cover to upload" />
+          </Form.Item>
+        </Col>
+        <Col md={4} sm={6} xs={12}>
+          <span className="form-label">Award</span>
+          <Form.Item name="award">
+            <ImageUpload label="Browse your award to upload" />
+          </Form.Item>
         </Col>
       </Row>
 

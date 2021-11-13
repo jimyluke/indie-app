@@ -57,7 +57,7 @@ const LoginForm = ({ onSubmit }) => {
       <button type="submit" className="material-btn-rectangle mt-4">
         Login
       </button>
-      <div className="mt-3 center" style={{color: "#aaa"}}>
+      <div className="mt-3 center" style={{ color: "#aaa" }}>
         Don't have an account?{" "}
         <Link to="/register" className="forgot">
           Sign up
@@ -69,7 +69,8 @@ const LoginForm = ({ onSubmit }) => {
       </div>
       <div className="login-social-btns">
         <Button type="primary" size="large">
-          <img src={FacebookIcon} alt="" className="mr-2" /> Log in with facebook
+          <img src={FacebookIcon} alt="" className="mr-2" /> Log in with
+          facebook
         </Button>
         <Button type="ghost" size="large">
           <img src={GoogleIcon} alt="" />
@@ -79,8 +80,8 @@ const LoginForm = ({ onSubmit }) => {
         </Button>
       </div>
       <p className="login-bottom">
-        By signing up you accept the <Link to="#">Terms of Service</Link> and{" "}
-        <Link to="#">Privacy Policy</Link>
+        By signing up you accept the <Link to="/terms">Terms of Service</Link>{" "}
+        and <Link to="/privacy">Privacy Policy</Link>
       </p>
     </Form>
   );

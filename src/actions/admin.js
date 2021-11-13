@@ -127,15 +127,21 @@ function processParticipants(participants) {
   let result = [],
     k = 0;
   for (let pt of participants) {
+    if (!pt.verified) continue;
     result.push({
       id: k,
       _id: pt._id,
       email: pt.email,
-      name: pt.profile.full_name,
+      username: pt.username,
+      full_name: pt.profile.full_name,
       photo: pt.profile.photo,
-      phone: pt.profile.phone,
-      country: pt.profile.country,
-      verified: pt.verified,
+      language: pt.profile.language,
+      location: pt.profile.location,
+      pronouns: pt.profile.pronouns,
+      films: pt.profile.films,
+      instagram: pt.profile.instagram,
+      twitter: pt.profile.twitter,
+      youtube: pt.profile.youtube,
       role: pt.role,
     });
     k++;

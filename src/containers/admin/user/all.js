@@ -11,57 +11,32 @@ import ToolkitProvider, {
   CSVExport,
 } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import { Skeleton, Modal } from "antd";
+import { Skeleton } from "antd";
 import sampleUrl from "../../../assets/images/general/user-avatar.png";
-import ColumnRole from "./column_role";
 import AdminAction from "../admin_action";
-import UserProfile from "./user-edit";
+import TwitterIcon from "../../../assets/images/general/twitter_icon.svg";
+import YoutubeIcon from "../../../assets/images/general/youtube_icon.svg";
+import InstagramIcon from "../../../assets/images/general/instram_icon.svg";
 
 class Participants extends Component {
-  _isMounted = false;
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: false,
-      visible: false,
-      userid: "",
-    };
-  }
-
-  showModal = (userid) => {
-    this.setState({
-      visible: true,
-      userid,
-    });
-  };
-
-  hideModal = () => {
-    this.setState({
-      visible: false,
-      userid: "",
-    });
+  state = {
+    loading: false,
+    userid: "",
   };
 
   componentDidMount = async () => {
     const { listAdminParticipants } = this.props;
-    this._isMounted = true;
     this.setState({ loading: true });
     await listAdminParticipants();
-    if (!this._isMounted) return;
     this.setState({ loading: false });
   };
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
 
   deleteParticipant(userid) {
     this.props.deleteParticipant(userid);
   }
 
   render() {
-    const { admin, isSuper } = this.props;
+    const { admin } = this.props;
     const participants = admin.participants || [];
     const { loading } = this.state;
     const { SearchBar } = Search;
@@ -102,17 +77,29 @@ class Participants extends Component {
       return <img className="table-photo" src={cell || sampleUrl} alt="" />;
     };
 
-    const roleFormatter = (cell, row) => {
-      if (!isSuper) return cell;
-      return <ColumnRole cell={cell} row={row} />;
+    const adminFormatter = (cell, row) => {
+      return <AdminAction onDelete={() => this.deleteParticipant(row._id)} />;
     };
 
-    const adminFormatter = (cell, row) => {
+    const socialFormatter = (cell, row) => {
       return (
-        <AdminAction
-          onEdit={() => this.showModal(row._id)}
-          onDelete={() => this.deleteParticipant(row._id)}
-        />
+        <div className="flex">
+          {row.youtube && (
+            <a href={row.youtube} target="_blank" rel="noopener noreferrer">
+              <img className="mr-2" src={YoutubeIcon} alt="" />
+            </a>
+          )}
+          {row.twitter && (
+            <a href={row.twitter} target="_blank" rel="noopener noreferrer">
+              <img className="mr-2" src={TwitterIcon} alt="" />
+            </a>
+          )}
+          {row.instagram && (
+            <a href={row.instagram} target="_blank" rel="noopener noreferrer">
+              <img className="mr-2" src={InstagramIcon} alt="" />
+            </a>
+          )}
+        </div>
       );
     };
 
@@ -123,25 +110,33 @@ class Participants extends Component {
         formatter: photoFormatter,
       },
       {
-        dataField: "name",
-        text: "Name",
+        dataField: "full_name",
+        text: "Full Name",
+      },
+      {
+        dataField: "username",
+        text: "Username",
       },
       {
         dataField: "email",
         text: "Email",
       },
       {
-        dataField: "country",
-        text: "Country",
-      },
-      {
         dataField: "role",
         text: "Site Role",
-        formatter: roleFormatter,
       },
       {
-        dataField: "verified",
-        text: "Verified",
+        dataField: "location",
+        text: "Location",
+      },
+      {
+        dataField: "twitter",
+        text: "Social",
+        formatter: socialFormatter,
+      },
+      {
+        dataField: "films",
+        text: "Films that Define user",
       },
       {
         dataField: "",
@@ -200,20 +195,6 @@ class Participants extends Component {
                 </ToolkitProvider>
               </CardBody>
             </Card>
-            <Modal
-              title={`User Profile`}
-              visible={this.state.visible}
-              width={800}
-              footer={false}
-              onCancel={this.hideModal}
-            >
-              {this.state.userid && (
-                <UserProfile
-                  id={this.state.userid}
-                  hideModal={this.hideModal}
-                />
-              )}
-            </Modal>
           </Col>
         </Row>
       </div>
@@ -224,7 +205,6 @@ class Participants extends Component {
 function mapStateToProps(state) {
   return {
     admin: state.admin,
-    isSuper: state.user.isSuper,
   };
 }
 

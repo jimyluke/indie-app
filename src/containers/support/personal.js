@@ -1,73 +1,113 @@
-import React, { useState } from "react";
-import { Row, Col} from "reactstrap";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Row, Col } from "reactstrap";
 import "react-phone-input-2/lib/style.css";
-import { Modal, Button } from "antd";
+import { Modal, Button, Popconfirm } from "antd";
+import sampleUrl from "../../assets/images/general/user-avatar.png";
+import ProfileForm from "../user/profile/profile-form";
 
-import avatar from "../../assets/images/supportpage/avar.png";
-
-function Personal() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => {
-    setIsModalVisible(true);
+class Personal extends Component {
+  state = {
+    showEditModal: false,
   };
-  const handleCancel = () => {
-    setIsModalVisible(false);
+
+  toggleModal = () => {
+    this.setState({ showEditModal: !this.state.showEditModal });
   };
-  return (
-    <div className="support-personal">
-      <Row className="support-center">
-        <Col md={12} sm={12} className="support-title">
-          PERSONAL INFORMATION
-        </Col>
-      </Row>
-      <Row className="support-pt3">
-        <Col md={12} sm={12} className="support-ava">
-          <img src={avatar} alt="avatar" />
-        </Col>
-        <Col md={12} sm={12} className="support-inf">
-          <div className="infor-name">Jane D. (She/Her)</div>
-          <div className="infor-address">New England, CA</div>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="support-btn-footer" xs={12} md={12} sm={12}>
+
+  render() {
+    const { user } = this.props;
+    const userInfo = user.profile || {};
+    const { showEditModal } = this.state;
+
+    return (
+      <div className="support-personal">
+        <Row className="support-center">
+          <Col md={12} sm={12} className="support-title">
+            PERSONAL INFORMATION
+          </Col>
+        </Row>
+        <Row className="support-pt3">
+          <Col md={12} sm={12} className="support-ava">
+            <img src={userInfo.photo || sampleUrl} alt="avatar" />
+          </Col>
+          <Col md={12} sm={12} className="support-inf">
+            <div className="infor-name">
+              {userInfo.full_name}
+              {userInfo.pronouns ? ` (${userInfo.pronouns})` : ""}
+            </div>
+            <div className="infor-address">{userInfo.location}</div>
+          </Col>
+        </Row>
+        <div className="m-flex center">
           <Button
             type="primary"
             shape="round"
             className="support-btn support-btn-save support-btn-update support-btn-personal"
             size="large"
+            onClick={this.toggleModal}
           >
             update personal details
           </Button>
-          <Button
-            type="primary"
-            shape="round"
-            className="support-btn support-btn-cancel support-btn-personal"
-            size="large"
-            onClick={showModal}
+          <Popconfirm
+            title="Are you sure delete this profile?"
+            onConfirm={() => {}}
+            okText="Yes"
+            cancelText="No"
           >
-            delete account
-          </Button>
-          <Modal visible={isModalVisible} onCancel={handleCancel}>
-            <div className="tick-box">
-              <div className="tick-box--sub">
-                <span className="checkmark">
-                  <div className="checkmark_stem"></div>
-                  <div className="checkmark_kick"></div>
-                </span>
+            <Button
+              type="primary"
+              shape="round"
+              className="support-btn support-btn-cancel support-btn-personal"
+              size="large"
+            >
+              delete account
+            </Button>
+          </Popconfirm>
+        </div>
+        {/* <Modal
+              visible={isModalVisible}
+              onCancel={handleCancel}
+              footer={false}
+              className="modal-with-shadow"
+              width={372}
+            >
+              <div className="tick-box">
+                <div className="tick-box--sub">
+                  <span className="checkmark">
+                    <div className="checkmark_stem"></div>
+                    <div className="checkmark_kick"></div>
+                  </span>
+                </div>
               </div>
+              <p className="text-notifi--main">Account deleted successfully!</p>
+              <p className="text-notifi--sub">
+                Your account will be logged out automatically
+              </p>
+            </Modal> */}
+        {showEditModal && (
+          <Modal
+            visible={showEditModal}
+            centered
+            width={1000}
+            footer={false}
+            closable={false}
+            className="modal-with-shadow"
+          >
+            <div className="support-profile">
+              <ProfileForm toggleEdit={this.toggleModal} />
             </div>
-            <p className="text-notifi--main">Account deleted successfully!</p>
-            <p className="text-notifi--sub">
-              Your account will be logged out automatically
-            </p>
           </Modal>
-        </Col>
-        <Col xs={0} md={6} sm={12} className="d-xs-none d-md-none d-lg-block" />
-      </Row>
-    </div>
-  );
+        )}
+      </div>
+    );
+  }
 }
 
-export default Personal;
+function mapStateToProps(state) {
+  return {
+    user: state.user.profile,
+  };
+}
+
+export default connect(mapStateToProps, {})(Personal);

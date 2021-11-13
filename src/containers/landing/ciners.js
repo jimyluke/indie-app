@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LandingHeader from "./landing_header";
+import SignupForm from "./signup_form";
 
 class HomePage extends Component {
   render() {
@@ -11,7 +12,7 @@ class HomePage extends Component {
           <div className="container">
             <div className="video_wrap">
               <img
-                src={require("../../assets/images/landing/video_screen.png")}
+                src={require("../../assets/images/landing/video_screen.webp")}
                 className="img-fluid"
                 alt=""
               />
@@ -81,14 +82,14 @@ class HomePage extends Component {
 
                 <div className="mockup_image">
                   <img
-                    src={require("../../assets/images/landing/mock_up1.png")}
+                    src={require("../../assets/images/landing/mock_up1.webp")}
                     className="img-fluid"
                     alt=""
                   />
                 </div>
                 <div className="mockup_mobile">
                   <img
-                    src={require("../../assets/images/landing/mock_up2.png")}
+                    src={require("../../assets/images/landing/mock_up2.webp")}
                     className="img-fluid"
                     alt=""
                   />
@@ -124,14 +125,14 @@ class HomePage extends Component {
                 <div className="images">
                   <div className="image_1 single_image">
                     <img
-                      src={require("../../assets/images/landing/august-de-richelieu.png")}
+                      src={require("../../assets/images/landing/august-de-richelieu.webp")}
                       className="img-fluid"
                       alt=""
                     />
                   </div>
                   <div className="image_2 single_image">
                     <img
-                      src={require("../../assets/images/landing/ekaterina-bolovtsova.png")}
+                      src={require("../../assets/images/landing/ekaterina-bolovtsova.webp")}
                       className="img-fluid"
                       alt=""
                     />
@@ -145,7 +146,7 @@ class HomePage extends Component {
                     </h2>
                   </div>
                   <div className="yellow_texts">
-                    <p>FILM FANATICS, BINGE WATCHERS, MOVIE</p>
+                    <p>FILM FANATICS, BINGE WATCHERS, MOVIE CONNOISSEURS</p>
                   </div>
                   <div className="para_texts">
                     <p>
@@ -158,7 +159,7 @@ class HomePage extends Component {
                     </p>
                   </div>
                   <div className="clickable_link">
-                    <Link to="#">Get Started</Link>
+                    <Link to="/register">Get Started</Link>
                   </div>
                   <div className="para_texts not_a_creator">
                     <p>
@@ -180,11 +181,11 @@ class HomePage extends Component {
               </div>
               <div className="para_texts">
                 <p>
-                  As a <span className="color">Creator</span>, you can opt to
-                  host monetized premiere parties, connect with fans through
-                  live streams in the Filmmakers’ Lounge, and meet other
-                  like-minded filmmakers. Did we mention you get to keep 80% of
-                  all your earnings?
+                  <span className="color">Ciners</span> can watch films with
+                  friends through Watch Parties, interact with their favorite
+                  Creators, and enjoy the social streaming experience with
+                  stories that are unique and diverse that can only be watched
+                  on INDIE
                 </p>
               </div>
 
@@ -220,14 +221,18 @@ class HomePage extends Component {
                 <div className="single_benefit">
                   <div className="icon">
                     <img
-                      src={require("../../assets/images/landing/make_money_icon.png")}
+                      src={require("../../assets/images/landing/connected.png")}
                       className="img-fluid"
+                      width="40"
                       alt=""
                     />
                   </div>
                   <div className="texts">
-                    <h5>Make Money</h5>
-                    <p>Simply upload your creation, and start earning! *</p>
+                    <h5>STAY CONNECTED</h5>
+                    <p>
+                      Сreate parties! Watch, share, discuss films with friends
+                      online!
+                    </p>
                   </div>
                 </div>
               </div>
@@ -323,78 +328,7 @@ class HomePage extends Component {
                 </div>
 
                 <div className="form_wrap">
-                  <div className="sign_up_methods">
-                    <form action="">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          placeholder="Full Name"
-                          className="form-control"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          placeholder="Email"
-                          className="form-control"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <div className="input_icon">
-                          <input
-                            type="password"
-                            placeholder="Password"
-                            className="form-control"
-                          />
-                          <i className="fas fa-eye-slash"></i>
-                        </div>
-                      </div>
-                      <div className="submit_button">
-                        <button type="button" className="btn sign_up_button">
-                          SIGN UP
-                        </button>
-                      </div>
-                    </form>
-
-                    <div className="or">
-                      <h6>or</h6>
-                    </div>
-
-                    <div className="alter_login">
-                      <ul>
-                        <li className="facebook">
-                          <Link to="#">
-                            <i className="fab fa-facebook"></i> Log in with
-                            Facebook
-                          </Link>
-                        </li>
-                        <li className="google">
-                          <Link to="#">
-                            <img
-                              src={require("../../assets/images/landing/google_icon.png")}
-                              className="img-fluid"
-                              alt=""
-                            />{" "}
-                            Log in with Google
-                          </Link>
-                        </li>
-                        <li className="twitter">
-                          <Link to="#">
-                            <i className="fab fa-twitter"></i> Log in with
-                            TWITTER
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="alert_texts">
-                      <p>
-                        By signing up you accept the{" "}
-                        <Link to="#">Terms of Service</Link> and{" "}
-                        <Link to="#">Privacy Policy</Link>
-                      </p>
-                    </div>
-                  </div>
+                  <SignupForm />
                 </div>
               </div>
 
@@ -607,7 +541,7 @@ class HomePage extends Component {
                 </h3>
               </div>
               <div className="clickable_link">
-                <Link to="#">Get Started</Link>
+                <Link to="/register">Get Started</Link>
               </div>
             </div>
           </div>

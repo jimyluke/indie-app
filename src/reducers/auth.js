@@ -5,6 +5,7 @@ import {
   FORGOT_PASSWORD_REQUEST,
   RESET_PASSWORD_REQUEST,
   PROTECTED_TEST,
+  SET_SIGNUP_DATA,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -12,6 +13,7 @@ const INITIAL_STATE = {
   message: "",
   content: "",
   authenticated: false,
+  signup: {},
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -28,6 +30,8 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, message: action.payload.message };
     case PROTECTED_TEST:
       return { ...state, content: action.payload.message };
+    case SET_SIGNUP_DATA:
+      return { ...state, signup: action.payload };
     default:
       return state;
   }

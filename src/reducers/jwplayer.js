@@ -3,6 +3,7 @@ import {
   FETCH_VIDEOS,
   FETCH_SEARCH_VIDEOS,
   FETCH_VIDEO_BYID,
+  FETCH_MY_WATCHES,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -10,6 +11,7 @@ const INITIAL_STATE = {
   search_videos: [],
   videos: [],
   curVideo: null,
+  mywatches: [],
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -25,6 +27,8 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, search_videos: svds };
     case FETCH_VIDEO_BYID:
       return { ...state, curVideo: action.video };
+    case FETCH_MY_WATCHES:
+      return { ...state, mywatches: action.watches };
     default:
       return state;
   }

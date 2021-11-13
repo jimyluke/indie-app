@@ -82,7 +82,7 @@ function Password() {
               />
             </Form.Item>
             <Form.Item>
-              <Checkbox onChange={(e)=>{setValue(e.target.checked)}} className="check-box" value={value}>
+              <Checkbox onChange={(e)=>{setValue(e.target.checked)}} className="check-box" checked={value}>
                 Require all devices to sign in with new password
               </Checkbox>
             </Form.Item>

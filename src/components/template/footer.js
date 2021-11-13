@@ -11,15 +11,7 @@ import FacebookIcon from "../../assets/images/general/facebook_icon.svg";
 import LinkedinIcon from "../../assets/images/general/linkedin_icon.svg";
 import { Link } from "react-router-dom";
 
-const CollapseWrapper = ({
-  title = "genres",
-  items = [
-    { label: "Mystery", url: "/" },
-    { label: "Sci-Fi", url: "/" },
-    { label: "Horror", url: "/" },
-    { label: "Romance", url: "/" },
-  ],
-}) => {
+const CollapseWrapper = ({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -58,12 +50,12 @@ const footerItems = [
   {
     title: "company",
     items: [
-      { label: "About Us", url: "/" },
-      { label: "Contact", url: "/" },
-      { label: "Partners", url: "/" },
-      { label: "Blog", url: "/" },
-      { label: "Meet the Team", url: "/" },
-      { label: "Careers", url: "/" },
+      { label: "About Us", url: "#" },
+      { label: "Contact", url: "/contact" },
+      { label: "Partners", url: "#" },
+      { label: "Blog", url: "#" },
+      { label: "Meet the Team", url: "#" },
+      { label: "Careers", url: "#" },
     ],
   },
   {
@@ -71,15 +63,15 @@ const footerItems = [
     items: [
       { label: "Privacy Policy", url: "/privacy" },
       { label: "Terms of Use", url: "/terms" },
-      { label: "Subscriber", url: "/" },
+      { label: "Subscriber", url: "#" },
     ],
   },
   {
     title: "help",
     items: [
-      { label: "FAQ", url: "/" },
-      { label: "Email Support", url: "/" },
-      { label: "Sitemap", url: "/support" },
+      { label: "FAQ", url: "#" },
+      { label: "Email Support", url: "#" },
+      { label: "Sitemap", url: "#" },
     ],
   },
 ];

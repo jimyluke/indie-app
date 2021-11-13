@@ -42,7 +42,6 @@
   &-infor {
     &--title {
       font-weight: 700;
-      font-family: Montserrat;
       font-style: normal;
       font-size: 24px;
       line-height: 30px;
@@ -51,7 +50,6 @@
       margin-bottom: 40px;
     }
     .text-content {
-      font-family: Nunito;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -74,12 +72,11 @@
       display: block;
     }
     .text-fw {
-      font-weight: 800;
+      font-weight: 700;
     }
   }
   &-element {
     &--title {
-      font-family: Montserrat;
       font-style: normal;
       font-weight: 700;
       font-size: 18px;
@@ -98,9 +95,8 @@
 
   &-footer {
     p {
-      font-family: Nunito;
       font-style: normal;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 16px;
       line-height: 24px;
       color: #ffffff;
