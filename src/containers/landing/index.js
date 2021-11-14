@@ -249,7 +249,7 @@ class HomePage extends Component {
                   <div className="audience-slider__views">
                     123
                     <img
-                      className="icon"
+                      className="icon eye"
                       src={require("../../assets/images/icon/view.svg")}
                       alt=""
                     />
@@ -267,7 +267,7 @@ class HomePage extends Component {
                   <div className="audience-slider__views">
                     123
                     <img
-                      className="icon"
+                      className="icon eye"
                       src={require("../../assets/images/icon/view.svg")}
                       alt=""
                     />
@@ -284,7 +284,7 @@ class HomePage extends Component {
                   <div className="audience-slider__views">
                     1 123 123 112
                     <img
-                      className="icon"
+                      className="icon eye"
                       src={require("../../assets/images/icon/view.svg")}
                       alt=""
                     />
@@ -301,7 +301,7 @@ class HomePage extends Component {
                   <div className="audience-slider__views">
                     123 131 212
                     <img
-                      className="icon"
+                      className="icon eye"
                       src={require("../../assets/images/icon/view.svg")}
                       alt=""
                     />
@@ -318,7 +318,7 @@ class HomePage extends Component {
                   <div className="audience-slider__views">
                     123
                     <img
-                      className="icon"
+                      className="icon eye"
                       src={require("../../assets/images/icon/view.svg")}
                       alt=""
                     />
@@ -335,7 +335,7 @@ class HomePage extends Component {
                   <div className="audience-slider__views">
                     123
                     <img
-                      className="icon"
+                      className="icon eye"
                       src={require("../../assets/images/icon/view.svg")}
                       alt=""
                     />
