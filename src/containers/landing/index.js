@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
-import "../../assets/css/main.css";
 
 class HomePage extends Component {
   render() {
