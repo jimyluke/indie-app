@@ -11,12 +11,15 @@
   .home {
     background: url("../../assets/images/home/bg-1920.jpg") no-repeat center top/cover;
   }
+
   .home__video-btn {
     background: url("../../assets/images/global/decor-line.png") no-repeat center top/cover, linear-gradient(180deg, rgba(240, 187, 109, 0.329) 0%, rgba(21, 25, 24, 0) 100%);
   }
+
   .audience {
     background: url("../../assets/images/audience/decor.png") no-repeat -50% bottom/10.7rem;
   }
+
   .audience:before {
     background: url("../../assets/images/audience/decor.png") no-repeat right top/10.7rem;
   }
@@ -27,5 +30,74 @@
 
   .btn {
     // padding: unset;
+  }
+
+  .header__sign-up {
+    padding: 0;
+  }
+
+  .header__login {
+    padding: 10px 20px;
+  }
+
+  .eye {
+    width: 20px;
+    height: 20px;
+  }
+
+  .audience-slider-prev,
+  .audience-slider-next {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .order__title,
+  .make-money__title,
+  .audience-card__title,
+  .home__title {
+    color: #ffffff;
+  }
+
+  .audience-slider-prev:hover .audience-slider-prev svg,
+  .audience-slider-next:hover .audience-slider-next svg {
+    fill: #ffffff;
+  }
+
+  .audience-slider-prev:hover .audience-slider-prev svg path,
+  .audience-slider-next:hover .audience-slider-next svg path {
+    stroke: #ffffff;
+  }
+
+  .audience-slider-prev:focus {
+    box-shadow: none !important;
+  }
+
+  .audience-slider-next:focus {
+    box-shadow: none !important;
+  }
+
+  .info-card__text,
+  .reviews-slide__text,
+  .questions-item__body p {
+    font-size: 0.2rem;
+  }
+
+  .modal-login__toggle {
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .modal-login__toggle:hover {
+    color: #DD5079;
+    border-color: #DD5079;
+  }
+
+  .modal-login__toggle:focus {
+    box-shadow: none !important;
   }
 }

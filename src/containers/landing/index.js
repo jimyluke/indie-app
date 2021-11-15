@@ -59,33 +59,85 @@ class HomePage extends Component {
                 className="social__item"
                 target="black"
               >
-                <img
+                <svg
                   className="icon"
-                  src={require("../../assets/images/icon/fasebook.svg")}
-                  alt=""
-                />
+                  width="10"
+                  height="20"
+                  viewBox="0 0 10 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_0_168)">
+                    <path
+                      d="M2.48148 19.9993V10.6147H0V7.23579H2.48148V4.34977C2.48148 2.08191 3.9473 -0.000732422 7.32486 -0.000732422C8.69238 -0.000732422 9.7036 0.130368 9.7036 0.130368L9.62392 3.28569C9.62392 3.28569 8.59264 3.27565 7.46726 3.27565C6.24926 3.27565 6.05412 3.83695 6.05412 4.76857V7.23579H9.72074L9.5612 10.6147H6.05412V19.9993H2.48148Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_0_168">
+                      <rect
+                        width="9.72074"
+                        height="20"
+                        fill="white"
+                        transform="translate(0 -0.000732422)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
               </a>
               <a
                 href="https://www.instagram.com/indiesparxs/"
                 className="social__item"
                 target="black"
               >
-                <img
-                  className="icon"
-                  src={require("../../assets/images/icon/instagram.svg")}
-                  alt=""
-                />
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.0874 2.48926H7.0874C4.32598 2.48926 2.0874 4.72783 2.0874 7.48926V17.4893C2.0874 20.2507 4.32598 22.4893 7.0874 22.4893H17.0874C19.8488 22.4893 22.0874 20.2507 22.0874 17.4893V7.48926C22.0874 4.72783 19.8488 2.48926 17.0874 2.48926Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16.0874 11.8593C16.2108 12.6916 16.0687 13.5415 15.6812 14.2883C15.2937 15.0351 14.6806 15.6407 13.929 16.019C13.1775 16.3972 12.3259 16.5289 11.4952 16.3952C10.6645 16.2616 9.89718 15.8694 9.30225 15.2745C8.70733 14.6796 8.31515 13.9122 8.18148 13.0815C8.04782 12.2509 8.17948 11.3992 8.55774 10.6477C8.936 9.89617 9.5416 9.28306 10.2884 8.89556C11.0352 8.50806 11.8852 8.3659 12.7174 8.48932C13.5663 8.6152 14.3523 9.01078 14.9591 9.61762C15.566 10.2245 15.9615 11.0104 16.0874 11.8593Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17.5874 6.98926H17.5974"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </a>
               <a
                 href="https://twitter.com/indiesparxs"
                 className="social__item"
                 target="black"
               >
-                <img
+                <svg
                   className="icon"
-                  src={require("../../assets/images/icon/twitter.svg")}
-                  alt=""
-                />
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.7825 3.82036C22.8249 4.49584 21.7646 5.01247 20.6425 5.35036C20.0402 4.65787 19.2398 4.16705 18.3495 3.94428C17.4592 3.72152 16.522 3.77755 15.6646 4.10481C14.8071 4.43207 14.0709 5.01476 13.5555 5.77408C13.04 6.53339 12.7702 7.43269 12.7825 8.35036V9.35036C11.0251 9.39593 9.28374 9.00617 7.71348 8.2158C6.14321 7.42544 4.79279 6.25899 3.78247 4.82036C3.78247 4.82036 -0.217529 13.8204 8.78247 17.8204C6.723 19.2183 4.26963 19.9193 1.78247 19.8204C10.7825 24.8204 21.7825 19.8204 21.7825 8.32036C21.7815 8.04181 21.7548 7.76395 21.7025 7.49036C22.7231 6.48385 23.4433 5.21307 23.7825 3.82036Z"
+                    fill="white"
+                  />
+                </svg>
               </a>
             </div>
           </div>
@@ -222,18 +274,40 @@ class HomePage extends Component {
               </strong>
               <div className="box m:show@lg">
                 <button className="btn audience-slider-prev">
-                  <img
+                  <svg
                     className="icon"
-                    src={require("../../assets/images/icon/slider-arrow.svg")}
-                    alt=""
-                  />
+                    width="26"
+                    height="25"
+                    viewBox="0 0 26 25"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#DD5079"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9.98577 20.6523L7.92779 18.5944L14.1017 12.4205L7.92779 6.24655L9.98577 4.18858L18.2177 12.4205L9.98577 20.6523Z"
+                      stroke="#DD5079"
+                      stroke-width="1"
+                    />
+                  </svg>
                 </button>
                 <button className="btn audience-slider-next">
-                  <img
+                  <svg
                     className="icon"
-                    src={require("../../assets/images/icon/slider-arrow.svg")}
-                    alt=""
-                  />
+                    width="26"
+                    height="25"
+                    viewBox="0 0 26 25"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#DD5079"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9.98577 20.6523L7.92779 18.5944L14.1017 12.4205L7.92779 6.24655L9.98577 4.18858L18.2177 12.4205L9.98577 20.6523Z"
+                      stroke="#DD5079"
+                      stroke-width="1"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -346,18 +420,40 @@ class HomePage extends Component {
             </div>
             <div className="audience-slider-btn-group-botton box m:hide@lg m:align-center-x">
               <button className="btn audience-slider-prev">
-                <img
+                <svg
                   className="icon"
-                  src={require("../../assets/images/icon/slider-arrow.svg")}
-                  alt=""
-                />
+                  width="26"
+                  height="25"
+                  viewBox="0 0 26 25"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#DD5079"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M9.98577 20.6523L7.92779 18.5944L14.1017 12.4205L7.92779 6.24655L9.98577 4.18858L18.2177 12.4205L9.98577 20.6523Z"
+                    stroke="#DD5079"
+                    stroke-width="1"
+                  />
+                </svg>
               </button>
               <button className="btn audience-slider-next">
-                <img
+                <svg
                   className="icon"
-                  src={require("../../assets/images/icon/slider-arrow.svg")}
-                  alt=""
-                />
+                  width="26"
+                  height="25"
+                  viewBox="0 0 26 25"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#DD5079"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M9.98577 20.6523L7.92779 18.5944L14.1017 12.4205L7.92779 6.24655L9.98577 4.18858L18.2177 12.4205L9.98577 20.6523Z"
+                    stroke="#DD5079"
+                    stroke-width="1"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -1245,25 +1341,88 @@ class HomePage extends Component {
                     </div>
                     <div className="modal-login__social grid">
                       <Link to="#" className="col-4">
-                        <img
+                        <svg
                           className="icon"
-                          src={require("../../assets/images/icon/google-modal.svg")}
-                          alt=""
-                        />
+                          width="154"
+                          height="100"
+                          viewBox="0 0 154 100"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="0.5"
+                            y="0.5"
+                            width="153"
+                            height="99"
+                            rx="4.5"
+                            fill="#FAFAFA"
+                            stroke="#2B3942"
+                          />
+                          <path
+                            d="M98.9778 50.5119C98.9778 48.9785 98.7222 47.1896 98.4667 45.9119H77V54.8563H89.2667C88.7556 57.6674 87.2222 59.9674 84.6667 61.7563V67.6341H92.3333C96.6778 63.5452 98.9778 57.4119 98.9778 50.5119Z"
+                            fill="#4285F4"
+                          />
+                          <path
+                            d="M76.9996 72.9994C83.133 72.9994 88.4996 70.9549 92.333 67.3771L84.6663 61.7549C82.6218 63.0327 80.0663 64.0549 76.9996 64.0549C71.1218 64.0549 66.0107 59.966 64.2218 54.5994H56.5552V60.2216C60.133 67.8883 68.0552 72.9994 76.9996 72.9994Z"
+                            fill="#34A853"
+                          />
+                          <path
+                            d="M64.2222 54.3443C63.7111 53.0665 63.4556 51.5331 63.4556 49.9998C63.4556 48.4665 63.7111 46.9331 64.2222 45.6554V39.7776H56.5556C55.0222 42.8443 54 46.422 54 49.9998C54 53.5776 54.7667 57.1554 56.5556 60.222L64.2222 54.3443Z"
+                            fill="#FBBC05"
+                          />
+                          <path
+                            d="M76.9996 36.2C80.3218 36.2 83.3885 37.4778 85.6885 39.5222L92.333 32.8778C88.4996 29.3 83.133 27 76.9996 27C68.0552 27 60.133 32.1111 56.5552 39.7778L64.2218 45.6556C66.0107 40.2889 71.1218 36.2 76.9996 36.2Z"
+                            fill="#EA4335"
+                          />
+                        </svg>
                       </Link>
                       <Link to="#" className="col-4">
-                        <img
+                        <svg
                           className="icon"
-                          src={require("../../assets/images/icon/fasebook-modal.svg")}
-                          alt=""
-                        />
+                          width="154"
+                          height="100"
+                          viewBox="0 0 154 100"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="0.5"
+                            y="0.5"
+                            width="153"
+                            height="99"
+                            rx="4.5"
+                            fill="#4267B2"
+                            stroke="#2B3942"
+                          />
+                          <path
+                            d="M87.6962 51.1341L88.7605 42.5755H80.592V37.1201C80.592 34.6519 81.2519 32.9678 84.6576 32.9678H89V25.3368C88.2443 25.2319 85.6634 25 82.6568 25C76.3774 25 72.0776 28.9756 72.0776 36.2808V42.5755H65V51.1341H72.0776V73H80.592V51.1341H87.6962Z"
+                            fill="white"
+                          />
+                        </svg>
                       </Link>
                       <Link to="#" className="col-4">
-                        <img
+                        <svg
                           className="icon"
-                          src={require("../../assets/images/icon/twitter-modal.svg")}
-                          alt=""
-                        />
+                          width="154"
+                          height="100"
+                          viewBox="0 0 154 100"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="0.5"
+                            y="0.5"
+                            width="153"
+                            height="99"
+                            rx="4.5"
+                            fill="#1DA1F2"
+                            stroke="#2B3942"
+                          />
+                          <path
+                            d="M66.9776 71C87.3464 71 98.492 54.0585 98.492 39.3918C98.492 38.9151 98.492 38.4385 98.4704 37.9619C100.63 36.3804 102.51 34.4306 104 32.2209C101.97 33.1091 99.8312 33.7157 97.628 33.9757C99.9392 32.5892 101.667 30.4011 102.488 27.823C100.306 29.1229 97.9304 30.0328 95.4464 30.5094C91.256 26.0249 84.236 25.8082 79.7648 30.0328C76.892 32.7408 75.6608 36.792 76.568 40.6483C67.6904 40.1933 59.3744 35.9688 53.7584 29.0362C50.8208 34.1057 52.3112 40.605 57.1928 43.8546C55.4216 43.8113 53.7152 43.3347 52.16 42.4681C52.16 42.5114 52.16 42.5547 52.16 42.5981C52.16 47.8842 55.8752 52.4337 61.0592 53.4952C59.4176 53.9502 57.7112 54.0152 56.048 53.6902C57.4952 58.218 61.664 61.316 66.3944 61.4027C62.4632 64.5007 57.6248 66.1689 52.6352 66.1689C51.7496 66.1689 50.864 66.1039 50 66.0172C55.076 69.2885 60.9512 71 66.9776 71Z"
+                            fill="white"
+                          />
+                        </svg>
                       </Link>
                     </div>
                     <p className="modal-login__politic">
