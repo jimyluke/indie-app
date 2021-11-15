@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 class HomePage extends Component {
   render() {
+    const cloudCSS = "https://sparxsdeploy.s3.amazonaws.com/js/main.css";
     return (
       <div className="landing-home">
+        <link rel="stylesheet" type="text/css" href={cloudCSS} />
         <div className="menu-modal">
           <div className="menu-modal__wrapper">
-            stop-color
             <div className="menu-modal__header">
               <button className="btn menu-modal__close">
                 <img
@@ -20,19 +21,19 @@ class HomePage extends Component {
             <nav className="menu-modal__box">
               <ul className="menu-modal__list">
                 <li className="menu-modal__list-item">
-                  <a href="#" className="menu-modal__link">
+                  <Link to="#" className="menu-modal__link">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-modal__list-item">
-                  <a href="#" className="menu-modal__link">
+                  <Link to="#" className="menu-modal__link">
                     Features
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-modal__list-item">
-                  <a href="#" className="menu-modal__link">
+                  <Link to="#" className="menu-modal__link">
                     Reviews
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -109,19 +110,19 @@ class HomePage extends Component {
             <nav className="header__menu menu m:show@lg">
               <ul className="menu__list m:center-x">
                 <li className="menu__list-item">
-                  <a href="#" className="menu__link">
+                  <Link to="#" className="menu__link">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu__list-item">
-                  <a href="#" className="menu__link">
+                  <Link to="#" className="menu__link">
                     Features
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu__list-item">
-                  <a href="#" className="menu__link">
+                  <Link to="#" className="menu__link">
                     Reviews
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -191,12 +192,12 @@ class HomePage extends Component {
               </button>
             </div>
             <div className="home__access">
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="home__access-btn btn btn--default m:center-x"
               >
                 REQUEST BETA ACCESS
-              </a>
+              </Link>
               <p className="home__access-text t:center t:left@md t:left@md">
                 1000+ free indie movies <br /> are available to you instantly.
               </p>
@@ -575,9 +576,12 @@ class HomePage extends Component {
                 </p>
               </div>
             </div>
-            <a href="#" className="info__btn btn btn--default m:center-x">
+            <Link
+              to="register"
+              className="info__btn btn btn--default m:center-x"
+            >
               GET STARTED
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -707,16 +711,19 @@ class HomePage extends Component {
           <video
             className="order__video"
             preload="none"
-            autoPlay=""
-            loop=""
-            muted=""
+            autoPlay
+            loop
+            muted
             playsInline
           >
             <source
               type="video/mp4"
               src={require("../../assets/images/order/Indie-Sparxs-Ciners.mp4")}
             />
-            <source type="video/quicktime" src="Indie-Sparxs-Ciners.mov" />
+            <source
+              type="video/quicktime"
+              src={require("../../assets/images/order/Indie-Sparxs-Ciners.mov")}
+            />
           </video>
           <div className="container">
             <p className="order__subtitle">READY TO JOIN THE FUN?</p>
@@ -1074,9 +1081,9 @@ class HomePage extends Component {
                 </p>
               </div>
               <div className="col-4@lg">
-                <a href="#" className="make-money__btn btn btn--default">
+                <Link to="#" className="make-money__btn btn btn--default">
                   submit your film
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -1094,19 +1101,19 @@ class HomePage extends Component {
             <nav className="col-6@lg menu m:align-center-x@lg m:show@lg">
               <ul className="menu__list">
                 <li className="menu__list-item">
-                  <a href="#" className="menu__link">
+                  <Link to="#" className="menu__link">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu__list-item">
-                  <a href="#" className="menu__link">
+                  <Link to="#" className="menu__link">
                     Features
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu__list-item">
-                  <a href="#" className="menu__link">
+                  <Link to="#" className="menu__link">
                     Reviews
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -1237,32 +1244,32 @@ class HomePage extends Component {
                       <span>or</span>
                     </div>
                     <div className="modal-login__social grid">
-                      <a href="#" className="col-4">
+                      <Link to="#" className="col-4">
                         <img
                           className="icon"
                           src={require("../../assets/images/icon/google-modal.svg")}
                           alt=""
                         />
-                      </a>
-                      <a href="#" className="col-4">
+                      </Link>
+                      <Link to="#" className="col-4">
                         <img
                           className="icon"
                           src={require("../../assets/images/icon/fasebook-modal.svg")}
                           alt=""
                         />
-                      </a>
-                      <a href="#" className="col-4">
+                      </Link>
+                      <Link to="#" className="col-4">
                         <img
                           className="icon"
                           src={require("../../assets/images/icon/twitter-modal.svg")}
                           alt=""
                         />
-                      </a>
+                      </Link>
                     </div>
                     <p className="modal-login__politic">
                       By signing up you accept the <br />{" "}
-                      <a href="">Terms of Service</a> and{" "}
-                      <a href="#">Privacy Policy</a>
+                      <Link to="/terms">Terms of Service</Link> and{" "}
+                      <Link to="/privacy">Privacy Policy</Link>
                     </p>
                   </div>
                 </div>

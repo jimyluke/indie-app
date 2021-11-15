@@ -1,0 +1,31 @@
+.landing-home {
+  --body-font-size: 0.28rem;
+  line-height: 1.465;
+  font-weight: 400;
+  font-size: var(--body-font-size);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background-color: #0d1215;
+
+  .home {
+    background: url("../../assets/images/home/bg-1920.jpg") no-repeat center top/cover;
+  }
+  .home__video-btn {
+    background: url("../../assets/images/global/decor-line.png") no-repeat center top/cover, linear-gradient(180deg, rgba(240, 187, 109, 0.329) 0%, rgba(21, 25, 24, 0) 100%);
+  }
+  .audience {
+    background: url("../../assets/images/audience/decor.png") no-repeat -50% bottom/10.7rem;
+  }
+  .audience:before {
+    background: url("../../assets/images/audience/decor.png") no-repeat right top/10.7rem;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .btn {
+    // padding: unset;
+  }
+}

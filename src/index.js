@@ -18,7 +18,6 @@ import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "suneditor/dist/css/suneditor.min.css";
 import "./index.scss";
-import './assets/css/main.css';
 import { configureSocket } from "./utils/socket";
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
